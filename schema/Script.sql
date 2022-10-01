@@ -83,7 +83,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bd`.`estoque` (
   `idEstoque` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `dataRenovacao` VARCHAR(45) NOT NULL,
-  `quantidade` VARCHAR(45) NOT NULL,
+  `quantidade` INT NOT NULL,
   PRIMARY KEY (`idEstoque`))
 ENGINE = InnoDB;
 
