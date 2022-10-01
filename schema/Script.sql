@@ -88,6 +88,26 @@ CREATE TABLE IF NOT EXISTS `bd`.`estoque` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `bd`.`fiado`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bd`.`fiado` (
+  `idFiado` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idProduto` INT UNSIGNED NOT NULL,
+  `cliente` VARCHAR(45) NOT NULL,
+  `valor` DOUBLE NOT NULL,
+  `dataInicial` VARCHAR(45) NOT NULL,
+  `dataFinal` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idFiado`),
+  INDEX `fk_fiado_produto1_idx` (`idProduto` ASC) VISIBLE,
+  CONSTRAINT `fk_fiado_produto1`
+    FOREIGN KEY (`idProduto`)
+    REFERENCES `bd`.`produto` (`idProduto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
