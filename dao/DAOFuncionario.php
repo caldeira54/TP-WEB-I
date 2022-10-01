@@ -3,7 +3,9 @@ class DAOFuncionario
 {
     public function inclui(Funcionario $funcionario)
     {
-        $sql = 'insert into funcionario (nome, usuario, senha) values (?, ?, ?)';
+        $sql = 'insert 
+                into funcionario (nome, usuario, senha) 
+                values (?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $funcionario->getNome());
@@ -22,7 +24,8 @@ class DAOFuncionario
 
     public function exclui(Funcionario $funcionario)
     {
-        $sql = 'delete from funcionario 
+        $sql = 'delete 
+                from funcionario 
                 where idFuncionario = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $funcionario->getIdFuncionario());
@@ -38,11 +41,14 @@ class DAOFuncionario
 
     public function altera(Funcionario $funcionario)
     {
-        $sql = 'update funcionario set nome = ?, usuario = ?, senha = ?';
+        $sql = 'update 
+                funcionario set nome = ?, usuario = ?, senha = ?
+                where idFuncionario = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $funcionario->getNome());
         $pst->bindValue(2, $funcionario->getUsuario());
         $pst->bindValue(3, $funcionario->getSenha());
+        $pst->bindValue(4, $funcionario->getIdFuncionario());
         if($pst->execute())
         {
             return true;
