@@ -4,14 +4,13 @@ class DAOProduto
     public function inclui(Produto $produto)
     {
         $sql = 'insert 
-                into produto (idFornecedor, nome, precoCompra, precoVenda) 
-                values (?, ?, ?, ?)';
+                into produto (idFuncionario, nome, preco) 
+                values (?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $produto->getIdFornecedor());
+        $pst->bindValue(1, $produto->getIdFuncionario());
         $pst->bindValue(2, $produto->getNome());
-        $pst->bindValue(3, $produto->getPrecoCompra());
-        $pst->bindValue(4, $produto->getPrecoVenda());
+        $pst->bindValue(3, $produto->getPreco());
 
         if($pst->execute())
         {
@@ -27,9 +26,9 @@ class DAOProduto
     {
         $sql = 'delete 
                 from produto 
-                where idProduto = ?';
+                where idEstoque = ?';
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $produto->getIdProduto());
+        $pst->bindValue(1, $produto->getIdEstoque());
         if($pst->execute())
         {
             return true;
@@ -43,14 +42,13 @@ class DAOProduto
     public function altera(Produto $produto)
     {
         $sql = 'update produto 
-                set idFornecedor = ?, nome = ?, precoCompra = ?, precoVenda = ? 
-                where idProduto = ?';
+                set idFuncionario = ?, nome = ?, preco = ? 
+                where idEstoque = ?';
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $produto->getIdFornecedor());
+        $pst->bindValue(1, $produto->getIdFuncionario());
         $pst->bindValue(2, $produto->getNome());
-        $pst->bindValue(3, $produto->getPrecoCompra());
-        $pst->bindValue(4, $produto->getPrecoVenda());
-        $pst->bindValue(5, $produto->getIdProduto());
+        $pst->bindValue(3, $produto->getPreco());
+        $pst->bindValue(4, $produto->getIdEstoque());
         if($pst->execute())
         {
             return true;
@@ -73,7 +71,7 @@ class DAOProduto
     public function localiza($id)
     {
         $lista = [];
-        $pst = Conexao::getPreparedStatement('select * from produto where idProduto = ?;');
+        $pst = Conexao::getPreparedStatement('select * from produto where idEstoque = ?;');
         $pst->bindValue(1, $id);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);

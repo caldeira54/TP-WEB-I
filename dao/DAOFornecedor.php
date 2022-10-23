@@ -4,15 +4,12 @@ class DAOFornecedor
     public function inclui(Fornecedor $fornecedor)
     {
         $sql = 'insert 
-                into fornecedor (nome, endereco, valorNotinha, dataCompraNotinha, dataPagamentoNotinha) 
-                values (?, ?, ?, ?, ?)';
+                into fornecedor (nome, endereco)
+                values (?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $fornecedor->getNome());
         $pst->bindValue(2, $fornecedor->getEndereco());
-        $pst->bindValue(3, $fornecedor->getValorNotinha());
-        $pst->bindValue(4, $fornecedor->getDataCompraNotinha());
-        $pst->bindValue(5, $fornecedor->getDataPagamentoNotinha());
 
         if($pst->execute())
         {
@@ -44,16 +41,12 @@ class DAOFornecedor
     public function altera(Fornecedor $fornecedor)
     {
         $sql = 'update fornecedor 
-                set nome = ?, endereco = ?, valorNotinha = ?, dataCompraNotinha = ?, 
-                dataPagamentoNotinha = ? 
+                set nome = ?, endereco = ? 
                 where idFornecedor = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $fornecedor->getNome());
         $pst->bindValue(2, $fornecedor->getEndereco());
-        $pst->bindValue(3, $fornecedor->getValorNotinha());
-        $pst->bindValue(4, $fornecedor->getDataCompraNotinha());
-        $pst->bindValue(5, $fornecedor->getDataPagamentoNotinha());
-        $pst->bindValue(6, $fornecedor->getIdFornecedor());
+        $pst->bindValue(3, $fornecedor->getIdFornecedor());
         if($pst->execute())
         {
             return true;

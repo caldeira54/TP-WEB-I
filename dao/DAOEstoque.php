@@ -4,12 +4,14 @@ class DAOEstoque
     public function inclui(Estoque $estoque)
     {
         $sql = 'insert 
-                into estoque (dataRenovacao, quantidade) 
+                into estoque (idFornecedor, nome, preco, quantidade) 
                 values (?, ?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $estoque->getDataRenovacao());
-        $pst->bindValue(2, $estoque->getQuantidade());
+        $pst->bindValue(1, $estoque->getIdFornecedor());
+        $pst->bindValue(2, $estoque->getNome());
+        $pst->bindValue(3, $estoque->getPreco());
+        $pst->bindValue(4, $estoque->getQuantidade());
 
         if($pst->execute())
         {
@@ -41,12 +43,14 @@ class DAOEstoque
     public function altera(Estoque $estoque)
     {
         $sql = 'update estoque 
-                set dataRenovacao = ?, quantidade = ? 
+                set idFornecedor = ?, nome = ?, preco = ?, quantidade = ?
                 where idEstoque = ?';
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $estoque->getDataRenovacao());
-        $pst->bindValue(2, $estoque->getQuantidade());
-        $pst->bindValue(3, $estoque->getIdEstoque());
+        $pst->bindValue(1, $estoque->getIdFornecedor());
+        $pst->bindValue(2, $estoque->getNome());
+        $pst->bindValue(3, $estoque->getPreco());
+        $pst->bindValue(4, $estoque->getQuantidade());
+        $pst->bindValue(5, $estoque->getIdEstoque());
         if($pst->execute())
         {
             return true;

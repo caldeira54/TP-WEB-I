@@ -1,7 +1,7 @@
 <?php
 class Produto
 {
-    private $idProduto;
+    private $idEstoque;
     private $idFuncionario;
     private $nome;
     private $preco;
@@ -11,14 +11,14 @@ class Produto
 
     }
  
-    public function getIdProduto()
+    public function getIdEstoque()
     {
-        return $this->idProduto;
+        return $this->idEstoque;
     }
 
-    public function setIdProduto($idProduto)
+    public function setIdEstoque($idEstoque)
     {
-        $this->idProduto = $idProduto;
+        $this->idEstoque = $idEstoque;
 
         return $this;
     }
