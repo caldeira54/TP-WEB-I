@@ -1,8 +1,8 @@
 <?php
-class Fiado 
+class VendaAPrazo 
 {
-    private $idFiado;
-    private $idProduto;
+    private $idVendaAPrazo;
+    private $idEstoque;
     private $cliente;
     private $valor;
     private $dataInicial;
@@ -13,26 +13,26 @@ class Fiado
         
     }
 
-    public function getIdFiado()
+    public function getIdVendaAPrazo()
     {
-        return $this->idFiado;
+        return $this->idVendaAPrazo;
     }
 
-    public function setIdFiado($idFiado)
+    public function setIdVendaAPrazo($idVendaAPrazo)
     {
-        $this->idFiado = $idFiado;
+        $this->idVendaAPrazo = $idVendaAPrazo;
 
         return $this;
     }
- 
-    public function getIdProduto()
+
+    public function getIdEstoque()
     {
-        return $this->idProduto;
+        return $this->idEstoque;
     }
 
-    public function setIdProduto($idProduto)
+    public function setIdEstoque($idEstoque)
     {
-        $this->idProduto = $idProduto;
+        $this->idEstoque = $idEstoque;
 
         return $this;
     }
@@ -72,7 +72,7 @@ class Fiado
 
         return $this;
     }
- 
+
     public function getDataFinal()
     {
         return $this->dataFinal;

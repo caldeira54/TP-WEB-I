@@ -2,10 +2,9 @@
 class Produto
 {
     private $idProduto;
+    private $idFuncionario;
     private $nome;
-    private $precoCompra;
-    private $precoVenda;
-    private $idFornecedor;
+    private $preco;
 
     public function __construct()
     {
@@ -36,38 +35,26 @@ class Produto
         return $this;
     }
 
-    public function getPrecoCompra()
+    public function getIdFuncionario()
     {
-        return $this->precoCompra;
+        return $this->idFuncionario;
     }
 
-    public function setPrecoCompra($precoCompra)
+    public function setIdFuncionario($idFuncionario)
     {
-        $this->precoCompra = $precoCompra;
+        $this->idFuncionario = $idFuncionario;
 
         return $this;
     }
 
-    public function getPrecoVenda()
+    public function getPreco()
     {
-        return $this->precoVenda;
+        return $this->preco;
     }
 
-    public function setPrecoVenda($precoVenda)
+    public function setPreco($preco)
     {
-        $this->precoVenda = $precoVenda;
-
-        return $this;
-    }
- 
-    public function getIdFornecedor()
-    {
-        return $this->idFornecedor;
-    }
-
-    public function setIdFornecedor($idFornecedor)
-    {
-        $this->idFornecedor = $idFornecedor;
+        $this->preco = $preco;
 
         return $this;
     }

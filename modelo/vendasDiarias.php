@@ -2,8 +2,8 @@
 class VendasDiarias
 {
     private $idVendasDiarias;
-    private $data;
     private $valor;
+    private $data;
     private $idFuncionario;
 
     public function __construct()
@@ -23,18 +23,6 @@ class VendasDiarias
         return $this;
     }
 
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    public function setData($data)
-    {
-        $this->data = $data;
-
-        return $this;
-    }
-
     public function getValor()
     {
         return $this->valor;
@@ -43,6 +31,18 @@ class VendasDiarias
     public function setValor($valor)
     {
         $this->valor = $valor;
+
+        return $this;
+    }
+
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    public function setData($data)
+    {
+        $this->data = $data;
 
         return $this;
     }

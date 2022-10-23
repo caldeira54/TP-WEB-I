@@ -2,8 +2,10 @@
 class Estoque
 {
     private $idEstoque;
-    private $dataRenovacao;
     private $quantidade;
+    private $idFornecedor;
+    private $nome;
+    private $preco;
 
     public function __construct()
     {
@@ -22,18 +24,6 @@ class Estoque
         return $this;
     }
 
-    public function getDataRenovacao()
-    {
-        return $this->dataRenovacao;
-    }
-
-    public function setDataRenovacao($dataRenovacao)
-    {
-        $this->dataRenovacao = $dataRenovacao;
-
-        return $this;
-    }
-
     public function getQuantidade()
     {
         return $this->quantidade;
@@ -42,6 +32,42 @@ class Estoque
     public function setQuantidade($quantidade)
     {
         $this->quantidade = $quantidade;
+
+        return $this;
+    }
+
+    public function getIdFornecedor()
+    {
+        return $this->idFornecedor;
+    }
+
+    public function setIdFornecedor($idFornecedor)
+    {
+        $this->idFornecedor = $idFornecedor;
+
+        return $this;
+    }
+
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    public function getPreco()
+    {
+        return $this->preco;
+    }
+
+    public function setPreco($preco)
+    {
+        $this->preco = $preco;
 
         return $this;
     }
