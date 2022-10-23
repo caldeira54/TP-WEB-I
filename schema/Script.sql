@@ -102,13 +102,13 @@ ENGINE = InnoDB;
 -- Table `bd`.`vendaAPrazo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`vendaAPrazo` (
-  `idVendaPrazo` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idVendaAPrazo` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `idEstoque` INT UNSIGNED NOT NULL,
   `cliente` VARCHAR(255) NOT NULL,
   `valor` DOUBLE NOT NULL,
   `dataInicial` VARCHAR(255) NOT NULL,
   `dataFinal` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`idVendaPrazo`),
+  PRIMARY KEY (`idVendaAPrazo`),
   INDEX `fk_vendaAPrazo_produto1_idx` (`idEstoque` ASC) VISIBLE,
   CONSTRAINT `fk_vendaAPrazo_produto1`
     FOREIGN KEY (`idEstoque`)
@@ -124,7 +124,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bd`.`notaPromissoria` (
   `idNotaPromissoria` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `idFornecedor` INT UNSIGNED NOT NULL,
-  `valor` DOUBLE NOT NULL,
+  `preco` DOUBLE NOT NULL,
   `dataCompra` VARCHAR(45) NOT NULL,
   `dataPagamento` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idNotaPromissoria`),
@@ -141,11 +141,11 @@ ENGINE = InnoDB;
 -- Table `bd`.`vendaAVista`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`vendaAVista` (
-  `idVendaPrazo` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idVendaAVista` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `idEstoque` INT UNSIGNED NOT NULL,
   `valor` DOUBLE NOT NULL,
   `data` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`idVendaPrazo`),
+  PRIMARY KEY (`idVendaAVista`),
   INDEX `fk_vendaAVista_produto1_idx` (`idEstoque` ASC) VISIBLE,
   CONSTRAINT `fk_vendaAVista_produto1`
     FOREIGN KEY (`idEstoque`)
