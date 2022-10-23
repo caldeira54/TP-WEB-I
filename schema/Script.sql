@@ -19,9 +19,9 @@ USE `bd` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`funcionario` (
   `idFuncionario` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
-  `usuario` VARCHAR(45) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(255) NOT NULL,
+  `usuario` VARCHAR(255) NOT NULL,
+  `senha` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idFuncionario`))
 ENGINE = InnoDB;
 
@@ -31,12 +31,28 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`fornecedor` (
   `idFornecedor` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
-  `endereco` VARCHAR(45) NOT NULL,
-  `valorNotinha` DOUBLE NOT NULL,
-  `dataCompraNotinha` VARCHAR(45) NOT NULL,
-  `dataPagamentoNotinha` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(255) NOT NULL,
+  `endereco` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idFornecedor`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bd`.`estoque`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bd`.`estoque` (
+  `idEstoque` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idFornecedor` INT UNSIGNED NOT NULL,
+  `nome` VARCHAR(255) NOT NULL,
+  `preco` DOUBLE NOT NULL,
+  `quantidade` DOUBLE NOT NULL,
+  PRIMARY KEY (`idEstoque`),
+  INDEX `fk_estoque_fornecedor1_idx` (`idFornecedor` ASC) VISIBLE,
+  CONSTRAINT `fk_estoque_fornecedor1`
+    FOREIGN KEY (`idFornecedor`)
+    REFERENCES `bd`.`fornecedor` (`idFornecedor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -44,16 +60,21 @@ ENGINE = InnoDB;
 -- Table `bd`.`produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`produto` (
-  `idProduto` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `idFornecedor` INT UNSIGNED NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
-  `precoCompra` DOUBLE NOT NULL,
-  `precoVenda` DOUBLE NOT NULL,
-  PRIMARY KEY (`idProduto`),
-  INDEX `fk_produto_fornecedor_idx` (`idFornecedor` ASC) VISIBLE,
-  CONSTRAINT `fk_produto_fornecedor`
-    FOREIGN KEY (`idFornecedor`)
-    REFERENCES `bd`.`fornecedor` (`idFornecedor`)
+  `idEstoque` INT UNSIGNED NOT NULL,
+  `idFuncionario` INT UNSIGNED NOT NULL,
+  `nome` VARCHAR(255) NOT NULL,
+  `preco` DOUBLE NOT NULL,
+  PRIMARY KEY (`idEstoque`),
+  INDEX `fk_produto_estoque1_idx` (`idEstoque` ASC) VISIBLE,
+  INDEX `fk_produto_funcionario1_idx` (`idFuncionario` ASC) VISIBLE,
+  CONSTRAINT `fk_produto_estoque1`
+    FOREIGN KEY (`idEstoque`)
+    REFERENCES `bd`.`estoque` (`idEstoque`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_produto_funcionario1`
+    FOREIGN KEY (`idFuncionario`)
+    REFERENCES `bd`.`funcionario` (`idFuncionario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -64,12 +85,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`vendasDiarias` (
   `idVendasDiarias` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idFuncionario` INT UNSIGNED NOT NULL,
   `data` VARCHAR(45) NOT NULL,
   `valor` DOUBLE NOT NULL,
-  `idFuncionario` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idVendasDiarias`),
-  INDEX `fk_vendasDiarias_funcionario1_idx` (`idFuncionario` ASC) VISIBLE,
-  CONSTRAINT `fk_vendasDiarias_funcionario1`
+  INDEX `fk_vendasDiarias_funcionario_idx` (`idFuncionario` ASC) VISIBLE,
+  CONSTRAINT `fk_vendasDiarias_funcionario`
     FOREIGN KEY (`idFuncionario`)
     REFERENCES `bd`.`funcionario` (`idFuncionario`)
     ON DELETE NO ACTION
@@ -78,31 +99,57 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bd`.`estoque`
+-- Table `bd`.`vendaAPrazo`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd`.`estoque` (
-  `idEstoque` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `dataRenovacao` VARCHAR(45) NOT NULL,
-  `quantidade` INT NOT NULL,
-  PRIMARY KEY (`idEstoque`))
+CREATE TABLE IF NOT EXISTS `bd`.`vendaAPrazo` (
+  `idVendaPrazo` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idEstoque` INT UNSIGNED NOT NULL,
+  `cliente` VARCHAR(255) NOT NULL,
+  `valor` DOUBLE NOT NULL,
+  `dataInicial` VARCHAR(255) NOT NULL,
+  `dataFinal` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idVendaPrazo`),
+  INDEX `fk_vendaAPrazo_produto1_idx` (`idEstoque` ASC) VISIBLE,
+  CONSTRAINT `fk_vendaAPrazo_produto1`
+    FOREIGN KEY (`idEstoque`)
+    REFERENCES `bd`.`produto` (`idEstoque`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bd`.`fiado`
+-- Table `bd`.`notaPromissoria`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd`.`fiado` (
-  `idFiado` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `idProduto` INT UNSIGNED NOT NULL,
-  `cliente` VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `bd`.`notaPromissoria` (
+  `idNotaPromissoria` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idFornecedor` INT UNSIGNED NOT NULL,
   `valor` DOUBLE NOT NULL,
-  `dataInicial` VARCHAR(45) NOT NULL,
-  `dataFinal` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idFiado`),
-  INDEX `fk_fiado_produto1_idx` (`idProduto` ASC) VISIBLE,
-  CONSTRAINT `fk_fiado_produto1`
-    FOREIGN KEY (`idProduto`)
-    REFERENCES `bd`.`produto` (`idProduto`)
+  `dataCompra` VARCHAR(45) NOT NULL,
+  `dataPagamento` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idNotaPromissoria`),
+  INDEX `fk_notaPromissoria_fornecedor1_idx` (`idFornecedor` ASC) VISIBLE,
+  CONSTRAINT `fk_notaPromissoria_fornecedor1`
+    FOREIGN KEY (`idFornecedor`)
+    REFERENCES `bd`.`fornecedor` (`idFornecedor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bd`.`vendaAVista`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bd`.`vendaAVista` (
+  `idVendaPrazo` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idEstoque` INT UNSIGNED NOT NULL,
+  `valor` DOUBLE NOT NULL,
+  `data` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idVendaPrazo`),
+  INDEX `fk_vendaAVista_produto1_idx` (`idEstoque` ASC) VISIBLE,
+  CONSTRAINT `fk_vendaAVista_produto1`
+    FOREIGN KEY (`idEstoque`)
+    REFERENCES `bd`.`produto` (`idEstoque`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
