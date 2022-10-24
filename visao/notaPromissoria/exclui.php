@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclui Fornecedor</title>
+    <title>Exclusão de Nota Promissória</title>
 </head>
 <body>
     <?php
-        require_once '../../dao/DAOFornecedor.php';
+        require_once '../../dao/DAONotaPromissoria.php';
         require_once '../../dao/Conexao.php';
-        require_once '../../modelo/Fornecedor.php';
+        require_once '../../modelo/NotaPromissoria.php';
 
-        $obj = new Fornecedor();
-        $dao = new DAOFornecedor();
+        $obj = new NotaPromissoria();
+        $dao = new DAONotaPromissoria();
 
         $id = filter_input(INPUT_POST, 'id');
 
-        $obj->setIdFornecedor($id);
+        $obj->setIdNotaPromissoria($id);
 
-        if($dao->exclui($obj)){
-            echo '<h1>Fornecedor excluído com sucesso</h1>';
+        if($dao->exclui($aluno)){
+            echo '<h1>Notinha excluída com sucesso</h1>';
             echo '<br><a href="../../index.php">Inicio</a>';
-            echo '<br><a href="listagem.php"> Listagem de Fornecedores </a><br>';
+            echo '<br><a href="listagem.php"> Listagem de Notinhas </a><br>';
         } else {
             echo 'Deu alguma merda...';
         }

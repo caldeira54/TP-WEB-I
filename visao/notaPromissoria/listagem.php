@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/cores.js"></link>
-    <title>Lista de Fornecedores</title>
+    <title>Listagem das Notas Promissórias</title>
 
     <style>
         td{
@@ -18,32 +17,35 @@
     </style>
 </head>
 <body>
-    <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Fornecedores ****** </h1>
+    <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Notinhas ****** </h1>
     <table style="width: 600px; border-collapse: collapse">
         <tr> 
-            <th> ID </th>
-            <th> Nome </th>
-            <th> Endereço </th>
-            <th> Ações </th>
+            <th> ID Notinha</th>
+            <th> ID Fornecedor </th>
+            <th> Data da Compra </th>
+            <th> Data do Pagamento </th>
+            <th> Ações <th>
             <th></th>
         </tr>
 
         <?php
-            require_once '../../dao/DAOFornecedor.php';
+            require_once '../../dao/DAONotaPromissoria.php';
             require_once '../../dao/Conexao.php';
 
-            $dao = new DAOFornecedor();
+            $dao = new DAONotaPromissoria();
             $lista = $dao->lista();
 
             foreach($lista as $v)
             {
                 echo '<tr>';
 
+                    echo '<td>' . $v['idNotaPromissoria'] . '</td>';
                     echo '<td>' . $v['idFornecedor'] . '</td>';
-                    echo '<td>' . $v['nome'] . '</td>';
-                    echo '<td>' . $v['endereco'] . '</td>';
-                    echo '<td> <a id = "excluir" href="exclui.php?idFornecedor=' . $v['idFornecedor'] . '">Excluir</a></td>';
-                    echo '<td> <a id = "editar" href="formEdicao.php?idFornecedor=' . $v['idFornecedor'] . '">Editar</a></td>';
+                    echo '<td>' . $v['preco'] . '</td>';
+                    echo '<td>' . $v['dataCompra'] . '</td>';
+                    echo '<td>' . $v['dataPagamento'] . '</td>';
+                    echo '<td> <a id = "excluir" href="exclui.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '">Excluir</a></td>';
+                    echo '<td> <a id = "editar" href="formEdicao.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '">Editar</a></td>';
 
                 echo '</tr>';
             }

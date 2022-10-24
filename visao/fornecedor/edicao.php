@@ -22,7 +22,7 @@
         if (($id && $nome && $endereco)) {
             $obj->setIdFornecedor($id);
             $obj->setNome($nome);
-            $obj->setEndereco($cpf);
+            $obj->setEndereco($endereco);
 
             if ($dao->altera($obj)) {
                 echo '<h1>Fornecedor editado com sucesso!</h1>';
