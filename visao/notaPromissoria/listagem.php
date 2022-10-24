@@ -24,8 +24,8 @@
             <th> ID Fornecedor </th>
             <th> Data da Compra </th>
             <th> Data do Pagamento </th>
-            <th> Ações <th>
-            <th></th>
+            <th> Editar <th>
+            <th> Excluir </th>
         </tr>
 
         <?php

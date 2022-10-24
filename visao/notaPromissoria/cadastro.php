@@ -19,6 +19,7 @@
         $preco = filter_input(INPUT_POST, 'preco');
         $dataCompra = filter_input(INPUT_POST, 'dataCompra');
         $dataPagamento = filter_input(INPUT_POST, 'dataPagamento');
+        var_dump($idFornecedor);
 
         if (($idFornecedor && $preco && $dataCompra && $dataPagamento)) {
             $obj->setIdFornecedor($idFornecedor);

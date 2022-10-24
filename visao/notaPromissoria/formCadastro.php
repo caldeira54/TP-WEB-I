@@ -23,7 +23,7 @@
 
     <form action="cadastro.php" method="post">
         <label for="idFornecedor">Fornecedor</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="idFornecedor" id="idFornecedor">
 
         <br>
 
