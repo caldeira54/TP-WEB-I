@@ -5,18 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tela Inicial</title>
-  <link rel="stylesheet" href="./visao/css/estilo.css">
 </head>
 <body>
-  <form>
-    <div class='formLogin'>
-      <h4>Login</h4>
-
-      <label>Usuário</label>
-      <hr>
-
-      <label>Senha</label>
-    </div>
-  </form>
+  <a href="visao/fornecedor/listagem.php">Listagem</a>
+  <br> <br>
+  <a href="visao/fornecedor/formCadastro.php">Cadastrar Fornecedor</a>
 </body>
 </html>
