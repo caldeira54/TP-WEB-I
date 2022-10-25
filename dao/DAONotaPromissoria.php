@@ -4,7 +4,7 @@ class DAONotaPromissoria
     public function inclui(NotaPromissoria $notaPromissoria)
     {
         $sql = 'insert 
-                into notaPrmissoria (idFornecedor, preco, dataCompra, dataPagamento) 
+                into notaPromissoria (idFornecedor, preco, dataCompra, dataPagamento) 
                 values (?, ?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);

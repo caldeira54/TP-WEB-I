@@ -14,6 +14,11 @@
         th{
             border: 2px solid #ccc; padding: 5px; text-align: center; background: #ccc;
         }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -22,10 +27,11 @@
         <tr> 
             <th> ID Notinha</th>
             <th> ID Fornecedor </th>
+            <th> Preço </th>
             <th> Data da Compra </th>
             <th> Data do Pagamento </th>
-            <th> Editar <th>
             <th> Excluir </th>
+            <th> Editar </th>
         </tr>
 
         <?php
@@ -44,8 +50,8 @@
                     echo '<td>' . $v['preco'] . '</td>';
                     echo '<td>' . $v['dataCompra'] . '</td>';
                     echo '<td>' . $v['dataPagamento'] . '</td>';
-                    echo '<td> <a id = "excluir" href="exclui.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '">Excluir</a></td>';
-                    echo '<td> <a id = "editar" href="formEdicao.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '">Editar</a></td>';
+                    echo '<td> <a id = "excluir" href="exclui.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
+                    echo '<td> <a id = "editar" href="formEdicao.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 
                 echo '</tr>';
             }
