@@ -15,7 +15,7 @@
         $obj = new Fornecedor();
         $dao = new DAOFornecedor();
 
-        $id = filter_input(INPUT_POST, 'id');
+        $id = filter_input(INPUT_POST, 'idFornecedor');
         $nome = filter_input(INPUT_POST, 'nome');
         $endereco = filter_input(INPUT_POST, 'endereco');
 

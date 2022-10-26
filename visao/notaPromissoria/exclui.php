@@ -15,11 +15,11 @@
         $obj = new NotaPromissoria();
         $dao = new DAONotaPromissoria();
 
-        $id = filter_input(INPUT_POST, 'id');
+        $id = filter_input(INPUT_GET, 'idNotaPromissoria');
 
         $obj->setIdNotaPromissoria($id);
 
-        if($dao->exclui($aluno)){
+        if($dao->exclui($obj)){
             echo '<h1>Notinha excluída com sucesso</h1>';
             echo '<br><a href="../../index.php">Inicio</a>';
             echo '<br><a href="listagem.php"> Listagem de Notinhas </a><br>';

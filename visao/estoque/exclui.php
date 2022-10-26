@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclui Fornecedor</title>
+    <title>Exclui Estoque</title>
 </head>
 <body>
     <?php
-        require_once '../../dao/DAOFornecedor.php';
+        require_once '../../dao/DAOEstoque.php';
         require_once '../../dao/Conexao.php';
-        require_once '../../modelo/Fornecedor.php';
+        require_once '../../modelo/Estoque.php';
 
-        $obj = new Fornecedor();
-        $dao = new DAOFornecedor();
+        $obj = new Estoque();
+        $dao = new DAOEstoque();
 
-        $id = filter_input(INPUT_GET, 'idFornecedor');
+        $id = filter_input(INPUT_GET, 'idEstoque');
 
-        $obj->setIdFornecedor($id);
+        $obj->setIdEstoque($id);
 
         if($dao->exclui($obj)){
-            echo '<h1>Fornecedor excluído com sucesso</h1>';
+            echo '<h1>Estoque excluído com sucesso</h1>';
             echo '<br><a href="../../index.php">Inicio</a>';
-            echo '<br><a href="listagem.php"> Listagem de Fornecedores </a><br>';
+            echo '<br><a href="listagem.php"> Listagem do Estoque </a><br>';
         } else {
             echo 'Deu alguma merda...';
         }

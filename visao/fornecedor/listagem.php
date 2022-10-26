@@ -6,16 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cores.js"></link>
     <title>Lista de Fornecedores</title>
-
-    <style>
-        td{
-            border: 2px solid #ccc; padding: 5px; text-align: center;
-        }
-        
-        th{
-            border: 2px solid #ccc; padding: 5px; text-align: center; background: #ccc;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
     <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Fornecedores ****** </h1>
@@ -24,8 +15,8 @@
             <th> ID </th>
             <th> Nome </th>
             <th> Endereço </th>
-            <th> Ações </th>
-            <th></th>
+            <th> Excluir </th>
+            <th> Editar </th>
         </tr>
 
         <?php
@@ -42,8 +33,8 @@
                     echo '<td>' . $v['idFornecedor'] . '</td>';
                     echo '<td>' . $v['nome'] . '</td>';
                     echo '<td>' . $v['endereco'] . '</td>';
-                    echo '<td> <a id = "excluir" href="exclui.php?idFornecedor=' . $v['idFornecedor'] . '">Excluir</a></td>';
-                    echo '<td> <a id = "editar" href="formEdicao.php?idFornecedor=' . $v['idFornecedor'] . '">Editar</a></td>';
+                    echo '<td> <a id = "excluir" href="exclui.php?idFornecedor=' . $v['idFornecedor'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
+                    echo '<td> <a id = "editar" href="formEdicao.php?idFornecedor=' . $v['idFornecedor'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 
                 echo '</tr>';
             }

@@ -16,5 +16,11 @@
   <a href="visao/notaPromissoria/listagem.php">Listagem de Nota Promissória</a>
   <br>
   <a href="visao/notaPromissoria/formCadastro.php">Cadastrar Nota Promissória</a>
+
+  <br> <br>
+
+  <a href="visao/estoque/listagem.php">Listagem do Estoque</a>
+  <br>
+  <a href="visao/estoque/formCadastro.php">Cadastrar produto no Estoque</a>
 </body>
 </html>

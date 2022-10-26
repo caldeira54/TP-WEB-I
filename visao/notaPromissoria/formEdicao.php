@@ -12,7 +12,7 @@
         require_once '../../dao/Conexao.php';
         require_once '../../modelo/NotaPromissoria.php';
 
-        $id = filter_input(INPUT_GET, 'id');
+        $id = filter_input(INPUT_GET, 'idNotaPromissoria');
 
         $dao = new DAONotaPromissoria();
         $lista = $dao->localiza($id);
@@ -21,10 +21,10 @@
     ?>
 
     <form action="edicao.php" method="post">
-        <input type="hidden" name="id" id="id" value="<?=$notaPromissoria['id'] ?>">
+        <input type="hidden" name="idNotaPromissoria" id="idNotaPromissoria" value="<?=$notaPromissoria['idNotaPromissoria'] ?>">
 
         <label for="idFornecedor">Fornecedor</label>
-        <input type="text" name="nome" id="nome" value="<?=$notaPromissoria['idFornecedor'] ?>">
+        <input type="text" name="idFornecedor" id="idFornecedor" value="<?=$notaPromissoria['idFornecedor'] ?>">
 
         <br>
 

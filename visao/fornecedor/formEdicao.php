@@ -12,7 +12,7 @@
         require_once '../../dao/Conexao.php';
         require_once '../../modelo/Fornecedor.php';
 
-        $id = filter_input(INPUT_GET, 'id');
+        $id = filter_input(INPUT_GET, 'idFornecedor');
 
         $dao = new DAOFornecedor();
         $lista = $dao->localiza($id);
@@ -21,7 +21,7 @@
     ?>
 
     <form action="edicao.php" method="post">
-        <input type="hidden" name="id" id="id" value="<?=$fornecedor['id'] ?>">
+        <input type="hidden" name="idFornecedor" id="idFornecedor" value="<?=$fornecedor['idFornecedor'] ?>">
 
         <label for="nome">Fornecedor</label>
         <input type="text" name="nome" id="nome" value="<?=$fornecedor['nome'] ?>">

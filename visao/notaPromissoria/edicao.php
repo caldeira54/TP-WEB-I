@@ -15,11 +15,17 @@
         $obj = new NotaPromissoria();
         $dao = new DAONotaPromissoria();
 
-        $id = filter_input(INPUT_POST, 'id');
+        $id = filter_input(INPUT_POST, 'idNotaPromissoria');
         $idFornecedor = filter_input(INPUT_POST, 'idFornecedor');
         $preco = filter_input(INPUT_POST, 'preco');
         $dataCompra = filter_input(INPUT_POST, 'dataCompra');
         $dataPagamento = filter_input(INPUT_POST, 'dataPagamento');
+
+        var_dump($id);
+        var_dump($idFornecedor);
+        var_dump($preco);
+        var_dump($dataCompra);
+        var_dump($dataPagamento);
 
         if (($id && $idFornecedor && $preco && $dataCompra && $dataPagamento)) {
             $obj->setIdNotaPromissoria($id);
