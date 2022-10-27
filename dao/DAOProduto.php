@@ -4,13 +4,14 @@ class DAOProduto
     public function inclui(Produto $produto)
     {
         $sql = 'insert 
-                into produto (idFuncionario, nome, preco) 
-                values (?, ?, ?)';
+                into produto (idEstoque, idFuncionario, nome, preco) 
+                values (?, ?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $produto->getIdFuncionario());
-        $pst->bindValue(2, $produto->getNome());
-        $pst->bindValue(3, $produto->getPreco());
+        $pst->bindValue(1, $produto->getIdEstoque());
+        $pst->bindValue(2, $produto->getIdFuncionario());
+        $pst->bindValue(3, $produto->getNome());
+        $pst->bindValue(4, $produto->getPreco());
 
         if($pst->execute())
         {

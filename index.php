@@ -22,5 +22,17 @@
   <a href="visao/estoque/listagem.php">Listagem do Estoque</a>
   <br>
   <a href="visao/estoque/formCadastro.php">Cadastrar produto no Estoque</a>
+
+  <br> <br>
+
+  <a href="visao/produto/listagem.php">Listagem de Produtos</a>
+  <br>
+  <a href="visao/produto/formCadastro.php">Cadastrar Produto</a>
+
+  <br> <br>
+
+  <a href="visao/vendasDiarias/listagem.php">Listagem das Vendas Diárias</a>
+  <br>
+  <a href="visao/vendasDiarias/formCadastro.php">Cadastrar Venda Diária</a>
 </body>
 </html>
