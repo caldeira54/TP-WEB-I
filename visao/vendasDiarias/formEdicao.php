@@ -7,6 +7,10 @@
     <title>Formulário de edição das Vendas Diárias</title>
 </head>
 <body>
+    <script src="../../mascaras/mascaraData.js">
+        
+    </script>
+    
     <?php
         require_once '../../dao/DAOVendasDiarias.php';
         require_once '../../dao/Conexao.php';

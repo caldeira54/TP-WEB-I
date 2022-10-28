@@ -7,6 +7,10 @@
     <title>Formulário de cadastro das Vendas Diárias</title>
 </head>
 <body>
+    <script src="../../mascaras/mascaraData.js">
+        
+    </script>
+
     <form action="cadastro.php" method="post">
         <label for="idFuncionario">Funcionário</label>
         <input type="text" name="idFuncionario" id="idFuncionario">
