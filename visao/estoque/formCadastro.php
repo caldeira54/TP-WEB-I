@@ -9,7 +9,22 @@
 <body>
     <form action="cadastro.php" method="post">
         <label for="idFornecedor">Fornecedor</label>
-        <input type="text" name="idFornecedor" id="idFornecedor">
+        <select name="idFornecedor" id="idFornecedor">
+            <?php
+                require_once '../../modelo/Fornecedor.php';
+                require_once '../../dao/DAOFornecedor.php';
+                require_once '../../dao/Conexao.php';
+
+                $dao = new DAOFornecedor();
+                $lista = $dao->lista();
+
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo '<option value="' . $l['idFornecedor'] . '">' . $l['nome'] . '</option>';
+                    }
+                }
+            ?>
+        </select>
 
         <br>
 

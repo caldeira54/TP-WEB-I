@@ -12,7 +12,7 @@
     <table style="width: 600px; border-collapse: collapse">
         <tr> 
             <th> ID Notinha</th>
-            <th> ID Fornecedor </th>
+            <th> Fornecedor </th>
             <th> Preço </th>
             <th> Data da Compra </th>
             <th> Data do Pagamento </th>
@@ -22,10 +22,14 @@
 
         <?php
             require_once '../../dao/DAONotaPromissoria.php';
+            require_once '../../dao/DAOFornecedor.php';
             require_once '../../dao/Conexao.php';
 
             $dao = new DAONotaPromissoria();
             $lista = $dao->lista();
+
+            $daoFornecedor = new DAOFornecedor();
+            $listaFornecedor = $daoFornecedor->lista();
 
             foreach($lista as $v)
             {

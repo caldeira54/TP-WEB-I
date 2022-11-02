@@ -8,13 +8,43 @@
 </head>
 <body>
     <form action="cadastro.php" method="post">
-        <label for="idEstoque">ID Produto</label>
-        <input type="text" name="idEstoque" id="idEstoque">
+        <label for="idEstoque">Produto</label>
+        <select name="idEstoque" id="idEstoque">
+            <?php
+                require_once '../../modelo/Estoque.php';
+                require_once '../../dao/DAOEstoque.php';
+                require_once '../../dao/Conexao.php';
+
+                $dao = new DAOEstoque();
+                $lista = $dao->lista();
+
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo '<option value="' . $l['idEstoque'] . '">' . $l['nome'] . '</option>';
+                    }
+                }
+            ?>
+        </select>
 
         <br>
 
         <label for="idFuncionario">Funcionário</label>
-        <input type="text" name="idFuncionario" id="idFuncionario">
+        <select name="idFuncionario" id="idFuncionario">
+            <?php
+                require_once '../../modelo/Funcionario.php';
+                require_once '../../dao/DAOFuncionario.php';
+                require_once '../../dao/Conexao.php';
+
+                $dao = new DAOFuncionario();
+                $lista = $dao->lista();
+
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo '<option value="' . $l['idFuncionario'] . '">' . $l['nome'] . '</option>';
+                    }
+                }
+            ?>
+        </select>
 
         <br>
 
