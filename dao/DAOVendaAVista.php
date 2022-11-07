@@ -10,7 +10,7 @@ class DAOVendaAVista
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $vendaAVista->getData());
         $pst->bindValue(2, $vendaAVista->getValor());
-        $pst->bindValue(3, $vendaAVista->getIdEstpque());
+        $pst->bindValue(3, $vendaAVista->getIdEstoque());
 
         if($pst->execute())
         {
@@ -21,6 +21,27 @@ class DAOVendaAVista
             return false;
         }
     }
+
+    // public function adicona(VendaAVista $vendaAVista)
+    // {
+    //     $sql = 'insert 
+    //             into vendaAVista (data, valor, idEstoque) 
+    //             values (?, ?, ?)';
+
+    //     $pst = Conexao::getPreparedStatement($sql);
+    //     $pst->bindValue(1, $vendaAVista->getData());
+    //     $pst->bindValue(2, $vendaAVista->getValor());
+    //     $pst->bindValue(3, $vendaAVista->getIdEstoque());
+
+    //     if($pst->execute())
+    //     {
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         return false;
+    //     }
+    // }
 
     public function exclui(VendaAVista $vendaAVista)
     {
@@ -47,7 +68,7 @@ class DAOVendaAVista
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $vendaAVista->getData());
         $pst->bindValue(2, $vendaAVista->getValor());
-        $pst->bindValue(3, $vendaAVista->getIdEstpque());
+        $pst->bindValue(3, $vendaAVista->getIdEstoque());
         $pst->bindValue(4, $vendaAVista->getIdVendaAVista());
 
         if($pst->execute())

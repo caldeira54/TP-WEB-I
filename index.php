@@ -42,6 +42,12 @@
   <a href="visao/funcionario/listagem.php">Listagem dos Funcionários</a>
   <br>
   <a href="visao/funcionario/formCadastro.php">Cadastrar Funcionário</a>
+
+  <br> <br>
+
+  <a href="visao/vendaAVista/listagem.php">Listagem das Vendas à Vista</a>
+  <br>
+  <a href="visao/vendaAVista/formCadastro.php">Cadastrar Venda à Vista</a>
 </body>
 
 </html>

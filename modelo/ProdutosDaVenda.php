@@ -1,26 +1,14 @@
 <?php
-class VendaAVista
+class ProdutosDaVenda
 {
-    private $idVendaAVista;
     private $idEstoque;
+    private $idVendaAVista;
+    private $quantidade;
     private $valor;
-    private $data;
 
     public function __construct()
     {
         
-    }
-
-    public function getIdVendaAVista()
-    {
-        return $this->idVendaAVista;
-    }
-
-    public function setIdVendaAVista($idVendaAVista)
-    {
-        $this->idVendaAVista = $idVendaAVista;
-
-        return $this;
     }
 
     public function getIdEstoque()
@@ -34,6 +22,30 @@ class VendaAVista
 
         return $this;
     }
+ 
+    public function getIdVendaAVista()
+    {
+        return $this->idVendaAVista;
+    }
+
+    public function setIdVendaAVista($idVendaAVista)
+    {
+        $this->idVendaAVista = $idVendaAVista;
+
+        return $this;
+    }
+ 
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+
+    public function setQuantidade($quantidade)
+    {
+        $this->quantidade = $quantidade;
+
+        return $this;
+    }
 
     public function getValor()
     {
@@ -43,18 +55,6 @@ class VendaAVista
     public function setValor($valor)
     {
         $this->valor = $valor;
-
-        return $this;
-    }
-
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    public function setData($data)
-    {
-        $this->data = $data;
 
         return $this;
     }

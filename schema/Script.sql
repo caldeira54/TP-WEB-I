@@ -142,14 +142,31 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`vendaAVista` (
   `idVendaAVista` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `idEstoque` INT UNSIGNED NOT NULL,
-  `valor` DOUBLE NOT NULL,
+  `valorTotal` DOUBLE NOT NULL,
   `data` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`idVendaAVista`),
-  INDEX `fk_vendaAVista_produto1_idx` (`idEstoque` ASC) VISIBLE,
-  CONSTRAINT `fk_vendaAVista_produto1`
+  PRIMARY KEY (`idVendaAVista`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bd`.`produtosDaVenda`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bd`.`produtosDaVenda` (
+  `idEstoque` INT UNSIGNED NOT NULL,
+  `idVendaAVista` INT UNSIGNED NOT NULL,
+  `quantidade` INT NOT NULL,
+  `valorUnitario` DOUBLE NOT NULL,
+  PRIMARY KEY (`idEstoque`, `idVendaAVista`),
+  INDEX `fk_produto_has_vendaAVista_vendaAVista1_idx` (`idVendaAVista` ASC) VISIBLE,
+  INDEX `fk_produto_has_vendaAVista_produto1_idx` (`idEstoque` ASC) VISIBLE,
+  CONSTRAINT `fk_produto_has_vendaAVista_produto1`
     FOREIGN KEY (`idEstoque`)
     REFERENCES `bd`.`produto` (`idEstoque`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_produto_has_vendaAVista_vendaAVista1`
+    FOREIGN KEY (`idVendaAVista`)
+    REFERENCES `bd`.`vendaAVista` (`idVendaAVista`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
