@@ -4,13 +4,13 @@ class DAOVendaAVista
     public function inclui(VendaAVista $vendaAVista)
     {
         $sql = 'insert 
-                into vendaAVista (data, valor, idEstoque) 
+                into vendaAVista (data, valor) 
                 values (?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $vendaAVista->getData());
         $pst->bindValue(2, $vendaAVista->getValor());
-        $pst->bindValue(3, $vendaAVista->getIdEstoque());
+        // $pst->bindValue(3, $vendaAVista->getIdEstoque());
 
         if($pst->execute())
         {
@@ -63,13 +63,13 @@ class DAOVendaAVista
     public function altera(VendaAVista $vendaAVista)
     {
         $sql = 'update 
-                vendaAVista set data = ?, valor = ?, idEstoque = ?
+                vendaAVista set data = ?, valor = ?
                 where idVendaAVista = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $vendaAVista->getData());
         $pst->bindValue(2, $vendaAVista->getValor());
-        $pst->bindValue(3, $vendaAVista->getIdEstoque());
-        $pst->bindValue(4, $vendaAVista->getIdVendaAVista());
+        // $pst->bindValue(3, $vendaAVista->getIdEstoque());
+        $pst->bindValue(3, $vendaAVista->getIdVendaAVista());
 
         if($pst->execute())
         {

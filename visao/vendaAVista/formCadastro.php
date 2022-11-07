@@ -11,26 +11,6 @@
 
     </script>
     <form action="cadastro.php" method="post">
-        <label for="idEstoque">Produto</label>
-        <select name="idEstoque" id="idEstoque">
-            <?php
-                require_once '../../modelo/Produto.php';
-                require_once '../../dao/DAOProduto.php';
-                require_once '../../dao/Conexao.php';
-
-                $dao = new DAOProduto();
-                $lista = $dao->lista();
-
-                if ($lista) {
-                    foreach ($lista as $l) {
-                        echo '<option value="' . $l['idEstoque'] . '">' . $l['nome'] . '</option>';
-                    }
-                }
-            ?>
-        </select>
-
-        <br>
-
         <label for="valor">Preço</label>
         <input type="text" name="valor" id="valor">
 

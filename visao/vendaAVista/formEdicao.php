@@ -24,7 +24,6 @@
     ?>
 
     <form action="edicao.php" method="post">
-        <input type="hidden" name="idEstoque" id="idEstoque" value="<?=$vendaAVista['idEstoque'] ?>">
         <input type="hidden" name="idVendaAVista" id="idVendaAVista" value="<?=$vendaAVista['idVendaAVista'] ?>">
 
         <label for="valor">Preço</label>

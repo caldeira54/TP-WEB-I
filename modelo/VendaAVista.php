@@ -2,7 +2,7 @@
 class VendaAVista
 {
     private $idVendaAVista;
-    private $idEstoque;
+    // private $idEstoque;
     private $valor;
     private $data;
 
@@ -23,17 +23,17 @@ class VendaAVista
         return $this;
     }
 
-    public function getIdEstoque()
-    {
-        return $this->idEstoque;
-    }
+    // public function getIdEstoque()
+    // {
+    //     return $this->idEstoque;
+    // }
 
-    public function setIdEstoque($idEstoque)
-    {
-        $this->idEstoque = $idEstoque;
+    // public function setIdEstoque($idEstoque)
+    // {
+    //     $this->idEstoque = $idEstoque;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getValor()
     {

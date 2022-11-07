@@ -16,18 +16,15 @@
         $dao = new DAOVendaAVista();
 
         $id = filter_input(INPUT_POST, 'idVendaAVista');
-        $idEstoque = filter_input(INPUT_POST, 'idEstoque');
         $valor = filter_input(INPUT_POST, 'valor');
         $data = filter_input(INPUT_POST, 'data');
 
         var_dump($idVendaAVista);
-        var_dump($idEstoque);
         var_dump($valor);
         var_dump($data);
 
-        if (($id && $idEstoque && $valor && $data)) {
+        if (($id && $valor && $data)) {
             $obj->setIdVendaAVista($id);
-            $obj->setIdEstoque($idEstoque);
             $obj->setValor($valor);
             $obj->setData($data);
 
