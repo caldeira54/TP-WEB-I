@@ -30,7 +30,7 @@
                 echo '<tr>';
 
                     echo '<td>' . $v['idVendaAVista'] . '</td>';
-                    echo '<td>' . $v['valor'] . '</td>';
+                    echo '<td>' . $v['valorTotal'] . '</td>';
                     echo '<td>' . $v['data'] . '</td>';
                     echo '<td> <a id = "editar" href="formEdicao.php?idVendaAVista=' . $v['idVendaAVista'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 

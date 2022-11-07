@@ -8,50 +8,22 @@
 </head>
 <body>
     <?php
-        require_once '../../dao/DAOVendaAVista.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/VendaAVista.php';
+        // require_once '../../dao/DAOEstoque.php';
+        // require_once '../../dao/Conexao.php';
+        // require_once '../../modelo/Estoque.php';
 
-        $id = filter_input(INPUT_GET, 'idVendaAVista');
+        // $id = filter_input(INPUT_GET, 'idEstoque');
 
-        $dao = new DAOVendaAVista();
-        $lista = $dao->localiza($id);
+        // $dao = new DAOEstoque();
+        // $lista = $dao->localiza($id);
 
-        $vendaAVista = $lista[0];
-    ?>
-    <?php
-        require_once '../../dao/DAOEstoque.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/Estoque.php';
+        // $estoque = $lista[0];
 
-        $id = filter_input(INPUT_GET, 'idEstoque');
-
-        $dao = new DAOEstoque();
-        $lista = $dao->localiza($id);
-
-        $estoque = $lista[0];
+        session_start();
     ?>
     <form action="cadastro.php" method="post">
-        <input type="hidden" name="idVendaAVista" id="idVendaAVista" value="<?=$vendaAVista['idVendaAVista'] ?>">
+        <input type="text" readonly name="idVendaAVista" id="idVendaAVista" value="<?=$_SESSION['ultimaCompra'] ?>">
         <input type="hidden" name="idEstoque" id="idEstoque" value="<?=$estoque['idEstoque'] ?>">
-
-        <label for="idVendaAVista">Venda</label>
-        <select name="idVendaAVista" id="idVendaAVista">
-            <?php
-                require_once '../../modelo/VendaAVista.php';
-                require_once '../../dao/DAOVendaAVista.php';
-                require_once '../../dao/Conexao.php';
-
-                $dao = new DAOVendaAVista();
-                $lista = $dao->lista();
-
-                if ($lista) {
-                    foreach ($lista as $l) {
-                        echo '<option value="' . $l['idVendaAVista'] . '">' . $l['idVendaAVista'] . '</option>';
-                    }
-                }
-            ?>
-        </select>
 
         <br>
 

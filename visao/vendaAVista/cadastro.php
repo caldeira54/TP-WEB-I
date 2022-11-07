@@ -25,10 +25,14 @@
             $obj->setValor($valor);
             $obj->setData($data);
 
-            if ($dao->inclui($obj)) {
-                echo '<h1>Venda cadastrada com sucesso!</h1>';
-                echo '<br><a href="../../index.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem de Vendas </a><br>';
+            if ($id = $dao->inclui($obj)) {
+                // echo '<h1>Venda cadastrada com sucesso!</h1>';
+                // echo '<br><a href="../../index.php">Inicio</a>';
+                // echo '<br><a href="listagem.php"> Listagem de Vendas </a><br>';
+                
+                session_start();
+                $_SESSION['ultimaCompra'] = $id;
+                header("Location: ../produtosDaVenda/formCadastro.php");
             } else {
                 echo 'Deu alguma merda...';
             }

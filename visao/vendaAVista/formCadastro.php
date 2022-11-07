@@ -21,7 +21,13 @@
 
         <br>
 
-        <button style=" margin-left: 90px ">Salvar</button>
+        <button id = 'salvar' style=" margin-left: 90px ">Salvar</button>
+
+        <!-- <script>
+            document.getElementById('salvar').addEventListener('click', () => {
+                window.open('../produtosDaVenda/formCadastro.php', '_self');
+            });
+        </script> -->
     </form>
 
     <form action="../../index.php">
