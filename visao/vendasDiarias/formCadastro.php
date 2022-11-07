@@ -18,7 +18,7 @@
         <br>
 
         <label for="data">Data</label>
-        <input type="text" name="data" id="data">
+        <input oninput="mascaraData(this)" type="text" name="data" id="data">
 
         <br>
 
