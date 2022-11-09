@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
     <title>Cadastro dos Produtos da Venda à Vista</title>
 </head>
 <body>
@@ -32,7 +33,17 @@
             $obj->setValor($valor);
 
             if ($dao->inclui($obj)) {
-                echo '<h1>Produto cadastrado na venda com sucesso!</h1>';
+                echo '<div class="popup-wrapper">
+                        <div class="popup">
+                        <div class="popup-close">x</div>
+                        <div class="popup-content">
+                            <p>Produto cadastrado com sucesso!</p>
+                            <a class="popup-link" href="./formCadastro.php">Adicionar produto</a>
+                        </div>
+                        </div>
+                      </div>';
+
+                // echo '<h1>Produto cadastrado na venda com sucesso!</h1>';
                 echo '<br><a href="../../index.php">Inicio</a>';
                 echo '<br><a href="listagem.php"> Listagem </a><br>';
             } else {
@@ -43,4 +54,5 @@
         }
     ?>
 </body>
+<script src="./popup.js"></script>
 </html>

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <button>Clique aqui</button>
+  <!-- <button class="button">Clique aqui</button>
 
   <div class="popup-wrapper">
     <div class="popup">
@@ -21,7 +21,7 @@
         <a class="popup-link" href="#">Saiba mais</a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <script src="./popup.js"></script>
 

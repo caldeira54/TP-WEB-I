@@ -15,7 +15,7 @@ img {
     box-sizing: border-box;
 }
 
-button {
+.button {
     display: block;
     margin: 20px auto;
     background: crimson;
@@ -26,7 +26,7 @@ button {
 }
 
 .popup-wrapper {
-    display: none;
+    display: block;
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;

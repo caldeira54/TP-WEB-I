@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
     <title>Formulário de cadastro de Venda à Vista</title>
 </head>
 <body>
@@ -21,13 +22,7 @@
 
         <br>
 
-        <button id = 'salvar' style=" margin-left: 90px ">Salvar</button>
-
-        <!-- <script>
-            document.getElementById('salvar').addEventListener('click', () => {
-                window.open('../produtosDaVenda/formCadastro.php', '_self');
-            });
-        </script> -->
+        <button style=" margin-left: 90px ">Salvar</button>
     </form>
 
     <form action="../../index.php">
