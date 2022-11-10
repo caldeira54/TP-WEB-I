@@ -33,7 +33,7 @@
                 echo '<tr>';
 
                     echo '<td>' . $v['idEstoque'] . '</td>';
-                    echo '<td>' . $v['idFornecedor'] . '</td>';
+                    echo '<td>' . $v['fornecedor'] . '</td>';
                     echo '<td>' . $v['nome'] . '</td>';
                     echo '<td>' . $v['preco'] . '</td>';
                     echo '<td>' . $v['quantidade'] . '</td>';

@@ -36,7 +36,7 @@
                 echo '<tr>';
 
                     echo '<td>' . $v['idNotaPromissoria'] . '</td>';
-                    echo '<td>' . $v['idFornecedor'] . '</td>';
+                    echo '<td>' . $v['nome'] . '</td>';
                     echo '<td>' . $v['preco'] . '</td>';
                     echo '<td>' . $v['dataCompra'] . '</td>';
                     echo '<td>' . $v['dataPagamento'] . '</td>';

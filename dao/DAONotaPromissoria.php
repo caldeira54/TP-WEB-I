@@ -64,7 +64,10 @@ class DAONotaPromissoria
     public function lista()
     {
         $lista = [];
-        $pst = Conexao::getPreparedStatement('select * from notaPromissoria;');
+        $pst = Conexao::getPreparedStatement('
+            select idNotaPromissoria, f.nome, preco, dataCompra, dataPagamento
+            from notapromissoria as np
+            inner join fornecedor as f on f.idFornecedor = np.idFornecedor;');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

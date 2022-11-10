@@ -62,7 +62,10 @@ class DAOVendasDiarias
     public function lista()
     {
         $lista = [];
-        $pst = Conexao::getPreparedStatement('select * from vendasDiarias;');
+        $pst = Conexao::getPreparedStatement('
+            select idVendasDiarias, f.nome, data, valor
+            from vendasdiarias as vd
+            inner join funcionario as f on f.idFuncionario = vd.idFuncionario;');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

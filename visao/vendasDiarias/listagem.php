@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-    <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Produtos ****** </h1>
+    <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista das Vendas Diárias ****** </h1>
     <table style="width: 600px; border-collapse: collapse">
         <tr> 
             <th> ID Venda </th>
@@ -32,7 +32,7 @@
                 echo '<tr>';
 
                     echo '<td>' . $v['idVendasDiarias'] . '</td>';
-                    echo '<td>' . $v['idFuncionario'] . '</td>';
+                    echo '<td>' . $v['nome'] . '</td>';
                     echo '<td>' . $v['data'] . '</td>';
                     echo '<td>' . $v['valor'] . '</td>';
                     echo '<td> <a id = "excluir" href="exclui.php?idVendasDiarias=' . $v['idVendasDiarias'] . '"><img src="../css/imagens/apagar.png"/></a></td>';

@@ -63,7 +63,10 @@ class DAOProduto
     public function lista()
     {
         $lista = [];
-        $pst = Conexao::getPreparedStatement('select * from produto;');
+        $pst = Conexao::getPreparedStatement('
+            select idEstoque, f.nome, p.nome as produto, p.preco
+            from produto as p
+            inner join funcionario as f on f.idFuncionario = p.idFuncionario;');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
