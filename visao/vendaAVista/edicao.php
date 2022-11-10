@@ -19,7 +19,7 @@
         $valor = filter_input(INPUT_POST, 'valor');
         $data = filter_input(INPUT_POST, 'data');
 
-        var_dump($idVendaAVista);
+        var_dump($id);
         var_dump($valor);
         var_dump($data);
 

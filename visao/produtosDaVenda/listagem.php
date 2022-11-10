@@ -16,8 +16,6 @@
             <th> Venda </th>
             <th> Quantidade </th>
             <th> Valor </th>
-            <!-- <th> Excluir </th>
-            <th> Editar </th> -->
         </tr>
 
         <?php
@@ -25,7 +23,8 @@
             require_once '../../dao/Conexao.php';
 
             $dao = new DAOProdutosDaVenda();
-            $lista = $dao->lista();
+            $id = filter_input(INPUT_GET, 'idVendaAVista');
+            $lista = $dao->listaPeloId($id);
 
             foreach($lista as $v)
             {
@@ -35,8 +34,6 @@
                     echo '<td>' . $v['idVendaAVista'] . '</td>';
                     echo '<td>' . $v['quantidade'] . '</td>';
                     echo '<td>' . $v['valorUnitario'] . '</td>';
-                    // echo '<td> <a id = "excluir" href="exclui.php?idVendasDiarias=' . $v['idVendasDiarias'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
-                    // echo '<td> <a id = "editar" href="formEdicao.php?idVendasDiarias=' . $v['idVendasDiarias'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 
                 echo '</tr>';
             }

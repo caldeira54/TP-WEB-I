@@ -13,12 +13,9 @@ class DAOProdutosDaVenda
         $pst->bindValue(3, $produtosDaVenda->getQuantidade());
         $pst->bindValue(4, $produtosDaVenda->getValor());
 
-        if($pst->execute())
-        {
+        if ($pst->execute()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -32,12 +29,9 @@ class DAOProdutosDaVenda
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $produtosDaVenda->getIdEstoque());
         $pst->bindValue(2, $produtosDaVenda->getIdVendaAVista());
-        if($pst->execute())
-        {
+        if ($pst->execute()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -51,12 +45,9 @@ class DAOProdutosDaVenda
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $produtosDaVenda->getQuantidade());
         $pst->bindValue(2, $produtosDaVenda->getValor());
-        if($pst->execute())
-        {
+        if ($pst->execute()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -65,6 +56,17 @@ class DAOProdutosDaVenda
     {
         $lista = [];
         $pst = Conexao::getPreparedStatement('select * from produtosDaVenda;');
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
+    public function listaPeloId($id)
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement("select *
+                                              from produtosDaVenda
+                                              where idVendaAVista = '$id'");
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
@@ -83,4 +85,3 @@ class DAOProdutosDaVenda
         return $lista;
     }
 }
-?>

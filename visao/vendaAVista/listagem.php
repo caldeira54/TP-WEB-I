@@ -16,6 +16,7 @@
             <th> Valor </th>
             <th> Data </th>
             <th> Editar </th>
+            <th> Lista </th>
         </tr>
 
         <?php
@@ -33,6 +34,7 @@
                     echo '<td>' . $v['valorTotal'] . '</td>';
                     echo '<td>' . $v['data'] . '</td>';
                     echo '<td> <a id = "editar" href="formEdicao.php?idVendaAVista=' . $v['idVendaAVista'] . '"><img src="../css/imagens/editar.png"/></a></td>';
+                    echo '<td> <a id = "listar" href="../produtosDaVenda/listagem.php?idVendaAVista=' . $v['idVendaAVista'] . '"><img src="../css/imagens/lista.png"/></a></td>';
 
                 echo '</tr>';
             }

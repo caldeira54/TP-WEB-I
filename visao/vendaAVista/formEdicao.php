@@ -15,7 +15,7 @@
         require_once '../../dao/Conexao.php';
         require_once '../../modelo/VendaAVista.php';
 
-        $id = filter_input(INPUT_GET, 'idEstoque');
+        $id = filter_input(INPUT_GET, 'idVendaAVista');
 
         $dao = new DAOVendaAVista();
         $lista = $dao->localiza($id);
@@ -27,7 +27,7 @@
         <input type="hidden" name="idVendaAVista" id="idVendaAVista" value="<?=$vendaAVista['idVendaAVista'] ?>">
 
         <label for="valor">Preço</label>
-        <input type="text" name="valor" id="valor" value="<?=$vendaAVista['valor'] ?>">
+        <input type="text" name="valor" id="valor" value="<?=$vendaAVista['valorTotal'] ?>">
 
         <br>
 
