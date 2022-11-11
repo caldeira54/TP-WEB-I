@@ -48,11 +48,6 @@
 
         <br>
 
-        <label for="nome">Produto</label>
-        <input type="text" name="nome" id="nome">
-
-        <br>
-
         <label for="preco">Preço</label>
         <input type="text" name="preco" id="preco">
 

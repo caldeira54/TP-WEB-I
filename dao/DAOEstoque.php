@@ -73,6 +73,15 @@ class DAOEstoque
         return $lista;
     }
 
+    public function listaSimples()
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('select * from estoque;');
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
     public function localiza($id)
     {
         $lista = [];

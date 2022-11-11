@@ -4,14 +4,13 @@ class DAOProduto
     public function inclui(Produto $produto)
     {
         $sql = 'insert 
-                into produto (idEstoque, idFuncionario, nome, preco) 
-                values (?, ?, ?, ?)';
+                into produto (idEstoque, idFuncionario, preco) 
+                values (?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $produto->getIdEstoque());
         $pst->bindValue(2, $produto->getIdFuncionario());
-        $pst->bindValue(3, $produto->getNome());
-        $pst->bindValue(4, $produto->getPreco());
+        $pst->bindValue(3, $produto->getPreco());
 
         if($pst->execute())
         {
@@ -43,13 +42,12 @@ class DAOProduto
     public function altera(Produto $produto)
     {
         $sql = 'update produto 
-                set idFuncionario = ?, nome = ?, preco = ? 
+                set idFuncionario = ?, preco = ? 
                 where idEstoque = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $produto->getIdFuncionario());
-        $pst->bindValue(2, $produto->getNome());
-        $pst->bindValue(3, $produto->getPreco());
-        $pst->bindValue(4, $produto->getIdEstoque());
+        $pst->bindValue(2, $produto->getPreco());
+        $pst->bindValue(3, $produto->getIdEstoque());
         if($pst->execute())
         {
             return true;
@@ -60,13 +58,23 @@ class DAOProduto
         }
     }
 
+    public function listaSimples()
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('select * from produto;');
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
     public function lista()
     {
         $lista = [];
         $pst = Conexao::getPreparedStatement('
-            select idEstoque, f.nome, p.nome as produto, p.preco
+            select p.idEstoque, e.nome as estoque, f.nome as funcionario, p.preco
             from produto as p
-            inner join funcionario as f on f.idFuncionario = p.idFuncionario;');
+            inner join funcionario as f on f.idFuncionario = p.idFuncionario
+            inner join estoque as e on e.idEstoque = p.idEstoque;');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

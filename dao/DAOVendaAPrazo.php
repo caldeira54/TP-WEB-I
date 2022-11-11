@@ -4,11 +4,11 @@ class DAOVendaAPrazo
     public function inclui(VendaAPrazo $vendaAPrazo)
     {
         $sql = 'insert 
-                into vendaAPrazo (idEstoque, cliente, valor, dataInicial, dataFinal) 
+                into vendaAPrazo (idVendaAPrazo, cliente, valor, dataInicial, dataFinal) 
                 values (?, ?, ?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $vendaAPrazo->getIdEstoque());
+        $pst->bindValue(1, $vendaAPrazo->getIdVendaAPrazo());
         $pst->bindValue(2, $vendaAPrazo->getCliente());
         $pst->bindValue(3, $vendaAPrazo->getValor());
         $pst->bindValue(4, $vendaAPrazo->getDataInicial());
@@ -44,10 +44,10 @@ class DAOVendaAPrazo
     public function altera(VendaAPrazo $vendaAPrazo)
     {
         $sql = 'update vendaAPrazo 
-                set idEstoque = ?, cliente = ?, valor = ?, dataInicial = ?, dataFinal = ?
+                set idVendaAPrazo = ?, cliente = ?, valor = ?, dataInicial = ?, dataFinal = ?
                 where idVendaAPrazo = ?';
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $vendaAPrazo->getIdEstoque());
+        $pst->bindValue(1, $vendaAPrazo->getIdVendaAPrazo());
         $pst->bindValue(2, $vendaAPrazo->getCliente());
         $pst->bindValue(3, $vendaAPrazo->getValor());
         $pst->bindValue(4, $vendaAPrazo->getDataInicial());

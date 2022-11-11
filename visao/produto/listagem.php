@@ -13,8 +13,8 @@
     <table style="width: 600px; border-collapse: collapse">
         <tr> 
             <th> ID Produto </th>
+            <th> Produto </th>
             <th> Funcionário </th>
-            <th> Nome </th>
             <th> Preço </th>
             <th> Excluir </th>
             <th> Editar </th>
@@ -32,8 +32,8 @@
                 echo '<tr>';
 
                     echo '<td>' . $v['idEstoque'] . '</td>';
-                    echo '<td>' . $v['nome'] . '</td>';
-                    echo '<td>' . $v['produto'] . '</td>';
+                    echo '<td>' . $v['estoque'] . '</td>';
+                    echo '<td>' . $v['funcionario'] . '</td>';
                     echo '<td>' . $v['preco'] . '</td>';
                     echo '<td> <a id = "excluir" href="exclui.php?idEstoque=' . $v['idEstoque'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
                     echo '<td> <a id = "editar" href="formEdicao.php?idEstoque=' . $v['idEstoque'] . '"><img src="../css/imagens/editar.png"/></a></td>';

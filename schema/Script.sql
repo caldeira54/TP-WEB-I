@@ -62,7 +62,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bd`.`produto` (
   `idEstoque` INT UNSIGNED NOT NULL,
   `idFuncionario` INT UNSIGNED NOT NULL,
-  `nome` VARCHAR(255) NOT NULL,
   `preco` DOUBLE NOT NULL,
   PRIMARY KEY (`idEstoque`),
   INDEX `fk_produto_estoque1_idx` (`idEstoque` ASC) VISIBLE,
@@ -103,18 +102,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd`.`vendaAPrazo` (
   `idVendaAPrazo` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `idEstoque` INT UNSIGNED NOT NULL,
   `cliente` VARCHAR(255) NOT NULL,
   `valor` DOUBLE NOT NULL,
   `dataInicial` VARCHAR(255) NOT NULL,
   `dataFinal` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`idVendaAPrazo`),
-  INDEX `fk_vendaAPrazo_produto1_idx` (`idEstoque` ASC) VISIBLE,
-  CONSTRAINT `fk_vendaAPrazo_produto1`
-    FOREIGN KEY (`idEstoque`)
-    REFERENCES `bd`.`produto` (`idEstoque`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idVendaAPrazo`))
 ENGINE = InnoDB;
 
 
@@ -167,6 +159,30 @@ CREATE TABLE IF NOT EXISTS `bd`.`produtosDaVenda` (
   CONSTRAINT `fk_produto_has_vendaAVista_vendaAVista1`
     FOREIGN KEY (`idVendaAVista`)
     REFERENCES `bd`.`vendaAVista` (`idVendaAVista`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bd`.`produtosDaVendaAPrazo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bd`.`produtosDaVendaAPrazo` (
+  `idVendaAPrazo` INT UNSIGNED NOT NULL,
+  `idEstoque` INT UNSIGNED NOT NULL,
+  `quantidade` INT NOT NULL,
+  `valor` DOUBLE NOT NULL,
+  PRIMARY KEY (`idVendaAPrazo`, `idEstoque`),
+  INDEX `fk_vendaAPrazo_has_produto_produto1_idx` (`idEstoque` ASC) VISIBLE,
+  INDEX `fk_vendaAPrazo_has_produto_vendaAPrazo1_idx` (`idVendaAPrazo` ASC) VISIBLE,
+  CONSTRAINT `fk_vendaAPrazo_has_produto_vendaAPrazo1`
+    FOREIGN KEY (`idVendaAPrazo`)
+    REFERENCES `bd`.`vendaAPrazo` (`idVendaAPrazo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vendaAPrazo_has_produto_produto1`
+    FOREIGN KEY (`idEstoque`)
+    REFERENCES `bd`.`produto` (`idEstoque`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

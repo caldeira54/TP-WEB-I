@@ -17,18 +17,15 @@
 
         $id = filter_input(INPUT_POST, 'idEstoque');
         $idFuncionario = filter_input(INPUT_POST, 'idFuncionario');
-        $nome = filter_input(INPUT_POST, 'nome');
         $preco = filter_input(INPUT_POST, 'preco');
 
         var_dump($idEstoque);
         var_dump($idFuncionario);
-        var_dump($nome);
         var_dump($preco);
 
-        if (($id && $idFuncionario && $nome && $preco)) {
+        if (($id && $idFuncionario && $preco)) {
             $obj->setIdEstoque($id);
             $obj->setIdFuncionario($idFuncionario);
-            $obj->setNome($nome);
             $obj->setPreco($preco);
 
             if ($dao->altera($obj)) {

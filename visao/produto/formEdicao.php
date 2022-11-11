@@ -24,11 +24,6 @@
         <input type="hidden" name="idEstoque" id="idEstoque" value="<?=$produto['idEstoque'] ?>">
         <input type="hidden" name="idFuncionario" id="idFuncionario" value="<?=$produto['idFuncionario'] ?>">
 
-        <label for="nome">Produto</label>
-        <input type="text" name="nome" id="nome" value="<?=$produto['nome'] ?>">
-
-        <br>
-
         <label for="preco">Preço</label>
         <input type="text" name="preco" value="<?=$produto['preco'] ?>">
 

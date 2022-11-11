@@ -3,7 +3,6 @@ class Produto
 {
     private $idEstoque;
     private $idFuncionario;
-    private $nome;
     private $preco;
 
     public function __construct()
@@ -19,18 +18,6 @@ class Produto
     public function setIdEstoque($idEstoque)
     {
         $this->idEstoque = $idEstoque;
-
-        return $this;
-    }
-
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
 
         return $this;
     }

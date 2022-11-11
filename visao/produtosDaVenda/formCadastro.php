@@ -30,12 +30,12 @@
         <label for="idEstoque">Produto</label>
         <select name="idEstoque" id="idEstoque">
             <?php
-                require_once '../../modelo/Produto.php';
-                require_once '../../dao/DAOProduto.php';
+                require_once '../../modelo/Estoque.php';
+                require_once '../../dao/DAOEstoque.php';
                 require_once '../../dao/Conexao.php';
 
-                $dao = new DAOProduto();
-                $lista = $dao->lista();
+                $dao = new DAOEstoque();
+                $lista = $dao->listaSimples();
 
                 if ($lista) {
                     foreach ($lista as $l) {

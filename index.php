@@ -65,6 +65,12 @@
   <br>
   <a href="visao/vendaAVista/formCadastro.php">Cadastrar Venda à Vista</a>
 
+  <br> <br>
+
+  <a href="visao/vendaAPrazo/listagem.php">Listagem das Vendas à Prazo</a>
+  <br>
+  <a href="visao/vendaAPrazo/formCadastro.php">Cadastrar Venda à Prazo</a>
+
 </body>
 
 </html>
