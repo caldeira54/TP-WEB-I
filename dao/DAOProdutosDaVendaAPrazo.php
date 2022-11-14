@@ -1,17 +1,17 @@
 <?php
 class DAOProdutosDaVendaAPrazo
 {
-    public function inclui(ProdutosDaVendaAPrazo $produtosDaVendaAVista)
+    public function inclui(ProdutosDaVendaAPrazo $produtosDaVendaAPrazo)
     {
         $sql = 'insert 
-                into produtosDaVendaAVista (idEstoque, idVendaAVista, quantidade, valor) 
+                into produtosDaVendaAPrazo (idVendaAPrazo, idEstoque, quantidade, valor) 
                 values (?, ?, ?, ?)';
 
         $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $produtosDaVendaAVista->getIdEstoque());
-        $pst->bindValue(2, $produtosDaVendaAVista->getIdVendaAPrazo());
-        $pst->bindValue(3, $produtosDaVendaAVista->getQuantidade());
-        $pst->bindValue(4, $produtosDaVendaAVista->getValor());
+        $pst->bindValue(1, $produtosDaVendaAPrazo->getIdVendaAPrazo());
+        $pst->bindValue(2, $produtosDaVendaAPrazo->getIdEstoque());
+        $pst->bindValue(3, $produtosDaVendaAPrazo->getQuantidade());
+        $pst->bindValue(4, $produtosDaVendaAPrazo->getValor());
 
         if ($pst->execute()) {
             return true;
@@ -65,8 +65,8 @@ class DAOProdutosDaVendaAPrazo
     {
         $lista = [];
         $pst = Conexao::getPreparedStatement('select *
-                                              from produtosDaVenda
-                                              where idVendaAVista = ?');
+                                              from produtosDaVendaAPrazo
+                                              where idVendaAPrazo = ?');
         $pst->bindValue(1, $id);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
