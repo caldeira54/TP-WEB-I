@@ -12,8 +12,8 @@
     <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Produtos ****** </h1>
     <table style="width: 600px; border-collapse: collapse">
         <tr> 
-            <th> Produto </th>
             <th> Venda </th>
+            <th> Produto </th>
             <th> Quantidade </th>
             <th> Valor </th>
         </tr>
@@ -24,14 +24,14 @@
 
             $dao = new DAOProdutosDaVenda();
             $id = filter_input(INPUT_GET, 'idVendaAVista');
-            $lista = $dao->listaPeloId($id);
+            $lista = $dao->lista($id);
 
             foreach($lista as $v)
             {
                 echo '<tr>';
 
-                    echo '<td>' . $v['idEstoque'] . '</td>';
                     echo '<td>' . $v['idVendaAVista'] . '</td>';
+                    echo '<td>' . $v['nome'] . '</td>';
                     echo '<td>' . $v['quantidade'] . '</td>';
                     echo '<td>' . $v['valorUnitario'] . '</td>';
 

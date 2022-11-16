@@ -24,14 +24,14 @@
 
             $dao = new DAOProdutosDaVendaAPrazo();
             $id = filter_input(INPUT_GET, 'idVendaAPrazo');
-            $lista = $dao->listaPeloId($id);
+            $lista = $dao->lista($id);
 
             foreach($lista as $v)
             {
                 echo '<tr>';
 
                     echo '<td>' . $v['idVendaAPrazo'] . '</td>';
-                    echo '<td>' . $v['idEstoque'] . '</td>';
+                    echo '<td>' . $v['nome'] . '</td>';
                     echo '<td>' . $v['quantidade'] . '</td>';
                     echo '<td>' . $v['valor'] . '</td>';
 

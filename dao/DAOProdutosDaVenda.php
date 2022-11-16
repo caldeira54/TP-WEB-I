@@ -52,21 +52,15 @@ class DAOProdutosDaVenda
         }
     }
 
-    public function lista()
+    public function lista($id)
     {
         $lista = [];
-        $pst = Conexao::getPreparedStatement('select * from produtosDaVenda;');
-        $pst->execute();
-        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
-        return $lista;
-    }
-
-    public function listaPeloId($id)
-    {
-        $lista = [];
-        $pst = Conexao::getPreparedStatement("select *
-                                              from produtosDaVenda
-                                              where idVendaAVista = '$id'");
+        $pst = Conexao::getPreparedStatement('
+            select idVendaAVista, e.nome, pv.quantidade, valorUnitario
+            from produtosdavenda as pv
+            inner join estoque as e on e.idEstoque = pv.idEstoque
+            where idVendaAVista = ?;');
+        $pst->bindValue(1, $id);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

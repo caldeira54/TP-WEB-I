@@ -16,7 +16,7 @@ class DAOVendaAPrazo
 
         if($pst->execute())
         {
-            return true;
+            return Conexao::getConexao()->lastInsertId();
         }
         else
         {
