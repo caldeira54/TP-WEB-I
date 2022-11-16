@@ -106,6 +106,7 @@ CREATE TABLE IF NOT EXISTS `bd`.`vendaAPrazo` (
   `valor` DOUBLE NOT NULL,
   `dataInicial` VARCHAR(255) NOT NULL,
   `dataFinal` VARCHAR(255) NOT NULL,
+  `ativa` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`idVendaAPrazo`))
 ENGINE = InnoDB;
 
