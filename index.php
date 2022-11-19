@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,66 +14,37 @@
 </head>
 
 <body>
-  <!-- <button class="button">Clique aqui</button>
 
-  <div class="popup-wrapper">
-    <div class="popup">
-      <div class="popup-close">x</div>
-      <div class="popup-content">
-        <h2>Popup</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <a class="popup-link" href="#">Saiba mais</a>
+  <div id="login">
+    <form action="./login.php" class="card" method="POST">
+      <div class="card-header">
+        <h2>Login</h2>
       </div>
-    </div>
-  </div> -->
-
-  <script src="./popup.js"></script>
-
-  <a href="visao/fornecedor/listagem.php">Listagem de Fornecedor</a>
-  <br>
-  <a href="visao/fornecedor/formCadastro.php">Cadastrar Fornecedor</a>
-
-  <br> <br>
-
-  <a href="visao/notaPromissoria/listagem.php">Listagem de Nota Promissória</a>
-  <br>
-  <a href="visao/notaPromissoria/formCadastro.php">Cadastrar Nota Promissória</a>
-
-  <br> <br>
-
-  <a href="visao/estoque/listagem.php">Listagem do Estoque</a>
-  <br>
-  <a href="visao/estoque/formCadastro.php">Cadastrar produto no Estoque</a>
-
-  <br> <br>
-
-  <a href="visao/produto/listagem.php">Listagem de Produtos</a>
-  <br>
-  <a href="visao/produto/formCadastro.php">Cadastrar Produto</a>
-
-  <br> <br>
-
-  <a href="visao/vendasDiarias/listagem.php">Listagem das Vendas Diárias</a>
-  <br>
-  <a href="visao/vendasDiarias/formCadastro.php">Cadastrar Venda Diária</a>
-
-  <br> <br>
-
-  <a href="visao/funcionario/listagem.php">Listagem dos Funcionários</a>
-  <br>
-  <a href="visao/funcionario/formCadastro.php">Cadastrar Funcionário</a>
-
-  <br> <br>
-
-  <a href="visao/vendaAVista/listagem.php">Listagem das Vendas à Vista</a>
-  <br>
-  <a href="visao/vendaAVista/formCadastro.php">Cadastrar Venda à Vista</a>
-
-  <br> <br>
-
-  <a href="visao/vendaAPrazo/listagem.php">Listagem das Vendas à Prazo</a>
-  <br>
-  <a href="visao/vendaAPrazo/formCadastro.php">Cadastrar Venda à Prazo</a>
+      <div class="card-content">
+        <div class="card-content-area">
+          <label for="usuario">Usuário</label>
+          <input type="text" id="usuario" name="usuario" autocomplete="off">
+        </div>
+        <div class="card-content-area">
+          <label for="senha">Senha</label>
+          <input type="senha" id="senha" name="senha" autocomplete="off">
+        </div>
+        <?php
+        if(isset($_SESSION['invalido'])):
+        ?>
+        <div class="erro">
+          <p>Usuário ou senha inválidos.</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['invalido']);
+        ?>
+      </div>
+      <div class="card-footer">
+        <button class="entrar"> Entrar </button>
+      </div>
+    </form>
+  </div>
 
 </body>
 

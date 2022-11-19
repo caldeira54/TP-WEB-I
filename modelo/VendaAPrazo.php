@@ -7,6 +7,7 @@ class VendaAPrazo
     private $valor;
     private $dataInicial;
     private $dataFinal;
+    private $ativa;
 
     public function __construct()
     {
@@ -81,6 +82,18 @@ class VendaAPrazo
     public function setDataFinal($dataFinal)
     {
         $this->dataFinal = $dataFinal;
+
+        return $this;
+    }
+
+    public function getAtiva()
+    {
+        return $this->ativa;
+    }
+
+    public function setAtiva($ativa)
+    {
+        $this->ativa = $ativa;
 
         return $this;
     }

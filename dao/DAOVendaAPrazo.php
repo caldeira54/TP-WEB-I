@@ -41,6 +41,23 @@ class DAOVendaAPrazo
         }
     }
 
+    public function recebe($id)
+    {
+        $sql = 'update vendaaprazo
+                set ativa = 0
+                where idVendaAPrazo = ?;';
+        $pst = Conexao::getPreparedStatement($sql);
+        $pst->bindValue(1, $id);
+        if($pst->execute())
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
     public function altera(VendaAPrazo $vendaAPrazo)
     {
         $sql = 'update vendaAPrazo 
@@ -63,10 +80,19 @@ class DAOVendaAPrazo
         }
     }
 
-    public function lista()
+    public function listaVendasAtivas()
     {
         $lista = [];
-        $pst = Conexao::getPreparedStatement('select * from vendaAPrazo;');
+        $pst = Conexao::getPreparedStatement('select * from vendaAPrazo where ativa = 1;');
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
+    public function listaVendasDesativas()
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('select * from vendaAPrazo where ativa = 0;');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
@@ -82,4 +108,3 @@ class DAOVendaAPrazo
         return $lista;
     }
 }
-?>

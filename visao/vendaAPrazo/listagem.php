@@ -17,7 +17,7 @@
             <th> Valor </th>
             <th> Data Inicial </th>
             <th> Data Final </th>
-            <th> Editar </th>
+            <th> Receber </th>
             <th> Lista </th>
         </tr>
 
@@ -26,7 +26,7 @@
             require_once '../../dao/Conexao.php';
 
             $dao = new DAOVendaAPrazo();
-            $lista = $dao->lista();
+            $lista = $dao->listaVendasAtivas();
 
             foreach($lista as $v)
             {
@@ -37,7 +37,7 @@
                     echo '<td>' . $v['valor'] . '</td>';
                     echo '<td>' . $v['dataInicial'] . '</td>';
                     echo '<td>' . $v['dataFinal'] . '</td>';
-                    echo '<td> <a id = "editar" href="formEdicao.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/editar.png"/></a></td>';
+                    echo '<td> <a id = "receber" href="./recebe.php"><img src="../css/imagens/receber.png"/></a></td>';
                     echo '<td> <a id = "listar" href="../produtosDaVendaAPrazo/listagem.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/lista.png"/></a></td>';
 
                 echo '</tr>';
