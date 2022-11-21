@@ -27,7 +27,7 @@ session_start();
         </div>
         <div class="card-content-area">
           <label for="senha">Senha</label>
-          <input type="senha" id="senha" name="senha" autocomplete="off">
+          <input type="password" id="senha" name="senha" autocomplete="off">
         </div>
         <?php
         if(isset($_SESSION['invalido'])):
