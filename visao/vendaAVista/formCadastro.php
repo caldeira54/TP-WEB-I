@@ -25,7 +25,7 @@
         <button style=" margin-left: 90px ">Salvar</button>
     </form>
 
-    <form action="../../index.php">
+    <form action="../formPrincipal.php">
         <button> Início </button>
     </form>
 </body>

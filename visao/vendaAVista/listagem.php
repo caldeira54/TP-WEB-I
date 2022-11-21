@@ -44,7 +44,7 @@
     
     <br>
 
-    <form action="../../index.php">
+    <form action="../formPrincipal.php">
         <button> Início </button>
     </form>
 </body>

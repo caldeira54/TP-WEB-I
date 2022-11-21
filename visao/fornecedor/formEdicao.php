@@ -36,7 +36,7 @@
         <button> Salvar </button>
     </form>
 
-    <form action="../../index.php">
+    <form action="../formEdicao.php">
         <button> Início </button>
     </form>
 </body>

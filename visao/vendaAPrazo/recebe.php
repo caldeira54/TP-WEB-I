@@ -20,9 +20,7 @@
         var_dump($ativa);
 
         if ($ativa) {
-            $obj->setAtiva($ativa);
-
-            if ($dao->recebe($obj)) {
+            if ($dao->recebe($ativa)) {
                 echo '<h1>Venda recebida com sucesso!</h1>';
                 echo '<br><a href="../../index.php">Inicio</a>';
                 echo '<br><a href="listagem.php"> Listagem das Vendas </a><br>';

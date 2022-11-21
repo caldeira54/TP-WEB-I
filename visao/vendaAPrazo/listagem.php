@@ -37,7 +37,7 @@
                     echo '<td>' . $v['valor'] . '</td>';
                     echo '<td>' . $v['dataInicial'] . '</td>';
                     echo '<td>' . $v['dataFinal'] . '</td>';
-                    echo '<td> <a id = "receber" href="./recebe.php"><img src="../css/imagens/receber.png"/></a></td>';
+                    echo '<td> <form action="./recebe.php" method="POST"> <input name="ativa" type="hidden" value="' . $v['idVendaAPrazo'] . '"/> <button> <img src="../css/imagens/receber.png"/> </button> </form></td>';
                     echo '<td> <a id = "listar" href="../produtosDaVendaAPrazo/listagem.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/lista.png"/></a></td>';
 
                 echo '</tr>';
@@ -48,7 +48,7 @@
     
     <br>
 
-    <form action="../../index.php">
+    <form action="../formPrincipal.php">
         <button> Início </button>
     </form>
 </body>
