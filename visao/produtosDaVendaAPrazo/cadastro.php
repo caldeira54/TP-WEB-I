@@ -44,7 +44,7 @@
                       </div>';
 
                 // echo '<h1>Produto cadastrado na venda com sucesso!</h1>';
-                echo '<br><a href="../../index.php">Inicio</a>';
+                echo '<br><a href="../formPrincipal.php">Inicio</a>';
                 echo '<br><a href="listagem.php"> Listagem </a><br>';
             } else {
                 echo 'Deu alguma merda...';
