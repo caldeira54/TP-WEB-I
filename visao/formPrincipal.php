@@ -56,6 +56,8 @@
 
   <a href="./vendaAPrazo/listagem.php">Listagem das Vendas à Prazo</a>
   <br>
+  <a href="./vendaAPrazo/listagemInativas.php">Listagem das Vendas à Prazo Inativas</a>
+  <br>
   <a href="./vendaAPrazo/formCadastro.php">Cadastrar Venda à Prazo</a>
 
   <h2><a href="../logout.php">Sair</a></h2>

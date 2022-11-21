@@ -89,7 +89,7 @@ class DAOVendaAPrazo
         return $lista;
     }
 
-    public function listaVendasDesativas()
+    public function listaVendasInativas()
     {
         $lista = [];
         $pst = Conexao::getPreparedStatement('select * from vendaAPrazo where ativa = 0;');
