@@ -16,6 +16,7 @@
             <th> Produto </th>
             <th> Quantidade </th>
             <th> Valor </th>
+            <!-- <th> Adicionar </th> -->
         </tr>
 
         <?php
@@ -34,6 +35,7 @@
                     echo '<td>' . $v['nome'] . '</td>';
                     echo '<td>' . $v['quantidade'] . '</td>';
                     echo '<td>' . $v['valor'] . '</td>';
+                    // echo '<td> <a id = "adicionar" href="adiciona.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/adicionar.png"/></a></td>';
 
                 echo '</tr>';
             }

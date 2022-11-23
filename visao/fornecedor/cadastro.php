@@ -24,7 +24,7 @@
 
             if ($dao->inclui($obj)) {
                 echo '<h1>Fornecedor cadastrado com sucesso!</h1>';
-                echo '<br><a href="../../index.php">Inicio</a>';
+                echo '<br><a href="../formPrincipal.php">Inicio</a>';
                 echo '<br><a href="listagem.php"> Listagem de Fornecedores </a><br>';
             } else {
                 echo 'Deu alguma merda...';
