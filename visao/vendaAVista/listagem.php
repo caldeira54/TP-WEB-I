@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-    <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Vendas Diárias ****** </h1>
+    <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista das Vendas á Vista ****** </h1>
     <table style="width: 600px; border-collapse: collapse">
         <tr> 
             <th> ID Venda </th>

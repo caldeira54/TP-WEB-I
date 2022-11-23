@@ -66,6 +66,20 @@ class DAOProdutosDaVenda
         return $lista;
     }
 
+    public function atualizaEstoque($id, $quantidade)
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('
+            update estoque
+            set quantidade = quantidade - ?
+            where idEstoque = ?;');
+        $pst->bindValue(1, $quantidade);
+        $pst->bindValue(2, $id);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
     public function localiza($idEstoque, $idVendaAVista)
     {
         $lista = [];

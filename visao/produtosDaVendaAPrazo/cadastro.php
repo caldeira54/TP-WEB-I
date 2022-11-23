@@ -33,6 +33,7 @@
             $obj->setValor($valor);
 
             if ($dao->inclui($obj)) {
+                $dao->atualizaEstoque($idEstoque, $quantidade);
                 echo '<div class="popup-wrapper">
                         <div class="popup">
                         <div class="popup-close">x</div>
@@ -42,8 +43,6 @@
                         </div>
                         </div>
                       </div>';
-
-                // echo '<h1>Produto cadastrado na venda com sucesso!</h1>';
                 echo '<br><a href="../formPrincipal.php">Inicio</a>';
                 echo '<br><a href="listagem.php"> Listagem </a><br>';
             } else {

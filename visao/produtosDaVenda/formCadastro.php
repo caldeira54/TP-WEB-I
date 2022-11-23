@@ -8,18 +8,7 @@
 </head>
 <body>
     <?php
-        // require_once '../../dao/DAOEstoque.php';
-        // require_once '../../dao/Conexao.php';
-        // require_once '../../modelo/Estoque.php';
-
-        // $id = filter_input(INPUT_GET, 'idEstoque');
-
-        // $dao = new DAOEstoque();
-        // $lista = $dao->localiza($id);
-
-        // $estoque = $lista[0];
-
-        session_start();
+    session_start();
     ?>
     <form action="cadastro.php" method="post">
         <input type="text" readonly name="idVendaAVista" id="idVendaAVista" value="<?=$_SESSION['ultimaCompra'] ?>">
