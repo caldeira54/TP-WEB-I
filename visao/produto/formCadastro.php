@@ -15,6 +15,8 @@
                 require_once '../../dao/DAOEstoque.php';
                 require_once '../../dao/Conexao.php';
 
+                session_start();
+
                 $dao = new DAOEstoque();
                 $lista = $dao->lista();
 
@@ -29,7 +31,8 @@
         <br>
 
         <label for="idFuncionario">Funcionário</label>
-        <select name="idFuncionario" id="idFuncionario">
+        <input type="text" value="<?php echo $_SESSION['usuario']?>">
+        <!-- <select name="idFuncionario" id="idFuncionario">
             <?php
                 require_once '../../modelo/Funcionario.php';
                 require_once '../../dao/DAOFuncionario.php';
@@ -44,7 +47,7 @@
                     }
                 }
             ?>
-        </select>
+        </select> -->
 
         <br>
 

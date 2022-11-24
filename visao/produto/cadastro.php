@@ -12,11 +12,14 @@
         require_once '../../dao/Conexao.php';
         require_once '../../modelo/Produto.php';
 
+        session_start();
+
         $obj = new Produto();
         $dao = new DAOProduto();
 
         $idEstoque = filter_input(INPUT_POST, 'idEstoque');
-        $idFuncionario = filter_input(INPUT_POST, 'idFuncionario');
+        // $idFuncionario = filter_input(INPUT_POST, 'idFuncionario');
+        $idFuncionario = $_SESSION['usuario'];
         $preco = filter_input(INPUT_POST, 'preco');
 
         var_dump($idEstoque);
