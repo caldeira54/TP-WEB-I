@@ -46,6 +46,31 @@ class DAOProdutosDaVendaAPrazo
         return $lista;
     }
 
+    public function removeProutos(ProdutosDaVendaAPrazo $produtosDaVendaAPrazo)
+    {
+        $sql = 'update produtosdavendaaprazo as pvp
+                inner join vendaAPrazo as va on va.idVendaAPrazo = pvp.idVendaAPrazo
+                set pvp.quantidade = pvp.quantidade - ?, va.valor = va.valor - ?
+                where pvp.idEstoque = ? and pvp.idVendaAPrazo = ?;';
+        $pst = Conexao::getPreparedStatement($sql);
+        $pst->bindValue(1, $produtosDaVendaAPrazo->getQuantidade());
+        $pst->bindValue(2, $produtosDaVendaAPrazo->getValor());
+        $pst->bindValue(3, $produtosDaVendaAPrazo->getIdEstoque());
+        $pst->bindValue(4, $produtosDaVendaAPrazo->getIdVendaAPrazo());
+
+        if ($pst->execute())
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+        
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
     public function exclui(ProdutosDaVendaAPrazo $produtosDaVendaAPrazo)
     {
         $sql = 'delete 
@@ -94,12 +119,26 @@ class DAOProdutosDaVendaAPrazo
         return $lista;
     }
 
-    public function atualizaEstoque($id, $quantidade)
+    public function baixaEstoque($id, $quantidade)
     {
         $lista = [];
         $pst = Conexao::getPreparedStatement('
             update estoque
             set quantidade = quantidade - ?
+            where idEstoque = ?;');
+        $pst->bindValue(1, $quantidade);
+        $pst->bindValue(2, $id);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
+    public function aumentaEstoque($id, $quantidade)
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('
+            update estoque
+            set quantidade = quantidade + ?
             where idEstoque = ?;');
         $pst->bindValue(1, $quantidade);
         $pst->bindValue(2, $id);

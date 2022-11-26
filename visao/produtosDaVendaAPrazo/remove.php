@@ -31,9 +31,9 @@
             $obj->setQuantidade($quantidade);
             $obj->setValor($valor);
 
-            if ($dao->adicionaProutos($obj)) {
-                $dao->aumentaEstoque($idEstoque, $quantidade);
-                echo 'Produto adicionado com sucesso!';
+            if ($dao->removeProutos($obj)) {
+                $dao->baixaEstoque($idEstoque, $quantidade);
+                echo 'Produto removido com sucesso!';
                 echo '<br><a href="../formPrincipal.php">Inicio</a>';
                 echo '<br><a href="listagem.php"> Listagem </a><br>';
             } else {
