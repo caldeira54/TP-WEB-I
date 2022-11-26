@@ -13,11 +13,37 @@ class DAOProdutosDaVendaAPrazo
         $pst->bindValue(3, $produtosDaVendaAPrazo->getQuantidade());
         $pst->bindValue(4, $produtosDaVendaAPrazo->getValor());
 
-        if ($pst->execute()) {
+        if ($pst->execute()) 
+        {
             return true;
         } else {
             return false;
         }
+    }
+
+    public function adicionaProutos(ProdutosDaVendaAPrazo $produtosDaVendaAPrazo)
+    {
+        $sql = 'update produtosdavendaaprazo as pvp
+                inner join vendaAPrazo as va on va.idVendaAPrazo = pvp.idVendaAPrazo
+                set pvp.quantidade = pvp.quantidade + ?, va.valor = va.valor + ?
+                where pvp.idEstoque = ? and pvp.idVendaAPrazo = ?;';
+        $pst = Conexao::getPreparedStatement($sql);
+        $pst->bindValue(1, $produtosDaVendaAPrazo->getQuantidade());
+        $pst->bindValue(2, $produtosDaVendaAPrazo->getValor());
+        $pst->bindValue(3, $produtosDaVendaAPrazo->getIdEstoque());
+        $pst->bindValue(4, $produtosDaVendaAPrazo->getIdVendaAPrazo());
+
+        if ($pst->execute())
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+        
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
     }
 
     public function exclui(ProdutosDaVendaAPrazo $produtosDaVendaAPrazo)
@@ -29,7 +55,8 @@ class DAOProdutosDaVendaAPrazo
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $produtosDaVendaAPrazo->getIdEstoque());
         $pst->bindValue(2, $produtosDaVendaAPrazo->getIdVendaAPrazo());
-        if ($pst->execute()) {
+        if ($pst->execute()) 
+        {
             return true;
         } else {
             return false;
@@ -45,7 +72,8 @@ class DAOProdutosDaVendaAPrazo
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $produtosDaVendaAPrazo->getQuantidade());
         $pst->bindValue(2, $produtosDaVendaAPrazo->getValor());
-        if ($pst->execute()) {
+        if ($pst->execute()) 
+        {
             return true;
         } else {
             return false;

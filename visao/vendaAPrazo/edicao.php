@@ -35,9 +35,12 @@
             $obj->setDataFinal($dataFinal);
 
             if ($dao->altera($obj)) {
-                session_start();
-                $_SESSION['ultimaCompra'] = $id;
-                header("Location: ../produtosDaVendaAPrazo/formCadastro.php");
+                echo '<br>Venda editada com sucesso!';
+                echo '<br><a href="./listagem.php">Listagm</a>';
+                echo '<br><a href="../formPrincipal.php">Início</a>';
+                // session_start();
+                // $_SESSION['ultimaCompra'] = $id;
+                // header("Location: ../produtosDaVendaAPrazo/formCadastro.php");
             } else {
                 echo 'Deu alguma merda...';
             }
