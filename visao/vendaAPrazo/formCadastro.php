@@ -22,7 +22,7 @@
         <br>
 
         <label for="dataInicial">Data Inicial</label>
-        <input oninput="mascaraData(this)" type="text" name="dataInicial" id="dataInicial">
+        <input readonly type="text" name="dataInicial" id="dataInicial" value="<?php $hoje = date('d/m/Y'); echo $hoje; ?>">
 
         <br>
 

@@ -40,7 +40,7 @@
         <br>
 
         <label for="dataCompra">Data da Compra</label>
-        <input oninput="mascaraData(this)" type="text" name="dataCompra" id="dataCompra">
+        <input readonly type="text" name="dataCompra" id="dataCompra" value="<?php $hoje = date('d/m/Y'); echo $hoje; ?>">
 
         <br>
 

@@ -18,7 +18,7 @@
         <br>
 
         <label for="data">Data</label>
-        <input oninput="mascaraData(this)" type="text" name="data" id="data">
+        <input readonly type="text" name="data" id="data" value="<?php $hoje = date('d/m/Y'); echo $hoje; ?>">
 
         <br>
 
