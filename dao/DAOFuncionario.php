@@ -68,6 +68,28 @@ class DAOFuncionario
         return $lista;
     }
 
+    public function logar(Funcionario $funcionario)
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('select * 
+                                              from funcionario 
+                                              where usuario = ? and senha = ?');
+        $pst->bindValue(1, $funcionario->getUsuario());
+        $pst->bindValue(2, $funcionario->getsenha());
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+
+        if($lista)
+        {
+            $ok = $lista[0];
+            return $ok;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public function localiza($id)
     {
         $lista = [];

@@ -11,20 +11,17 @@ $dao = new DAOFuncionario();
 $usuario = filter_input(INPUT_POST, 'usuario');
 $senha = filter_input(INPUT_POST, 'senha');
 
-$sql = 'select * 
-        from funcionario 
-        where usuario = ? and senha = ?';
-$pst = Conexao::getPreparedStatement($sql);
-$pst->bindValue(1, $obj->getNome());
-$pst->bindValue(2, $obj->getUsuario());
+$obj->setUsuario($usuario);
+$obj->setSenha($senha);
+$lista = $dao->logar($obj);
 
-if ($pst->execute())
-{
-    $_SESSION['usuario'] = $usuario;
+if ($lista) {
+    $_SESSION['idFuncionario'] = $lista['idFuncionario'];
+    $_SESSION['nome'] = $lista['nome'];
+    $_SESSION['usuario'] = $lista['usuario'];
+    $_SESSION['senha'] = $lista['senha'];
     header("Location: ./visao/formPrincipal.php");
-}
-else
-{
+} else {
     $_SESSION['invalido'] = true;
     header("Location: ./index.php");
 }

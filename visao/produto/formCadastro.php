@@ -31,23 +31,7 @@
         <br>
 
         <label for="idFuncionario">Funcionário</label>
-        <input type="text" value="<?php echo $_SESSION['usuario']?>">
-        <!-- <select name="idFuncionario" id="idFuncionario">
-            <?php
-                require_once '../../modelo/Funcionario.php';
-                require_once '../../dao/DAOFuncionario.php';
-                require_once '../../dao/Conexao.php';
-
-                $dao = new DAOFuncionario();
-                $lista = $dao->lista();
-
-                if ($lista) {
-                    foreach ($lista as $l) {
-                        echo '<option value="' . $l['idFuncionario'] . '">' . $l['nome'] . '</option>';
-                    }
-                }
-            ?>
-        </select> -->
+        <input readonly type="text" name="idFuncionario" value="<?php echo $_SESSION['nome']?>">
 
         <br>
 

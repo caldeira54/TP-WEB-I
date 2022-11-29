@@ -18,17 +18,11 @@
         $dao = new DAOProduto();
 
         $idEstoque = filter_input(INPUT_POST, 'idEstoque');
-        // $idFuncionario = filter_input(INPUT_POST, 'idFuncionario');
-        $idFuncionario = $_SESSION['usuario'];
         $preco = filter_input(INPUT_POST, 'preco');
 
-        var_dump($idEstoque);
-        var_dump($idFuncionario);
-        var_dump($preco);
-
-        if (($idEstoque && $idFuncionario && $preco)) {
+        if (($idEstoque && $preco)) {
             $obj->setIdEstoque($idEstoque);
-            $obj->setIdFuncionario($idFuncionario);
+            $obj->setIdFuncionario($_SESSION['idFuncionario']);
             $obj->setPreco($preco);
 
             if ($dao->inclui($obj)) {

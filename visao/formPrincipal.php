@@ -10,7 +10,7 @@
   <?php
   include('../verificaLogin.php');
   ?>
-  <h2><?php echo $_SESSION['usuario'] ?></h2>
+  <h2><?php echo $_SESSION['nome'] ?></h2>
 <br>
 <a href="./fornecedor/listagem.php">Listagem de Fornecedor</a>
   <br>
