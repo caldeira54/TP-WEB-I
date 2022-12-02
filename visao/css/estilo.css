@@ -1,9 +1,14 @@
-td{
-    border: 2px solid #ccc; padding: 5px; text-align: center;
+td {
+    border: 2px solid #ccc;
+    padding: 5px;
+    text-align: center;
 }
 
-th{
-    border: 2px solid #ccc; padding: 5px; text-align: center; background: #ccc;
+th {
+    border: 2px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    background: #ccc;
 }
 
 img {
@@ -12,7 +17,8 @@ img {
 }
 
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .button {
@@ -35,7 +41,7 @@ img {
     height: 100%;
 }
 
-.popup{
+.popup {
     font-family: Arial;
     text-align: center;
     width: 100%;
@@ -84,7 +90,7 @@ img {
     background-color: rgba(19, 19, 19, 0.3);
     padding: 40px;
     border-radius: 2px;
-    width:280px;
+    width: 280px;
 }
 
 .card-header {
@@ -112,14 +118,14 @@ img {
 .card-content-area {
     display: flex;
     flex-direction: column;
-    padding:10px 0;
+    padding: 10px 0;
 }
 
 .card-content-area input {
     margin-top: 10px;
-    padding:0 5px;
+    padding: 0 5px;
     background-color: transparent;
-    border:none;
+    border: none;
     border-bottom: 1px solid #e1e1e1;
     outline: none;
     color: #fff;
@@ -135,8 +141,8 @@ img {
     width: 50%;
     height: 40px;
     background-color: #a13854;
-    border:none;
-    color:#e1e1e1;
+    border: none;
+    color: #e1e1e1;
     margin: 10px 0;
 }
 
@@ -147,3 +153,5 @@ img {
     color: #fff;
     text-decoration: none;
 }
+
+/* CSS do formPrincipal */

@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    padding: 0;
+}
+
+.menuLateral {
+    background-color: black;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    left: -250px;
+    transition: left 0.5s;
+}
+
+.menuLateral .titulo {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    line-height: 45px;
+    font-size: 24px;
+    border-bottom: 2px solid red;
+}
+
+.menuLateral ul {
+    list-style: none;
+}
+
+.menuLateral ul li {
+    line-height: 40px;
+    border-bottom: 1px solid white;
+}
+
+.menuLateral ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 30px;
+    font-weight: bold;
+    display: block;
+}
+
+.menuLateral ul li a:hover {
+    background-color: #370707;
+    transition: 0.5s;
+}
+
+.menuLateral ul ul li a {
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 60px;
+    background-color: #131313;
+}
+
+.menuLateral ul ul {
+    display: none;
+}
+
+.menuLateral ul .itensNordeste.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensSudeste.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensFornecedor.mostra {
+    display: block;
+}
+
+.btnAbre {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnAbre span {
+    font-size: 35px;
+}
+
+.menuLateral.mostra {
+    left: 0;
+}
+
+.btnFecha {
+    position: relative;
+    left: 20px;
+    top: 3px;
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btnFecha:hover {
+    border: 1px solido red;
+}
+
+.menuLateral ul li a span {
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    transition: 0.4s;
+}
+
+.menuLateral ul li a span.gira{
+    transform: rotate(90deg);
+}
+
+/* .cabecalho {
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+}
+
+.funcionario {
+    width: 17%;
+    height: 17px;
+}
+
+img {
+    width: 40px;
+} */
