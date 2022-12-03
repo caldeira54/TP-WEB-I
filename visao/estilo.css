@@ -56,15 +56,31 @@
     display: none;
 }
 
-.menuLateral ul .itensNordeste.mostra {
-    display: block;
-}
-
-.menuLateral ul .itensSudeste.mostra {
-    display: block;
-}
-
 .menuLateral ul .itensFornecedor.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensNotinha.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensEstoque.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensProduto.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensVendasDiarias.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensVendaAVista.mostra {
+    display: block;
+}
+
+.menuLateral ul .itensVendaAPrazo.mostra {
     display: block;
 }
 
@@ -110,17 +126,11 @@
     transform: rotate(90deg);
 }
 
-/* .cabecalho {
-    background-color: brown;
-    display: flex;
-    justify-content: space-between;
-}
-
 .funcionario {
-    width: 17%;
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 20%;
     height: 17px;
 }
-
-img {
-    width: 40px;
-} */

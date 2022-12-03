@@ -28,79 +28,59 @@
           <li><a href="./fornecedor/formCadastro.php">Cadastrar</a></li>
         </ul>
       </li>
-      <li><a href="#" class="notinha">Notinha</a>
+      <li><a href="#" class="notinha">Notinha<span class="material-symbols-outlined setaNotinha"> arrow_right </span></a>
         <ul class="itensNotinha">
           <li><a href="./notaPromissoria/listagem.php">Listagem</a></li>
           <li><a href="./notaPromissoria/formCadastro.php">Cadastrar</a></li>
         </ul>
       </li>
-      <li><a href="#" class="nordeste">Nordeste<span class="material-symbols-outlined seta1"> arrow_right </span></a>
-        <ul class="itensNordeste">
-          <li><a href="#">Pernambuco</a></li>
-          <li><a href="#">Maranhão</a></li>
-          <li><a href="#">Sergipe</a></li>
-          <li><a href="#">Ceará</a></li>
+      <li><a href="#" class="estoque">Estoque<span class="material-symbols-outlined setaEstoque"> arrow_right </span></a>
+        <ul class="itensEstoque">
+          <li><a href="./estoque/listagem.php">Listagem</a></li>
+          <li><a href="./estoque/formCadastro.php">Cadastrar</a></li>
         </ul>
       </li>
-      <li><a href="#" class="sudeste">Sudeste <span class="material-symbols-outlined seta2">
-            arrow_right
-          </span></a>
-        <ul class="itensSudeste">
-          <li><a href="#">Minas Gerais</a></li>
-          <li><a href="#">São Paulo</a></li>
-          <li><a href="#">Rio de Janeiro</a></li>
-          <li><a href="#">Espiríto Santo</a></li>
+      <li><a href="#" class="produto">Produtos<span class="material-symbols-outlined setaProduto"> arrow_right </span></a>
+        <ul class="itensProduto">
+          <li><a href="./produto/listagem.php">Listagem</a></li>
+          <li><a href="./produto/formCadastro.php">Cadastrar</a></li>
         </ul>
       </li>
-      <li><a href="#">Centro-Oeste</a></li>
+      <li><a href="#" class="vendasDiarias">Vendas Diárias<span class="material-symbols-outlined setaVendasDiarias"> arrow_right </span></a>
+        <ul class="itensVendasDiarias">
+          <li><a href="./vendasDiarias/listagem.php">Listagem</a></li>
+          <li><a href="./vendasDiarias/formCadastro.php">Cadastrar</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="vendaAVista">Vendas á Vista<span class="material-symbols-outlined setaVendaAVista"> arrow_right </span></a>
+        <ul class="itensVendaAVista">
+          <li><a href="./vendaAVista/listagem.php">Listagem</a></li>
+          <li><a href="./vendaAVista/formCadastro.php">Cadastrar</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="vendaAPrazo">Vendas á Prazo<span class="material-symbols-outlined setaVendaAPrazo"> arrow_right </span></a>
+        <ul class="itensVendaAPrazo">
+          <li><a href="./vendaAPrazo/listagem.php">Listagem Ativas</a></li>
+          <li><a href="./vendaAPrazo/listagemInativas.php">Listagem Inativas</a></li>
+          <li><a href="./vendaAPrazo/formCadastro.php">Cadastrar</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
   <script type="text/javascript" src="./script.js"></script>
 
-  <!-- <?php
-        include('../verificaLogin.php');
-        ?>
-  <div class="cabecalho">
-    <div class="iconeMenu">
-      <img src="./css/imagens/lista.png">
-    </div>
-
-    <div class="funcionario">
-      <p>
-        <?php
-        echo 'Bem vindo: ';
-        echo $_SESSION['nome'];
-        ?>
-      </p>
-    </div>
-  </div> -->
-
-
-  <!-- 
-  
-
-  
-  
-
-  <a href="./estoque/listagem.php">Listagem do Estoque</a>
-  <a href="./estoque/formCadastro.php">Cadastrar produto no Estoque</a>
-
-  <a href="./produto/listagem.php">Listagem de Produtos</a>
-  <a href="./produto/formCadastro.php">Cadastrar Produto</a>
-
-  <a href="./vendasDiarias/listagem.php">Listagem das Vendas Diárias</a>
-  <a href="./vendasDiarias/formCadastro.php">Cadastrar Venda Diária</a>
-
-  <a href="./funcionario/listagem.php">Listagem dos Funcionários</a>
-  <a href="./funcionario/formCadastro.php">Cadastrar Funcionário</a>
-
-  <a href="./vendaAVista/listagem.php">Listagem das Vendas à Vista</a>
-  <a href="./vendaAVista/formCadastro.php">Cadastrar Venda à Vista</a>
-
-  <a href="./vendaAPrazo/listagem.php">Listagem das Vendas à Prazo</a>
-  <a href="./vendaAPrazo/listagemInativas.php">Listagem das Vendas à Prazo Inativas</a>
-  <a href="./vendaAPrazo/formCadastro.php">Cadastrar Venda à Prazo</a> -->
+  <?php
+  include('../verificaLogin.php');
+  ?>
+  <div class="funcionario">
+    <p>
+      <?php
+      echo 'Bem vindo: ';
+      echo $_SESSION['nome'];
+      ?>
+    </p>
+  </div>
 
   <!-- <h2><a href="../logout.php">Sair</a></h2> -->
 </body>
