@@ -75,15 +75,14 @@
   include('../verificaLogin.php');
   ?>
   <div class="funcionario">
-    <p>
+    <p >
       <?php
       echo 'Bem vindo: ';
       echo $_SESSION['nome'];
       ?>
     </p>
+    <a href="../logout.php"><img src="./css/imagens/sair.png"></a>
   </div>
-  <br><br><br>
-  <h2><a href="../logout.php">Sair</a></h2>
 </body>
 
 </html>
