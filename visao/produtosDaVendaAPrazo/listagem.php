@@ -46,11 +46,15 @@
     </table>
     
     <br>
+    <form action="./formCadastro.php">
+        <button> Novo Produto </button>
+        <br>
+    </form>
 
     <form action="../formPrincipal.php">
         <button> Início </button>
         <br>
-        <a href="../vendaAPrazo/listagem.php">Listagm</a>
+        <a href="../vendaAPrazo/listagem.php">Listagem</a>
     </form>
 </body>
 </html>

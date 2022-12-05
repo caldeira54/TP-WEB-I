@@ -30,7 +30,8 @@
       </li>
       <li><a href="#" class="notinha">Notinha<span class="material-symbols-outlined setaNotinha"> arrow_right </span></a>
         <ul class="itensNotinha">
-          <li><a href="./notaPromissoria/listagem.php">Listagem</a></li>
+          <li><a href="./notaPromissoria/listagem.php">Listagem Ativas</a></li>
+          <li><a href="./notaPromissoria/listagemInativas.php">Listagem Inativas</a></li>
           <li><a href="./notaPromissoria/formCadastro.php">Cadastrar</a></li>
         </ul>
       </li>
@@ -81,8 +82,8 @@
       ?>
     </p>
   </div>
-
-  <!-- <h2><a href="../logout.php">Sair</a></h2> -->
+  <br><br><br>
+  <h2><a href="../logout.php">Sair</a></h2>
 </body>
 
 </html>

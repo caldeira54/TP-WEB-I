@@ -33,7 +33,7 @@
             $obj->setValor($valor);
 
             if ($dao->inclui($obj)) {
-                $dao->atualizaEstoque($idEstoque, $quantidade);
+                $dao->baixaEstoque($idEstoque, $quantidade);
                 echo '<div class="popup-wrapper">
                         <div class="popup">
                         <div class="popup-close">x</div>

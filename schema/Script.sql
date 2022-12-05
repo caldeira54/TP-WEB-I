@@ -120,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `bd`.`notaPromissoria` (
   `preco` DOUBLE NOT NULL,
   `dataCompra` VARCHAR(45) NOT NULL,
   `dataPagamento` VARCHAR(45) NOT NULL,
+  `ativa` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`idNotaPromissoria`),
   INDEX `fk_notaPromissoria_fornecedor1_idx` (`idFornecedor` ASC) VISIBLE,
   CONSTRAINT `fk_notaPromissoria_fornecedor1`

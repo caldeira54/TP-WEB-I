@@ -16,9 +16,6 @@
             <th> Preço </th>
             <th> Data da Compra </th>
             <th> Data do Pagamento </th>
-            <th> Pagar </th>
-            <th> Excluir </th>
-            <th> Editar </th>
         </tr>
 
         <?php
@@ -27,7 +24,7 @@
             require_once '../../dao/Conexao.php';
 
             $dao = new DAONotaPromissoria();
-            $lista = $dao->listaAtivas();
+            $lista = $dao->listaInativas();
 
             $daoFornecedor = new DAOFornecedor();
             $listaFornecedor = $daoFornecedor->lista();
@@ -41,9 +38,6 @@
                     echo '<td>' . $v['preco'] . '</td>';
                     echo '<td>' . $v['dataCompra'] . '</td>';
                     echo '<td>' . $v['dataPagamento'] . '</td>';
-                    echo '<td> <form action="./paga.php" method="POST"> <input name="ativa" type="hidden" value="' . $v['idNotaPromissoria'] . '"/> <button> <img src="../css/imagens/pagar.png"/> </button> </form></td>';
-                    echo '<td> <a id = "excluir" href="exclui.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
-                    echo '<td> <a id = "editar" href="formEdicao.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 
                 echo '</tr>';
             }

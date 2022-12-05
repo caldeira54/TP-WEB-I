@@ -6,6 +6,7 @@ class NotaPromissoria
     private $preco;
     private $dataCompra;
     private $dataPagamento;
+    private $ativa;
 
     public function getIdNotaPromissoria()
     {
@@ -63,6 +64,18 @@ class NotaPromissoria
     public function setDataPagamento($dataPagamento)
     {
         $this->dataPagamento = $dataPagamento;
+
+        return $this;
+    }
+
+    public function getAtiva()
+    {
+        return $this->ativa;
+    }
+
+    public function setAtiva($ativa)
+    {
+        $this->ativa = $ativa;
 
         return $this;
     }
