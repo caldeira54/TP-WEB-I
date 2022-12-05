@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adiona produtos na venda</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Cadastro dos Produtos da Venda à Prazo</title>
 </head>
 <body>
-<?php
+    <?php
         require_once '../../dao/DAOProdutosDaVendaAPrazo.php';
         require_once '../../dao/Conexao.php';
         require_once '../../modelo/ProdutosDaVendaAPrazo.php';
@@ -31,9 +32,18 @@
             $obj->setQuantidade($quantidade);
             $obj->setValor($valor);
 
-            if ($dao->adicionaProutos($obj)) {
+            if ($dao->inclui($obj)) {
+                $dao->adicionaProutos($obj);
                 $dao->baixaEstoque($idEstoque, $quantidade);
-                echo 'Produto adicionado com sucesso!';
+                echo '<div class="popup-wrapper">
+                        <div class="popup">
+                        <div class="popup-close">x</div>
+                        <div class="popup-content">
+                            <p>Produto cadastrado com sucesso!</p>
+                            <a class="popup-link" href="./formCadastro.php">Adicionar produto</a>
+                        </div>
+                        </div>
+                      </div>';
                 echo '<br><a href="../formPrincipal.php">Inicio</a>';
                 echo '<br><a href="listagem.php"> Listagem </a><br>';
             } else {

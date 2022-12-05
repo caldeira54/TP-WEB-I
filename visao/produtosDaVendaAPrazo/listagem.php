@@ -46,7 +46,7 @@
     </table>
     
     <br>
-    <form action="./formCadastro.php">
+    <form action="./formCadastroNovo.php">
         <button> Novo Produto </button>
         <br>
     </form>
