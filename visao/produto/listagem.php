@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cores.js"></link>
     <title>Lista de Pordutos</title>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="./estilo.css">
 </head>
 <body>
-    <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Produtos ****** </h1>
-    <table style="width: 600px; border-collapse: collapse">
+    <div class="tabela">
+    <h1> Produtos </h1>
+    <table>
         <tr> 
             <th> ID Produto </th>
             <th> Produto </th>
@@ -43,11 +44,17 @@
         ?>
 
     </table>
-    
-    <br>
+    </div>
 
+    <div class="botoes">
     <form action="../formPrincipal.php">
         <button> Início </button>
     </form>
+
+    <form action="./formCadastro.php">
+        <button> Cadastro </button>
+    </form>
+    </div>
+    
 </body>
 </html>

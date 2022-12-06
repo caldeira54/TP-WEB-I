@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,28 @@
     <link rel="stylesheet" href="./estilo.css">
     <title>Formulário de cadastro do Fornecedor</title>
 </head>
+
 <body>
-    <form action="cadastro.php" method="post">
-        <label for="nome">Fornecedor</label>
-        <input type="text" name="nome" id="nome">
+    <div class="cadastro">
+        <h1>Cadastro de Fornecedores</h1>
+        <form action="cadastro.php" method="post">
+            <label for="nome">Fornecedor</label>
+            <input type="text" name="nome" id="nome">
 
-        <br>
+            <br>
 
-        <label for="endereco">Endereco</label>
-        <input type="text" name="endereco" id="endereco">
+            <label for="endereco">Endereco</label>
+            <input type="text" name="endereco" id="endereco">
 
-        <br>
+            <br>
 
-        <button style=" margin-left: 126px ">Salvar</button>
-    </form>
+            <button>Salvar</button>
+        </form>
 
-    <form action="../formPrincipal.php">
-        <button> Início </button>
-    </form>
+        <form action="../formPrincipal.php">
+            <button> Início </button>
+        </form>
+    </div>
 </body>
+
 </html>

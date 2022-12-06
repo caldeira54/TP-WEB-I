@@ -45,7 +45,6 @@
 
         </table>
 
-        <br>
         <div class="botoes">
             <form action="../formPrincipal.php">
                 <button> Início </button>
