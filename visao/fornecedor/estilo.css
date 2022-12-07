@@ -32,7 +32,7 @@ body {
 }
 
 .cadastro {
-    border: 1px solid #213635;
+    /* border: 1px solid #213635; */
     width: 500px;
     border-radius: 5px;
     margin-top: 30px;
@@ -43,8 +43,21 @@ h1 {
     color: #f2f2f2;
 }
 
+input[type="text"] {
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+label {
+    width: 100px;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
 table {
-    width: 600px; 
+    width: 600px;
     border-collapse: collapse;
     color: #f2f2f2;
 }
@@ -84,4 +97,12 @@ button {
 
 button:hover {
     transform: scale(1.2);
+}
+
+.btnSalvar {
+    float: left;
+}
+
+.btnInicio {
+    float: right;
 }

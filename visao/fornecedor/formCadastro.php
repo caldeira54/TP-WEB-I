@@ -18,16 +18,20 @@
 
             <br>
 
-            <label for="endereco">Endereco</label>
+            <label for="endereco">Endereço</label>
             <input type="text" name="endereco" id="endereco">
 
             <br>
 
-            <button>Salvar</button>
+            <button class="btnSalvar">Salvar</button>
         </form>
 
         <form action="../formPrincipal.php">
-            <button> Início </button>
+            <button class="btnInicio"> Início </button>
+        </form>
+
+        <form action="./listagem.php">
+            <button> Listagem </button>
         </form>
     </div>
 </body>

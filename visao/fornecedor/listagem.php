@@ -50,7 +50,7 @@
                 <button> Início </button>
             </form>
 
-            <form action="../formCadastro.php">
+            <form action="./formCadastro.php">
                 <button> Cadastrar </button>
             </form>
         </div>
