@@ -29,8 +29,6 @@
                     alert("Fornecedor cadastrado com sucesso");
                     window.location.href = "./formCadastro.php";
                   </script>';
-            // echo '<br><a href="../formPrincipal.php">Inicio</a>';
-            // echo '<br><a href="listagem.php"> Listagem de Fornecedores </a><br>';
         } else {
             echo 'Deu alguma merda...';
         }

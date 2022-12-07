@@ -78,3 +78,32 @@ button:hover {
     margin: 30px;
     width: 500px;
 }
+
+.btnSalvar {
+    float: left;
+}
+
+.btnInicio {
+    float: right;
+}
+
+.dados {
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 200px;
+    text-align: center;
+}
+
+label {
+    width: 100px;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.cadastro {
+    /* border: 1px solid #213635; */
+    width: 500px;
+    border-radius: 5px;
+    margin-top: 30px;
+}

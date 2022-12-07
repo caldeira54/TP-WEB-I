@@ -29,14 +29,18 @@
             $obj->setPreco($preco);
 
             if ($dao->altera($obj)) {
-                echo '<h1>Produto editado com sucesso!</h1>';
-                echo '<br><a href="../../index.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem de Produtos </a><br>';
+                echo '<script>
+                    alert("Produto editado com sucesso!");
+                    window.location.href = "./listagem.php";
+                  </script>';
             } else {
                 echo 'Deu alguma merda...';
             }
         } else {
-            echo 'Dados ausentes ou incorretos!';
+            echo '<script>
+                    alert("Dados ausentes ou incorretos!");
+                    window.location.href = "./formCadastro.php";
+                  </script>';
         }
     ?>
 </body>

@@ -27,14 +27,18 @@
             $obj->setValor($valor);
 
             if ($dao->altera($obj)) {
-                echo '<h1>Venda diária editada com sucesso!</h1>';
-                echo '<br><a href="../../index.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem de Vendas Diárias </a><br>';
+                echo '<script>
+                        alert("Venda editada com sucesso!");
+                        window.location.href = "./listagem.php";
+                      </script>';
             } else {
                 echo 'Deu alguma merda...';
             }
         } else {
-            echo 'Dados ausentes ou incorretos!';
+            echo '<script>
+                    alert("Dados ausentes ou incorretos!");
+                    window.location.href = "./formEdicao.php";
+                  </script>';
         }
     ?>
 </body>

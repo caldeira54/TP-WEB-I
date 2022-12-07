@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Formulário de edição do Estoque</title>
 </head>
+
 <body>
     <?php
-        require_once '../../dao/DAOEstoque.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/Estoque.php';
+    require_once '../../dao/DAOEstoque.php';
+    require_once '../../dao/Conexao.php';
+    require_once '../../modelo/Estoque.php';
 
-        $id = filter_input(INPUT_GET, 'idEstoque');
+    $id = filter_input(INPUT_GET, 'idEstoque');
 
-        $dao = new DAOEstoque();
-        $lista = $dao->localiza($id);
+    $dao = new DAOEstoque();
+    $lista = $dao->localiza($id);
 
-        $estoque = $lista[0];
+    $estoque = $lista[0];
     ?>
 
-    <form action="edicao.php" method="post">
-        <input type="hidden" name="idEstoque" id="idEstoque" value="<?=$estoque['idEstoque'] ?>">
+    <div class="cadastro">
+        <h1> Edição </h1>
+        <form action="edicao.php" method="post">
+            <input type="hidden" name="idEstoque" id="idEstoque" value="<?= $estoque['idEstoque'] ?>">
 
-        <label for="idFornecedor">Fornecedor</label>
-        <input type="text" name="idFornecedor" id="idFornecedor" value="<?=$estoque['idFornecedor'] ?>">
+            <label for="idFornecedor">Fornecedor</label>
+            <input class="dados" type="text" name="idFornecedor" id="idFornecedor" value="<?= $estoque['idFornecedor'] ?>">
 
-        <br>
+            <br>
 
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" value="<?=$estoque['nome'] ?>">
+            <label for="nome">Nome</label>
+            <input class="dados" type="text" name="nome" value="<?= $estoque['nome'] ?>">
 
-        <br>
+            <br>
 
-        <label for="preco">Preço</label>
-        <input type="text" name="preco" value="<?=$estoque['preco'] ?>">
+            <label for="preco">Preço</label>
+            <input class="dados" type="text" name="preco" value="<?= $estoque['preco'] ?>">
 
-        <br>
+            <br>
 
-        <label for="quantidade">Quantidade</label>
-        <input type="text" name="quantidade" value="<?=$estoque['quantidade'] ?>">
+            <label for="quantidade">Quantidade</label>
+            <input class="dados" type="text" name="quantidade" value="<?= $estoque['quantidade'] ?>">
 
-        <br>
+            <br>
 
-        <button> Salvar </button>
-    </form>
+            <button class="btnSalvar"> Salvar </button>
+        </form>
 
-    <form action="../formPrincipal.php">
-        <button> Início </button>
-    </form>
+        <form action="../formPrincipal.php">
+            <button class="btnInicio"> Início </button>
+        </form>
+
+        <form action="./listagem.php">
+            <button> Estoque </button>
+        </form>
+    </div>
+
 </body>
+
 </html>

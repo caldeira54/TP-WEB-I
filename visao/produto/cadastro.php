@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produto</title>
 </head>
+
 <body>
     <?php
-        require_once '../../dao/DAOProduto.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/Produto.php';
+    require_once '../../dao/DAOProduto.php';
+    require_once '../../dao/Conexao.php';
+    require_once '../../modelo/Produto.php';
 
-        session_start();
+    session_start();
 
-        $obj = new Produto();
-        $dao = new DAOProduto();
+    $obj = new Produto();
+    $dao = new DAOProduto();
 
-        $idEstoque = filter_input(INPUT_POST, 'idEstoque');
-        $preco = filter_input(INPUT_POST, 'preco');
+    $idEstoque = filter_input(INPUT_POST, 'idEstoque');
+    $preco = filter_input(INPUT_POST, 'preco');
 
-        if (($idEstoque && $preco)) {
-            $obj->setIdEstoque($idEstoque);
-            $obj->setIdFuncionario($_SESSION['idFuncionario']);
-            $obj->setPreco($preco);
+    if (($idEstoque && $preco)) {
+        $obj->setIdEstoque($idEstoque);
+        $obj->setIdFuncionario($_SESSION['idFuncionario']);
+        $obj->setPreco($preco);
 
-            if ($dao->inclui($obj)) {
-                echo '<h1>Produto cadastrado com sucesso!</h1>';
-                echo '<br><a href="../formPrincipal.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem de Produtos </a><br>';
-            } else {
-                echo 'Deu alguma merda...';
-            }
+        if ($dao->inclui($obj)) {
+            echo '<script>
+                    alert("Produto cadastrado com sucesso!");
+                    window.location.href = "./formCadastro.php";
+                  </script>';
         } else {
-            echo 'Dados ausentes ou incorretos!';
+            echo 'Deu alguma merda...';
         }
+    } else {
+        echo '<script>
+                alert("Dados ausentes ou incorretos");
+                window.location.href = "./formCadastro.php";
+              </script>';
+    }
     ?>
 </body>
+
 </html>
