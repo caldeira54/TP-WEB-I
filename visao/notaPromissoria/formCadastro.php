@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Cadastro de Nota Promissória</title>
 </head>
 
@@ -13,10 +14,12 @@
 
     </script>
 
-    <form action="cadastro.php" method="post">
-        <label for="idFornecedor">Fornecedor</label>
-        <select name="idFornecedor" id="idFornecedor">
-            <?php
+    <div class="cadastro">
+        <h1>Cadastro de Nota Promissória</h1>
+        <form action="cadastro.php" method="post">
+            <label for="idFornecedor">Fornecedor</label>
+            <select name="idFornecedor" id="idFornecedor" class="dados">
+                <?php
                 require_once '../../modelo/Fornecedor.php';
                 require_once '../../dao/DAOFornecedor.php';
                 require_once '../../dao/Conexao.php';
@@ -29,32 +32,38 @@
                         echo '<option value="' . $l['idFornecedor'] . '">' . $l['nome'] . '</option>';
                     }
                 }
-            ?>
-        </select>
+                ?>
+            </select>
 
-        <br>
+            <br>
 
-        <label for="preco">Preço</label>
-        <input type="text" name="preco" id="preco">
+            <label for="preco">Preço</label>
+            <input type="text" name="preco" id="preco" class="dados">
 
-        <br>
+            <br>
 
-        <label for="dataCompra">Data da Compra</label>
-        <input readonly type="text" name="dataCompra" id="dataCompra" value="<?php $hoje = date('d/m/Y'); echo $hoje; ?>">
+            <label for="dataCompra">Data da Compra</label>
+            <input class="dados" readonly type="text" name="dataCompra" id="dataCompra" value="<?php $hoje = date('d/m/Y');
+                                                                                    echo $hoje; ?>">
 
-        <br>
+            <br>
 
-        <label for="dataPagamento">Data do Pagamento</label>
-        <input oninput="mascaraData(this)" type="text" name="dataPagamento" id="dataPagamento">
+            <label for="dataPagamento">Data do Pagamento</label>
+            <input oninput="mascaraData(this)" type="text" name="dataPagamento" id="dataPagamento" class="dados">
 
-        <br>
+            <br>
 
-        <button style=" margin-left: 75px ">Salvar</button>
-    </form>
+            <button class="btnSalvar"> Salvar </button>
+        </form>
 
-    <form action="../formPrincipal.php">
-        <button> Início </button>
-    </form>
+        <form action="../formPrincipal.php">
+            <button class="btnInicio"> Início </button>
+        </form>
+
+        <form action="./listagem.php">
+            <button> Ativas </button>
+        </form>
+    </div>
 </body>
 
 </html>
