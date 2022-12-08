@@ -28,7 +28,7 @@
             session_start();
             $_SESSION['ultimaCompra'] = $id;
             echo '<script>
-                    alert("Produto cadastrado com sucesso!");
+                    alert("Venda cadastrada com sucesso!");
                     window.location.href = "../produtosDaVenda/formCadastro.php";
                   </script>';
         } else {

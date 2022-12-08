@@ -47,7 +47,7 @@
 #body {
     padding: 0;
     margin: 0;
-    background-color: #454d6b;
+    background-color: #348e91;
 }
 
 #login {
@@ -55,7 +55,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: sans-serif;
 }
 
 .erro {
@@ -117,10 +117,11 @@
 .entrar {
     width: 50%;
     height: 40px;
-    background-color: #a13854;
+    background-color: #213635;
     border: none;
     color: #e1e1e1;
     margin: 10px 0;
+    cursor: pointer;
 }
 
 .card-footer a {
