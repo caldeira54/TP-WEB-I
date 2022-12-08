@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Formulário de edição de Venda à Vista</title>
 </head>
+
 <body>
     <script src="../../mascaras/mascaraData.js">
 
     </script>
     <?php
-        require_once '../../dao/DAOVendaAPrazo.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/VendaAPrazo.php';
+    require_once '../../dao/DAOVendaAPrazo.php';
+    require_once '../../dao/Conexao.php';
+    require_once '../../modelo/VendaAPrazo.php';
 
-        $id = filter_input(INPUT_GET, 'idVendaAPrazo');
+    $id = filter_input(INPUT_GET, 'idVendaAPrazo');
 
-        $dao = new DAOVendaAPrazo();
-        $lista = $dao->localiza($id);
+    $dao = new DAOVendaAPrazo();
+    $lista = $dao->localiza($id);
 
-        $vendaAPrazo = $lista[0];
+    $vendaAPrazo = $lista[0];
     ?>
 
-    <form action="edicao.php" method="post">
-        <input type="hidden" name="idVendaAPrazo" id="idVendaAPrazo" value="<?=$vendaAPrazo['idVendaAPrazo'] ?>">
+    <div class="cadastro">
+        <h1> Edição da Venda à Prazo </h1>
+        <form action="edicao.php" method="post">
+            <input type="hidden" name="idVendaAPrazo" id="idVendaAPrazo" value="<?= $vendaAPrazo['idVendaAPrazo'] ?>">
 
-        <label for="cliente">Cliente</label>
-        <input type="text" name="cliente" id="cliente" value="<?=$vendaAPrazo['cliente'] ?>">
+            <label for="cliente">Cliente</label>
+            <input class="dados" type="text" name="cliente" id="cliente" value="<?= $vendaAPrazo['cliente'] ?>">
 
-        <br>
+            <br>
 
-        <label for="valor">Preço</label>
-        <input type="text" name="valor" id="valor" value="<?=$vendaAPrazo['valor'] ?>">
+            <label for="valor">Preço</label>
+            <input class="dados" type="text" name="valor" id="valor" value="<?= $vendaAPrazo['valor'] ?>">
 
-        <br>
+            <br>
 
-        <label for="dataInicial">Data Inicial</label>
-        <input oninput="mascaraData(this)" type="text" name="dataInicial" value="<?=$vendaAPrazo['dataInicial'] ?>">
+            <label for="dataInicial">Data Inicial</label>
+            <input class="dados" oninput="mascaraData(this)" type="text" name="dataInicial" value="<?= $vendaAPrazo['dataInicial'] ?>">
 
-        <br>
+            <br>
 
-        <label for="dataFinal">Data Final</label>
-        <input oninput="mascaraData(this)" type="text" name="dataFinal" value="<?=$vendaAPrazo['dataFinal'] ?>">
+            <label for="dataFinal">Data Final</label>
+            <input class="dados" oninput="mascaraData(this)" type="text" name="dataFinal" value="<?= $vendaAPrazo['dataFinal'] ?>">
 
-        <br>
+            <br>
 
-        <button> Salvar </button>
-    </form>
+            <button class="btnSalvar"> Salvar </button>
+        </form>
 
-    <form action="../formPrincipal.php">
-        <button> Início </button>
-    </form>
+        <form action="../formPrincipal.php">
+            <button class="btnInicio"> Início </button>
+        </form>
+
+        <form action="./listagem.php">
+            <button> Ativas </button>
+        </form>
+    </div>
 </body>
+
 </html>
