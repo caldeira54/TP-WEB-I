@@ -24,6 +24,7 @@
     ?>
 
     <div class="cadastro">
+        <h1> Edição do Produto </h1>
         <form action="edicao.php" method="post">
             <input type="hidden" name="idEstoque" id="idEstoque" value="<?= $produto['idEstoque'] ?>">
             <input class="dados" type="hidden" name="idFuncionario" id="idFuncionario" value="<?= $produto['idFuncionario'] ?>">
