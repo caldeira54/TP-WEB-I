@@ -20,9 +20,10 @@
         $obj->setIdFornecedor($id);
 
         if($dao->exclui($obj)){
-            echo '<h1>Fornecedor excluído com sucesso</h1>';
-            echo '<br><a href="../../index.php">Inicio</a>';
-            echo '<br><a href="listagem.php"> Listagem de Fornecedores </a><br>';
+            echo '<script>
+                    alert("Fornecedor apagado com sucesso");
+                    window.location.href = "./listagem.php";
+                  </script>';
         } else {
             echo 'Deu alguma merda...';
         }
