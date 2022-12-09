@@ -42,7 +42,7 @@
             <br>
 
             <label for="dataInicial">Data Inicial</label>
-            <input class="dados" oninput="mascaraData(this)" type="text" name="dataInicial" value="<?= $vendaAPrazo['dataInicial'] ?>">
+            <input readonly class="dados" oninput="mascaraData(this)" type="text" name="dataInicial" value="<?= $vendaAPrazo['dataInicial'] ?>">
 
             <br>
 

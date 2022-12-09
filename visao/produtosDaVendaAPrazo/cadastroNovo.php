@@ -21,11 +21,6 @@
         $quantidade = filter_input(INPUT_POST, 'quantidade');
         $valor = filter_input(INPUT_POST, 'valor');
 
-        var_dump($idEstoque);
-        var_dump($idVendaAPrazo);
-        var_dump($quantidade);
-        var_dump($valor);
-
         if (($idEstoque && $idVendaAPrazo && $quantidade && $valor)) {
             $obj->setIdEstoque($idEstoque);
             $obj->setIdVendaAPrazo($idVendaAPrazo);
@@ -44,13 +39,14 @@
                         </div>
                         </div>
                       </div>';
-                echo '<br><a href="../formPrincipal.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem </a><br>';
             } else {
                 echo 'Deu alguma merda...';
             }
         } else {
-            echo 'Dados ausentes ou incorretos!';
+            echo '<script>
+                    alert("Dados ausentes ou incorretos!");
+                    window.location.href = "./formCadastroNovo.php";
+                  </script>';
         }
     ?>
 </body>

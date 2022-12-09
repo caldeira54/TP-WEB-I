@@ -20,8 +20,8 @@
                 <th> Produto </th>
                 <th> Quantidade </th>
                 <th> Valor </th>
-                <th> Adicionar </th>
-                <th> Remover </th>
+                <!-- <th> Adicionar </th>
+                <th> Remover </th> -->
             </tr>
 
             <?php
@@ -39,8 +39,8 @@
                 echo '<td>' . $v['nome'] . '</td>';
                 echo '<td>' . $v['quantidade'] . '</td>';
                 echo '<td>' . $v['valor'] . '</td>';
-                echo '<td> <a id = "adicionar" href="formAdiciona.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/adicionar.png"/></a></td>';
-                echo '<td> <a id = "remover" href="formRemove.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/remover.png"/></a></td>';
+                // echo '<td> <a id = "adicionar" href="formAdiciona.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/adicionar.png"/></a></td>';
+                // echo '<td> <a id = "remover" href="formRemove.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/remover.png"/></a></td>';
 
                 echo '</tr>';
             }
@@ -50,8 +50,8 @@
     </div>
 
     <div class="botoes">
-        <form action="./formCadastroNovo.php">
-            <button> Novo Produto </button>
+        <form action="./formAdiciona.php">
+            <button> Adicionar </button>
             <br>
         </form>
 
@@ -61,6 +61,10 @@
 
         <form action="../vendaAPrazo/listagem.php">
             <button> Vendas </button>
+        </form>
+
+        <form action="./formRemove.php">
+            <button> Remover </button>
         </form>
     </div>
 </body>

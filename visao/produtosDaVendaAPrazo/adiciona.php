@@ -20,11 +20,6 @@
         $quantidade = filter_input(INPUT_POST, 'quantidade');
         $valor = filter_input(INPUT_POST, 'valor');
 
-        var_dump($idEstoque);
-        var_dump($idVendaAPrazo);
-        var_dump($quantidade);
-        var_dump($valor);
-
         if (($idEstoque && $idVendaAPrazo && $quantidade && $valor)) {
             $obj->setIdEstoque($idEstoque);
             $obj->setIdVendaAPrazo($idVendaAPrazo);
@@ -33,9 +28,10 @@
 
             if ($dao->adicionaProutos($obj)) {
                 $dao->baixaEstoque($idEstoque, $quantidade);
-                echo 'Produto adicionado com sucesso!';
-                echo '<br><a href="../formPrincipal.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem </a><br>';
+                echo '<script>
+                        alert("Produto adicionado com sucesso!");
+                        window.location.href = "../vendaAPrazo/listagem.php";
+                      </script>';
             } else {
                 echo 'Deu alguma merda...';
             }

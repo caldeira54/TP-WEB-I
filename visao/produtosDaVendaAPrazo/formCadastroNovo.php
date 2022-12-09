@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Formulário de cadastro dos Produtos na Venda à Prazo</title>
 </head>
+
 <body>
     <?php
     session_start();
     ?>
-    <form action="cadastroNovo.php" method="post">
-        <input type="text" readonly name="idVendaAPrazo" id="idVendaAPrazo" value="<?=$_SESSION['ultimaCompra'] ?>">
-        <input type="hidden" name="idEstoque" id="idEstoque" value="<?=$estoque['idEstoque'] ?>">
 
-        <br>
+    <div class="cadastro">
+        <h1>Adicionando novo Produto</h1>
+        <form action="cadastroNovo.php" method="post">
+            <label>Venda Nº</label>
+            <input class="dados" type="text" readonly name="idVendaAPrazo" id="idVendaAPrazo" value="<?= $_SESSION['ultimaCompra'] ?>">
+            <input type="hidden" name="idEstoque" id="idEstoque" value="<?= $estoque['idEstoque'] ?>">
 
-        <label for="idEstoque">Produto</label>
-        <select name="idEstoque" id="idEstoque">
-            <?php
+            <br>
+
+            <label for="idEstoque">Produto</label>
+            <select class="dados" name="idEstoque" id="idEstoque">
+                <?php
                 require_once '../../modelo/Estoque.php';
                 require_once '../../dao/DAOEstoque.php';
                 require_once '../../dao/Conexao.php';
@@ -31,26 +38,28 @@
                         echo '<option value="' . $l['idEstoque'] . '">' . $l['nome'] . '</option>';
                     }
                 }
-            ?>
-        </select>
+                ?>
+            </select>
 
-        <br>
+            <br>
 
-        <label for="quantidade">Quantidade</label>
-        <input type="text" name="quantidade" id="quantidade">
+            <label for="quantidade">Quantidade</label>
+            <input class="dados" type="text" name="quantidade" id="quantidade">
 
-        <br>
+            <br>
 
-        <label for="valor">Valor</label>
-        <input type="text" name="valor" id="valor">
+            <label for="valor">Valor</label>
+            <input class="dados" type="text" name="valor" id="valor">
 
-        <br>
+            <br>
 
-        <button style=" margin-left: 90px ">Salvar</button>
-    </form>
+            <button class="btnSalvar">Salvar</button>
+        </form>
 
-    <form action="../formPrincipal.php">
-        <button> Início </button>
-    </form>
+        <form action="../formPrincipal.php">
+            <button class="btnInicio"> Início </button>
+        </form>
+    </div>
 </body>
+
 </html>
