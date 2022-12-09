@@ -44,7 +44,7 @@
     } else {
         echo '<script>
                 alert("Dados ausentes ou incorretos!");
-                window.location.href = "./formCadastro.php";
+                window.location.href = "./listagem.php";
               </script>';
     }
     ?>

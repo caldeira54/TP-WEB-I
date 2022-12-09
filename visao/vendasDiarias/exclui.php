@@ -20,9 +20,10 @@
         $obj->setIdVendasDiarias($id);
 
         if($dao->exclui($obj)){
-            echo '<h1>Venda diária excluída com sucesso</h1>';
-            echo '<br><a href="../../index.php">Inicio</a>';
-            echo '<br><a href="listagem.php"> Listagem de Venda Diárias </a><br>';
+            echo '<script>
+                    alert("Venda Diária apagada com sucesso");
+                    window.location.href = "./listagem.php";
+                  </script>';
         } else {
             echo 'Deu alguma merda...';
         }

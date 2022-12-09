@@ -17,12 +17,13 @@
     $obj = new VendasDiarias();
     $dao = new DAOVendasDiarias();
 
-    $idFuncionario = filter_input(INPUT_POST, 'idFuncionario');
+    session_start();
+
     $data = filter_input(INPUT_POST, 'data');
     $valor = filter_input(INPUT_POST, 'valor');
 
-    if (($idFuncionario && $data && $valor)) {
-        $obj->setIdFuncionario($idFuncionario);
+    if (($data && $valor)) {
+        $obj->setIdFuncionario($_SESSION['idFuncionario']);
         $obj->setData($data);
         $obj->setValor($valor);
 

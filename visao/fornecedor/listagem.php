@@ -45,10 +45,6 @@
 
         </table>
 
-        <script>
-            confirm('Deseja excluir');
-        </script>
-
         <div class="botoes">
             <form action="../formPrincipal.php">
                 <button> Início </button>

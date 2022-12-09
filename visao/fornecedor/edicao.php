@@ -37,8 +37,8 @@
     } else {
         echo  '<script>
                     alert("Dados ausentes ou incorretos");
-                    window.location.href = "./formEdicao.php";
-                   </script>';
+                    window.location.href = "./listagem.php";
+               </script>';
     }
     ?>
 </body>

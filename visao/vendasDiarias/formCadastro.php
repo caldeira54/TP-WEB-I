@@ -14,11 +14,15 @@
 
     </script>
 
+    <?php
+    session_start();
+    ?>
+
     <div class="cadastro">
         <h1>Cadastro de Venda Diária</h1>
         <form action="cadastro.php" method="post">
             <label for="idFuncionario">Funcionário</label>
-            <input class="dados" type="text" name="idFuncionario" id="idFuncionario">
+            <input readonly class="dados" type="text" name="idFuncionario" id="idFuncionario" value="<?php echo $_SESSION['nome'] ?>">
 
             <br>
 
