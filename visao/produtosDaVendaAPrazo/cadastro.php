@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Cadastro dos Produtos da Venda à Prazo</title>
 </head>
 <body>
@@ -20,11 +20,6 @@
         $idVendaAPrazo = filter_input(INPUT_POST, 'idVendaAPrazo');
         $quantidade = filter_input(INPUT_POST, 'quantidade');
         $valor = filter_input(INPUT_POST, 'valor');
-
-        var_dump($idEstoque);
-        var_dump($idVendaAPrazo);
-        var_dump($quantidade);
-        var_dump($valor);
 
         if (($idEstoque && $idVendaAPrazo && $quantidade && $valor)) {
             $obj->setIdEstoque($idEstoque);

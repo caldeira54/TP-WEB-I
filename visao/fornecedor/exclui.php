@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Exclui Fornecedor</title>
 </head>
 
@@ -21,27 +22,18 @@
 
     $obj->setIdFornecedor($id);
 
-    echo $ok = '<script>
-                    confirm("Deseja realmente excluir?");
-                </script>';
-
-    if ($ok) {
-        if ($dao->exclui($obj)) {
-            echo '<script>
-                    alert("Fornecedor apagado com sucesso");
-                    window.location.href = "./listagem.php";
-                  </script>';
-        } else {
-            echo '<script>
-                    alert("Deu merda...");
-                  </script>';
-        }
+    if ($dao->exclui($obj)) {
+        echo '<script>
+                alert("Fornecedor apagado com sucesso");
+                window.location.href = "./listagem.php";
+              </script>';
     } else {
         echo '<script>
-                window.location.href = "./listagem.php";
+                alert("Deu merda...");
               </script>';
     }
     ?>
 </body>
 <script src="./verificaExclusao.js"></script>
+
 </html>

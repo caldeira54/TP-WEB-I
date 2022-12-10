@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Edição de Nota Promissória</title>
 </head>
 
@@ -22,12 +23,6 @@
     $preco = filter_input(INPUT_POST, 'preco');
     $dataCompra = filter_input(INPUT_POST, 'dataCompra');
     $dataPagamento = filter_input(INPUT_POST, 'dataPagamento');
-
-    var_dump($id);
-    var_dump($idFornecedor);
-    var_dump($preco);
-    var_dump($dataCompra);
-    var_dump($dataPagamento);
 
     if (($id && $idFornecedor && $preco && $dataCompra && $dataPagamento)) {
         $obj->setIdNotaPromissoria($id);
