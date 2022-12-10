@@ -19,7 +19,7 @@
 }
 
 .popup {
-    font-family: Arial;
+    font-family: sans-serif;
     text-align: center;
     width: 100%;
     max-width: 300px;
@@ -34,7 +34,7 @@
     cursor: pointer;
     padding: 6px 10px;
     text-decoration: none;
-    background: crimson;
+    background: #213635;
 }
 
 .popup-close {

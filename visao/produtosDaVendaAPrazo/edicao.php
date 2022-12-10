@@ -35,7 +35,10 @@
                 echo 'Deu alguma merda...';
             }
         } else {
-            echo 'Dados ausentes ou incorretos!';
+            echo '<script>
+                    alert("Dados ausentes ou incorretos!");
+                    window.location.href = "../vendaAPrazo/listagem.php";
+                  </script>';
         }
     ?>
 </body>

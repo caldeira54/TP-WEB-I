@@ -30,8 +30,11 @@
         if ($dao->altera($obj)) {
             echo '<script>
                     alert("Venda edita com sucesso!");
-                    window.location.href = "./formListagem.php";
                   </script>';
+
+            session_start();
+            $_SESSION['ultimaCompra'] = $id;
+            header("Location: ../produtosDaVenda/formCadastro.php");
         } else {
             echo 'Deu alguma merda...';
         }
