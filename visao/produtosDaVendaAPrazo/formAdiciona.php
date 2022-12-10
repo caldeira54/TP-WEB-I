@@ -12,6 +12,17 @@
 <body>
     <?php
     session_start();
+
+    // require_once '../../dao/DAOEstoque.php';
+    // require_once '../../dao/Conexao.php';
+
+    // $idEstoque = filter_input(INPUT_POST, 'idEstoque');
+    // $idVendaAPrazo = filter_input(INPUT_POST, 'idVendaAPrazo');
+
+    // $dao = new DAOEstoque();
+    // $lista = $dao->localiza($idEstoque, $idVendaAPrazo);
+
+    // $p = $lista[0];
     ?>
 
     <div class="cadastro">
@@ -23,6 +34,7 @@
             <br>
 
             <label for="idEstoque">Produto</label>
+            <!-- <input type="text" class="dados" name="idEstoque" id="idEstoque" value="<?= $p['nome'] ?>"> -->
             <select class="dados" name="idEstoque" id="idEstoque">
                 <?php
                 require_once '../../modelo/Estoque.php';

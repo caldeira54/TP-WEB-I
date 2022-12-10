@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Rceber conta</title>
 </head>
 <body>
@@ -17,13 +18,12 @@
 
         $ativa = filter_input(INPUT_POST, 'ativa');
 
-        var_dump($ativa);
-
         if ($ativa) {
             if ($dao->recebe($ativa)) {
-                echo '<h1>Venda recebida com sucesso!</h1>';
-                echo '<br><a href="../../index.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem das Vendas </a><br>';
+                echo '<script>
+                        alert("Conta recebida com sucesso!");
+                        document.location.href = "./listagem.php";
+                      </script>';
             } else {
                 echo 'Deu alguma merda...';
             }
