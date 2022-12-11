@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
     <title>Cadastro dos Produtos da Venda à Prazo</title>
 </head>
 
@@ -34,7 +34,7 @@
             $dao->baixaEstoque($idEstoque, $quantidade);
             echo '<script>
                     alert("Novo produto adicionado na venda com sucesso!");
-                    window.location.href = "./formCadastroNovo.php";
+                    window.location.href = "./listagem.php";
                   </script>';
         } else {
             echo 'Deu alguma merda...';
