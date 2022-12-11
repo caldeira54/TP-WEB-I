@@ -45,6 +45,4 @@
     }
     ?>
 </body>
-<script src="./popup.js"></script>
-
 </html>

@@ -28,7 +28,10 @@
                 echo 'Deu alguma merda...';
             }
         } else {
-            echo 'Dados ausentes ou incorretos!';
+            echo '<script>
+                    alert("Dados ausentes ou incorretos!");
+                    document.location.href = "./listagem.php";
+                  </script>';
         }
     ?>
 </body>

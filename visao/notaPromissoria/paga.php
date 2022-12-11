@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
     <title>Cadastro de Nota Promissória</title>
 </head>
 <body>
@@ -18,18 +18,20 @@
 
         $ativa = filter_input(INPUT_POST, 'ativa');
 
-        var_dump($ativa);
-
         if($ativa) {
             if ($dao->paga($ativa)) {
-                echo '<h1>Notinha paga com sucesso!</h1>';
-                echo '<br><a href="../formPrincipal.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem de Notinhas </a><br>';
+                echo '<script>
+                        alert("Notinha paga com sucesso!");
+                        window.location.href = "./listagem.php";
+                      </script>';
             } else {
                 echo 'Deu alguma merda...';
             }
         } else {
-            echo 'Dados ausentes ou incorretos!';
+            echo '<script>
+                    alert("Dados ausentes ou incorretos!");
+                    window.location.href = "./listagem.php";
+                  </script>';
         }
     ?>
 </body>
