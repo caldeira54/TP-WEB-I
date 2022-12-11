@@ -44,12 +44,6 @@
     cursor: pointer;
 }
 
-#body {
-    padding: 0;
-    margin: 0;
-    background-color: #348e91;
-}
-
 #login {
     display: flex;
     align-items: center;

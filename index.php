@@ -13,7 +13,7 @@ session_start();
   <title>Tela Inicial</title>
 </head>
 
-<body id="body">
+<body>
 
   <div id="login">
     <form action="./login.php" class="card" method="POST">

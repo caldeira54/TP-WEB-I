@@ -39,8 +39,6 @@
                         </div>
                         </div>
                       </div>';
-                echo '<br><a href="../formPrincipal.php">Inicio</a>';
-                echo '<br><a href="listagem.php"> Listagem </a><br>';
             } else {
                 echo 'Deu alguma merda...';
             }
