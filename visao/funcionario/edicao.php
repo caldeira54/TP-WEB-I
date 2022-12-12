@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edição de Funcionário</title>
 </head>
-<body>
+<body class="body">
     <?php
        require_once '../../dao/DAOFuncionario.php';
        require_once '../../dao/Conexao.php';

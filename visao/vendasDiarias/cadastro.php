@@ -9,7 +9,7 @@
     <title>Cadastro de Vendas Diárias</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOVendasDiarias.php';
     require_once '../../dao/Conexao.php';

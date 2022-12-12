@@ -9,7 +9,7 @@
     <title>Cadastro dos Produtos da Venda à Vista</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOProdutosDaVenda.php';
     require_once '../../dao/Conexao.php';

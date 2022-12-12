@@ -9,7 +9,7 @@
     <title>Adiona produtos na venda</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOProdutosDaVendaAPrazo.php';
     require_once '../../dao/Conexao.php';

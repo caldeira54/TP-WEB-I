@@ -9,7 +9,7 @@
     <title>Lista de Fornecedores</title>
 </head>
 
-<body>
+<body class="body">
     <div class="tabela">
         <h1> Fornecedores </h1>
         <table>

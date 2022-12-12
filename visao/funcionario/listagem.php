@@ -7,7 +7,7 @@
     <title>Listagem de Funcionários</title>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
-<body>
+<body class="body">
     <h1 style="background-color: colors('preto'); margin-left: 40px"> ****** Lista de Funcionários ****** </h1>
     <table style="width: 600px; border-collapse: collapse">
         <tr> 

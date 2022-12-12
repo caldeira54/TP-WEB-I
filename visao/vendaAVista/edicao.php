@@ -9,7 +9,7 @@
     <title>Edição das Vendas Diárias</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOVendaAVista.php';
     require_once '../../dao/Conexao.php';

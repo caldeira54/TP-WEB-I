@@ -7,7 +7,7 @@
     <title>Lista de Pordutos</title>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
-<body>
+<body class="body">
     <div class="tabela">
     <h1> Produtos </h1>
     <table>

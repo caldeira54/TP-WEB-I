@@ -9,7 +9,7 @@
     <title>Cadastro de Produto</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOProduto.php';
     require_once '../../dao/Conexao.php';

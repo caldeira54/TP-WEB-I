@@ -9,7 +9,7 @@
     <title>Edição de Edição</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOEstoque.php';
     require_once '../../dao/Conexao.php';

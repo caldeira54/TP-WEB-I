@@ -9,7 +9,7 @@
     <title>Formulário de cadastro de Venda à Vista</title>
 </head>
 
-<body>
+<body class="body">
     <script src="../../mascaras/mascaraData.js">
 
     </script>

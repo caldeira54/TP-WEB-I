@@ -9,7 +9,7 @@
     <title>Formulário de cadastro do Produto</title>
 </head>
 
-<body>
+<body class="body">
     <div class="cadastro">
         <h1> Cadastro de Produto</h1>
         <form action="cadastro.php" method="post">

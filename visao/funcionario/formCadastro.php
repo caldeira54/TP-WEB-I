@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Nota Promissória</title>
 </head>
-<body>
+<body class="body">
     <form action="cadastro.php" method="post">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome">

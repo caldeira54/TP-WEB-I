@@ -9,7 +9,7 @@
     <title>Cadastro de Nota Promissória</title>
 </head>
 
-<body>
+<body class="body">
     <script src="../../mascaras/mascaraData.js">
 
     </script>

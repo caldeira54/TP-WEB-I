@@ -9,7 +9,7 @@
     <title>Edição de Nota Promissória</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAONotaPromissoria.php';
     require_once '../../dao/Conexao.php';

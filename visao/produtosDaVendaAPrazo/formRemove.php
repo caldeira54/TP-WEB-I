@@ -9,7 +9,7 @@
     <title>Remover Produto</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     session_start();
     ?>

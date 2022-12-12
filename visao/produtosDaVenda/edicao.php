@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Edição de Vendas Diárias</title>
 </head>
-<body>
+<body class="body">
     <?php
        require_once '../../dao/DAOProdutosDaVenda.php';
        require_once '../../dao/Conexao.php';

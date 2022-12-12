@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Edição de Produto</title>
 </head>
-<body>
+<body class="body">
     <?php
        require_once '../../dao/DAOProduto.php';
        require_once '../../dao/Conexao.php';

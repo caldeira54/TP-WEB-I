@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Cadastro dos Produtos da Venda à Prazo</title>
 </head>
-<body>
+<body class="body">
     <?php
         require_once '../../dao/DAOProdutosDaVendaAPrazo.php';
         require_once '../../dao/Conexao.php';

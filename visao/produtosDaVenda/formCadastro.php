@@ -9,7 +9,7 @@
     <title>Formulário de cadastro dos Produtos na Venda à Vista</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     session_start();
     ?>

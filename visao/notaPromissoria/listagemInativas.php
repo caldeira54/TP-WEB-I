@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 
-<body>
+<body class="body">
     <div class="tabela">
         <h1> Notinhas Inativas </h1>
         <table>

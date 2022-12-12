@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 
-<body>
+<body class="body">
     <div class="tabela">
         <h1> Vendas à Prazo Inativas </h1>
         <table>

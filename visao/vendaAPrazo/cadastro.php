@@ -9,7 +9,7 @@
     <title>Cadastro das Vendas Diárias</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOVendaAPrazo.php';
     require_once '../../dao/Conexao.php';
@@ -42,7 +42,7 @@
     } else {
         echo '<script>
                 alert("Dados ausentes ou incorretos!");
-                window.location.href = ".formEdicao.php";
+                window.location.href = "./formCadastro.php";
               </script>';
     }
     ?>

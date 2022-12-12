@@ -9,7 +9,7 @@
     <title>Cadastro de Fornecedor</title>
 </head>
 
-<body>
+<body class="body">
     <?php
     require_once '../../dao/DAOFornecedor.php';
     require_once '../../dao/Conexao.php';
