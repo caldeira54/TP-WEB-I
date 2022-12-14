@@ -34,7 +34,7 @@
                 echo '<td>' . $v['idFornecedor'] . '</td>';
                 echo '<td>' . $v['nome'] . '</td>';
                 echo '<td>' . $v['endereco'] . '</td>';
-                echo '<td> <a id = "excluir" href="exclui.php?idFornecedor=' . $v['idFornecedor'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
+                echo '<td> <a id = "excluir" href="verificaExclusao.php?idFornecedor=' . $v['idFornecedor'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
                 echo '<td> <a id = "editar" href="formEdicao.php?idFornecedor=' . $v['idFornecedor'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 
                 echo '</tr>';
