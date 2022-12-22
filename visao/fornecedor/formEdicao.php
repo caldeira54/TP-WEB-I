@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Edição do Fornecedor</title>
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <?php
     require_once '../../dao/DAOFornecedor.php';

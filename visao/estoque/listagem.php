@@ -8,7 +8,9 @@
     <title>Lista de Fornecedores</title>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <div class="tabela">
         <h1> Estoque </h1>

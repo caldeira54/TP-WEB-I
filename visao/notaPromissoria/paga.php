@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Cadastro de Nota Promissória</title>
 </head>
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <?php
         require_once '../../dao/DAONotaPromissoria.php';

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Edição de Produto</title>
 </head>
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <?php
        require_once '../../dao/DAOProduto.php';

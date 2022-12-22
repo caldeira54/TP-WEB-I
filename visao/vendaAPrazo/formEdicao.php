@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Formulário de edição de Venda à Vista</title>
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <script src="../../mascaras/mascaraData.js">
 

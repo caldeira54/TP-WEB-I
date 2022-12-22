@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Cadastro dos Produtos da Venda à Vista</title>
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <?php
     require_once '../../dao/DAOProdutosDaVenda.php';

@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edição de Nota Promissória</title>
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <?php
     require_once '../../dao/DAOFuncionario.php';

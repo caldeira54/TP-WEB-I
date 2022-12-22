@@ -8,7 +8,9 @@
     <title>Lista de Vendas</title>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <div class="tabela">
         <h1> Vendas á Vista </h1>

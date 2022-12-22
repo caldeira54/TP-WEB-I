@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Formulário de cadastro dos Produtos na Venda à Vista</title>
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <?php
     session_start();

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exclusão de Funcionário</title>
 </head>
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <?php
         require_once '../../dao/DAOFuncionario.php';

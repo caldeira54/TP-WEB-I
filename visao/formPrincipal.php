@@ -15,9 +15,13 @@
 
 <body>
   <?php
-  include('../verificaLogin.php');
-  ?>
-  <?php
+  session_start();
+  if(!$_SESSION['usuario'])
+  {
+      header('Location: ../index.php');
+      exit();
+  }
+  
   include('./menu.php');
   ?>
   <div class="funcionario">

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Formulário de cadastro do Estoque</title>
 </head>
-
+<?php
+include('../../verificaLogin.php');
+?>
 <body class="body">
     <div class="cadastro">
         <h1> Cadastro de Estoque </h1>

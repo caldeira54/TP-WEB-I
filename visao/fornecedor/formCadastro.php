@@ -9,6 +9,10 @@
     <title>Formulário de cadastro do Fornecedor</title>
 </head>
 
+<?php
+include('../../verificaLogin.php');
+?>
+
 <body class="body">
     <div class="cadastro">
         <h1>Cadastro de Fornecedores</h1>
