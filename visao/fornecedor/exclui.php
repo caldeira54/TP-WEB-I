@@ -20,22 +20,29 @@ include('../../verificaLogin.php');
     $obj = new Fornecedor();
     $dao = new DAOFornecedor();
 
-    $id = filter_input(INPUT_GET, 'idFornecedor');
+    $id = filter_input(INPUT_POST, 'idFornecedor');
+    $checado = filter_input(INPUT_POST, 'checado');
 
     $obj->setIdFornecedor($id);
 
-    if ($dao->exclui($obj)) {
-        echo '<script>
-                alert("Fornecedor apagado com sucesso");
-                window.location.href = "./listagem.php";
-              </script>';
+    if($checado) {
+        if ($dao->exclui($obj)) {
+            echo '<script>
+                    alert("Fornecedor apagado com sucesso");
+                    window.location.href = "./listagem.php";
+                  </script>';
+        } else {
+            echo '<script>
+                    alert("Deu merda...");
+                  </script>';
+        }
     } else {
         echo '<script>
                 alert("Deu merda...");
               </script>';
     }
+
     ?>
 </body>
-<script src="./verificaExclusao.js"></script>
 
 </html>
