@@ -1,11 +1,30 @@
-<?php
+<!DOCTYPE html>
+<html lang="pt">
 
-$id = filter_input(INPUT_GET, 'idFornecedor');
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <title>Verifica exclusão</title>
+</head>
 
-echo "Deseja realmente excluir o fornecedor $id";
-echo "<a href='./listagem.php'> Não </a>";
-echo "<form method='POST' action='exclui.php'> 
-        <input type='hidden' name='idFornecedor' value='$id'>
-        <input type='hidden' name='checado' value='1'> 
-        <button> Sim </button>
-      </form>";
+<body class="body">
+    <?php
+    $id = filter_input(INPUT_POST, 'idFornecedor');
+
+    echo "Deseja realmente excluir o fornecedor?";
+    echo "<div class='verificaExclusao'>";
+      echo "<form method='POST' action='./listagem.php'>
+            <button> Não </button>
+          </form>";
+      echo "<form method='POST' action='exclui.php'> 
+            <input type='hidden' name='idFornecedor' value='$id'>
+            <input type='hidden' name='checado' value='1'> 
+            <button> Sim </button>
+          </form>";
+    echo "</div>";
+    ?>
+</body>
+
+</html>

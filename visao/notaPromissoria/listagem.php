@@ -45,7 +45,7 @@ include('../../verificaLogin.php');
                 echo '<td>' . $v['preco'] . '</td>';
                 echo '<td>' . $v['dataCompra'] . '</td>';
                 echo '<td>' . $v['dataPagamento'] . '</td>';
-                echo '<td> <form action="./paga.php" method="POST"> <input name="ativa" type="hidden" value="' . $v['idNotaPromissoria'] . '"/> <button class="pagar"> <img src="../css/imagens/pagar.png"/> </button> </form></td>';
+                echo '<td> <form action="./paga.php" method="POST"> <input name="ativa" type="hidden" value="' . $v['idNotaPromissoria'] . '"/> <button class="botoesTd"> <img src="../css/imagens/pagar.png"/> </button> </form></td>';
                 echo '<td> <a id = "excluir" href="exclui.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
                 echo '<td> <a id = "editar" href="formEdicao.php?idNotaPromissoria=' . $v['idNotaPromissoria'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 

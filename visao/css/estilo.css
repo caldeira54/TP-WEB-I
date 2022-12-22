@@ -236,3 +236,21 @@ label {
     border-radius: 5px;
     margin-top: 30px;
 }
+
+.botoesTd {
+    width: 50px;
+    background-color: #348e91;
+    border: none;
+}
+
+.botoesTd:hover {
+    transform: scale(1.05);
+}
+
+.verificaExclusao {
+    display: flex;
+    flex-direction: line;
+    justify-content: space-evenly;
+    margin: 20px;
+    width: 300px;
+}
