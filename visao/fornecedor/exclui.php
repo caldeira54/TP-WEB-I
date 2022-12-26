@@ -11,6 +11,7 @@
 <?php
 include('../../verificaLogin.php');
 ?>
+
 <body class="body">
     <?php
     require_once '../../dao/DAOFornecedor.php';
@@ -25,15 +26,22 @@ include('../../verificaLogin.php');
 
     $obj->setIdFornecedor($id);
 
-    if($checado) {
-        if ($dao->exclui($obj)) {
+    if ($checado) {
+        try {
+            if ($dao->exclui($obj)) {
+                echo '<script>
+                        alert("Fornecedor apagado com sucesso");
+                        window.location.href = "./listagem.php";
+                      </script>';
+            } else {
+                echo '<script>
+                        alert("Deu merda...");
+                      </script>';
+            }
+        } catch (Exception $e) {
             echo '<script>
-                    alert("Fornecedor apagado com sucesso");
+                    alert("Não foi possível apagar o fornecedor!");
                     window.location.href = "./listagem.php";
-                  </script>';
-        } else {
-            echo '<script>
-                    alert("Deu merda...");
                   </script>';
         }
     } else {
