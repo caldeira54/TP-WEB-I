@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,27 +11,36 @@
 <?php
 include('../../verificaLogin.php');
 ?>
+
 <body class="body">
     <?php
-        require_once '../../dao/DAOVendasDiarias.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/VendasDiarias.php';
+    require_once '../../dao/DAOVendasDiarias.php';
+    require_once '../../dao/Conexao.php';
+    require_once '../../modelo/VendasDiarias.php';
 
-        $obj = new VendasDiarias();
-        $dao = new DAOVendasDiarias();
+    $obj = new VendasDiarias();
+    $dao = new DAOVendasDiarias();
 
-        $id = filter_input(INPUT_GET, 'idVendasDiarias');
+    $id = filter_input(INPUT_POST, 'idVendasDiarias');
+    $checado = filter_input(INPUT_POST, 'checado');
 
-        $obj->setIdVendasDiarias($id);
+    $obj->setIdVendasDiarias($id);
 
-        if($dao->exclui($obj)){
+    if ($checado) {
+        try {
+            $dao->exclui($obj);
             echo '<script>
-                    alert("Venda Diária apagada com sucesso");
+                    alert("Venda Diária excluida com sucesso!");
                     window.location.href = "./listagem.php";
                   </script>';
-        } else {
-            echo 'Deu alguma merda...';
+        } catch (Exception) {
+            echo '<script>
+                    alert("Não foi possível excluir a venda!");
+                    window.location.href = "./listagem.php";
+                  </script>';
         }
+    }
     ?>
 </body>
+
 </html>

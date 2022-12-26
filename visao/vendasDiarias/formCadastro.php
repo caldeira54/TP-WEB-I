@@ -12,13 +12,7 @@
 include('../../verificaLogin.php');
 ?>
 <body class="body">
-    <script src="../../mascaras/mascaraData.js">
-
-    </script>
-
-    <?php
-    session_start();
-    ?>
+    <script src="../../mascaras/mascaraData.js"></script>
 
     <div class="cadastro">
         <h1>Cadastro de Venda Diária</h1>

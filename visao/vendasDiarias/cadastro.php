@@ -20,8 +20,6 @@ include('../../verificaLogin.php');
     $obj = new VendasDiarias();
     $dao = new DAOVendasDiarias();
 
-    session_start();
-
     $data = filter_input(INPUT_POST, 'data');
     $valor = filter_input(INPUT_POST, 'valor');
 
