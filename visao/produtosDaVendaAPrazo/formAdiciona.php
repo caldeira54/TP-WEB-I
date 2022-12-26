@@ -12,20 +12,18 @@
 include('../../verificaLogin.php');
 ?>
 <body class="body">
-    <?php
-    session_start();
+    <!-- <?php
+    require_once '../../dao/DAOEstoque.php';
+    require_once '../../dao/Conexao.php';
 
-    // require_once '../../dao/DAOEstoque.php';
-    // require_once '../../dao/Conexao.php';
+    $idEstoque = filter_input(INPUT_POST, 'idEstoque');
+    $idVendaAPrazo = filter_input(INPUT_POST, 'idVendaAPrazo');
 
-    // $idEstoque = filter_input(INPUT_POST, 'idEstoque');
-    // $idVendaAPrazo = filter_input(INPUT_POST, 'idVendaAPrazo');
+    $dao = new DAOEstoque();
+    $lista = $dao->localiza($idEstoque, $idVendaAPrazo);
 
-    // $dao = new DAOEstoque();
-    // $lista = $dao->localiza($idEstoque, $idVendaAPrazo);
-
-    // $p = $lista[0];
-    ?>
+    $p = $lista[0];
+    ?> -->
 
     <div class="cadastro">
         <form action="adiciona.php" method="post">

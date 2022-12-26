@@ -30,14 +30,18 @@ include('../../verificaLogin.php');
             $obj->setQuantidade($quantidade);
             $obj->setValor($valor);
 
-            if ($dao->adicionaProutos($obj)) {
+            try {
+                $dao->adicionaProutos($obj);
                 $dao->baixaEstoque($idEstoque, $quantidade);
                 echo '<script>
                         alert("Produto adicionado com sucesso!");
                         window.location.href = "../vendaAPrazo/listagem.php";
                       </script>';
-            } else {
-                echo 'Deu alguma merda...';
+            } catch(Exception $e) {
+                echo '<script>
+                        alert("Produto já existente na venda!");
+                        window.location.href = "../vendaAPrazo/listagem.php";
+                      </script>';
             }
         } else {
             echo '<script>
