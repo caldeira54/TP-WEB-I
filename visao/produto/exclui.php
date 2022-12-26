@@ -11,6 +11,7 @@
 <?php
 include('../../verificaLogin.php');
 ?>
+
 <body class="body">
     <?php
     require_once '../../dao/DAOProduto.php';
@@ -20,17 +21,24 @@ include('../../verificaLogin.php');
     $obj = new Produto();
     $dao = new DAOProduto();
 
-    $id = filter_input(INPUT_GET, 'idEstoque');
+    $id = filter_input(INPUT_POST, 'idEstoque');
+    $checado = filter_input(INPUT_POST, 'checado');
 
     $obj->setIdEstoque($id);
 
-    if ($dao->exclui($obj)) {
-        echo '<script>
-                alert("Produto apagado com sucesso");
-                window.location.href = "./listagem.php";
-              </script>';
-    } else {
-        echo 'Deu alguma merda...';
+    if ($checado) {
+        try {
+            $dao->exclui($obj);
+            echo '<script>
+                    alert("Produto excluído com sucesso");
+                    window.location.href = "./listagem.php";
+                 </script>';
+        } catch (Exception $e) {
+            echo '<script>
+                    alert("Não é possível excluir esse produto no momento!");
+                    window.location.href = "./listagem.php";
+                  </script>';
+        }
     }
     ?>
 </body>

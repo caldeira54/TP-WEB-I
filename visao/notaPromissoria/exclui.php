@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,30 +11,36 @@
 <?php
 include('../../verificaLogin.php');
 ?>
+
 <body class="body">
     <?php
-        require_once '../../dao/DAONotaPromissoria.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/NotaPromissoria.php';
+    require_once '../../dao/DAONotaPromissoria.php';
+    require_once '../../dao/Conexao.php';
+    require_once '../../modelo/NotaPromissoria.php';
 
-        $obj = new NotaPromissoria();
-        $dao = new DAONotaPromissoria();
+    $obj = new NotaPromissoria();
+    $dao = new DAONotaPromissoria();
 
-        $id = filter_input(INPUT_GET, 'idNotaPromissoria');
+    $id = filter_input(INPUT_GET, 'idNotaPromissoria');
+    $checado = filter_input(INPUT_POST, 'checado');
 
-        $obj->setIdNotaPromissoria($id);
+    $obj->setIdNotaPromissoria($id);
 
-        if($dao->exclui($obj)){
+    if ($checado) {
+        try {
+            $dao->exclui($obj);
             echo '<script>
-                    alert("Notinha apagada com sucesso");
+                    alert("Notinha excluída com sucesso");
                     window.location.href = "./listagem.php";
                   </script>';
-        } else {
+        } catch (Exception $e) {
             echo '<script>
                     alert("Não foi possível excluir!");
                     window.location.href = "./listagem.php";
                   </script>';
         }
+    }
     ?>
 </body>
+
 </html>

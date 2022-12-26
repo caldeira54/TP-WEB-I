@@ -38,7 +38,7 @@ include('../../verificaLogin.php');
                     echo '<td>' . $v['estoque'] . '</td>';
                     echo '<td>' . $v['funcionario'] . '</td>';
                     echo '<td>' . $v['preco'] . '</td>';
-                    echo '<td> <a id = "excluir" href="exclui.php?idEstoque=' . $v['idEstoque'] . '"><img src="../css/imagens/apagar.png"/></a></td>';
+                    echo '<td> <form action="./verificaExclusao.php" method="POST"> <input name="idEstoque" type="hidden" value="' . $v['idEstoque'] . '"/> <button class="botoesTd"> <img src="../css/imagens/apagar.png"/> </button> </form></td>';
                     echo '<td> <a id = "editar" href="formEdicao.php?idEstoque=' . $v['idEstoque'] . '"><img src="../css/imagens/editar.png"/></a></td>';
 
                 echo '</tr>';

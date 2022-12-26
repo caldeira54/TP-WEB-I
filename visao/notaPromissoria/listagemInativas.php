@@ -21,6 +21,7 @@ include('../../verificaLogin.php');
                 <th> Preço </th>
                 <th> Data da Compra </th>
                 <th> Data do Pagamento </th>
+                <th> Excluir </th>
             </tr>
 
             <?php
@@ -42,6 +43,7 @@ include('../../verificaLogin.php');
                 echo '<td>' . $v['preco'] . '</td>';
                 echo '<td>' . $v['dataCompra'] . '</td>';
                 echo '<td>' . $v['dataPagamento'] . '</td>';
+                echo '<td> <form action="./verificaExclusao.php" method="POST"> <input name="exclui" type="hidden" value="' . $v['idNotaPromissoria'] . '"/> <button class="botoesTd"> <img src="../css/imagens/apagar.png"/> </button> </form></td>';
 
                 echo '</tr>';
             }

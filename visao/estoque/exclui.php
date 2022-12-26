@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,27 +11,36 @@
 <?php
 include('../../verificaLogin.php');
 ?>
+
 <body class="body">
     <?php
-        require_once '../../dao/DAOEstoque.php';
-        require_once '../../dao/Conexao.php';
-        require_once '../../modelo/Estoque.php';
+    require_once '../../dao/DAOEstoque.php';
+    require_once '../../dao/Conexao.php';
+    require_once '../../modelo/Estoque.php';
 
-        $obj = new Estoque();
-        $dao = new DAOEstoque();
+    $obj = new Estoque();
+    $dao = new DAOEstoque();
 
-        $id = filter_input(INPUT_GET, 'idEstoque');
+    $id = filter_input(INPUT_POST, 'idEstoque');
+    $checado = filter_input(INPUT_POST, 'checado');
 
-        $obj->setIdEstoque($id);
+    $obj->setIdEstoque($id);
 
-        if($dao->exclui($obj)){
+    if($checado) {
+        try {
+            $dao->exclui($obj);
             echo '<script>
-                    alert("Produto apagado do estoque com sucesso");
+                    alert("Produto excluído do estoque com sucesso!");
                     window.location.href = "./listagem.php";
                   </script>';
-        } else {
-            echo 'Deu alguma merda...';
+        } catch (Exception $e) {
+            echo '<script>
+                    alert("Não é possível excluir o produto no momento!");
+                    window.location.href = "./listagem.php";
+                  </script>';
         }
+    }
     ?>
 </body>
+
 </html>
