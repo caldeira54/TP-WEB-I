@@ -39,7 +39,7 @@ include('../../verificaLogin.php');
                 echo '<td>' . $v['data'] . '</td>';
                 echo '<td>' . $v['valor'] . '</td>';
                 echo '<td> <form action="./verificaExclusao.php" method="POST"> <input name="idVendasDiarias" type="hidden" value="' . $v['idVendasDiarias'] . '"/> <button class="botoesTd"> <img src="../css/imagens/apagar.png"/> </button> </form></td>';
-                echo '<td> <a id = "editar" href="formEdicao.php?idVendasDiarias=' . $v['idVendasDiarias'] . '"><img src="../css/imagens/editar.png"/></a></td>';
+                echo '<td> <form action="./formEdicao.php" method="POST"> <input name="idVendasDiarias" type="hidden" value="' . $v['idVendasDiarias'] . '"/> <button class="botoesTd"> <img src="../css/imagens/editar.png"/> </button> </form></td>';
 
                 echo '</tr>';
             }

@@ -42,9 +42,9 @@ include('../../verificaLogin.php');
                 echo '<td>' . $v['valor'] . '</td>';
                 echo '<td>' . $v['dataInicial'] . '</td>';
                 echo '<td>' . $v['dataFinal'] . '</td>';
-                echo '<td> <a id = "editar" href="./formEdicao.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/editar.png"/></a></td>';
+                echo '<td> <form action="./formEdicao.php" method="POST"> <input name="idVendaAPrazo" type="hidden" value="' . $v['idVendaAPrazo'] . '"/> <button class="botoesTd"> <img src="../css/imagens/editar.png"/> </button> </form></td>';
                 echo '<td> <form action="./recebe.php" method="POST"> <input name="ativa" type="hidden" value="' . $v['idVendaAPrazo'] . '"/> <button class="botoesTd"> <img src="../css/imagens/receber.png"/> </button> </form></td>';
-                echo '<td> <a id = "listar" href="../produtosDaVendaAPrazo/listagem.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/lista.png"/></a></td>';
+                echo '<td> <form action="../produtosDaVendaAPrazo/listagem.php" method="POST"> <input name="idVendaAPrazo" type="hidden" value="' . $v['idVendaAPrazo'] . '"/> <button class="botoesTd"> <img src="../css/imagens/lista.png"/> </button> </form></td>';
 
                 echo '</tr>';
             }

@@ -39,7 +39,7 @@ include('../../verificaLogin.php');
                     echo '<td>' . $v['funcionario'] . '</td>';
                     echo '<td>' . $v['preco'] . '</td>';
                     echo '<td> <form action="./verificaExclusao.php" method="POST"> <input name="idEstoque" type="hidden" value="' . $v['idEstoque'] . '"/> <button class="botoesTd"> <img src="../css/imagens/apagar.png"/> </button> </form></td>';
-                    echo '<td> <a id = "editar" href="formEdicao.php?idEstoque=' . $v['idEstoque'] . '"><img src="../css/imagens/editar.png"/></a></td>';
+                    echo '<td> <form action="./formEdicao.php" method="POST"> <input name="idEstoque" type="hidden" value="' . $v['idEstoque'] . '"/> <button class="botoesTd"> <img src="../css/imagens/editar.png"/> </button> </form></td>';
 
                 echo '</tr>';
             }

@@ -12,10 +12,6 @@
 include('../../verificaLogin.php');
 ?>
 <body class="body">
-    <?php
-    session_start();
-    ?>
-
     <div class="cadastro">
         <h1>Remover Produto</h1>
         <form action="remove.php" method="post">

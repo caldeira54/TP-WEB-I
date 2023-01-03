@@ -12,9 +12,6 @@
 include('../../verificaLogin.php');
 ?>
 <body class="body">
-    <?php
-    session_start();
-    ?>
     <div class="cadastro">
         <h1> Cadastro de Produtos na Venda </h1>
         <form action="cadastro.php" method="post">

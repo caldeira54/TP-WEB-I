@@ -29,7 +29,7 @@ include('../../verificaLogin.php');
             require_once '../../dao/Conexao.php';
 
             $dao = new DAOProdutosDaVendaAPrazo();
-            $id = filter_input(INPUT_GET, 'idVendaAPrazo');
+            $id = filter_input(INPUT_POST, 'idVendaAPrazo');
             $lista = $dao->lista($id);
 
             foreach ($lista as $v) {
@@ -39,8 +39,8 @@ include('../../verificaLogin.php');
                 echo '<td>' . $v['nome'] . '</td>';
                 echo '<td>' . $v['quantidade'] . '</td>';
                 echo '<td>' . $v['valor'] . '</td>';
-                echo '<td> <a id = "adicionar" href="formAdiciona.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/adicionar.png"/></a></td>';
-                echo '<td> <a id = "remover" href="formRemove.php?idVendaAPrazo=' . $v['idVendaAPrazo'] . '"><img src="../css/imagens/remover.png"/></a></td>';
+                echo '<td> <form action="./formAdiciona.php" method="POST"> <input name="idVendaAPrazo" type="hidden" value="' . $v['idVendaAPrazo'] . '"/> <button class="botoesTd"> <img src="../css/imagens/adicionar.png"/> </button> </form></td>';
+                echo '<td> <form action="./formRemove.php" method="POST"> <input name="idVendaAPrazo" type="hidden" value="' . $v['idVendaAPrazo'] . '"/> <button class="botoesTd"> <img src="../css/imagens/remover.png"/> </button> </form></td>';
 
                 echo '</tr>';
             }

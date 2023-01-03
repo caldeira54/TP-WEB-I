@@ -36,8 +36,8 @@ include('../../verificaLogin.php');
                 echo '<td>' . $v['idVendaAVista'] . '</td>';
                 echo '<td>' . $v['valorTotal'] . '</td>';
                 echo '<td>' . $v['data'] . '</td>';
-                echo '<td> <a id = "editar" href="formEdicao.php?idVendaAVista=' . $v['idVendaAVista'] . '"><img src="../css/imagens/editar.png"/></a></td>';
-                echo '<td> <a id = "listar" href="../produtosDaVenda/listagem.php?idVendaAVista=' . $v['idVendaAVista'] . '"><img src="../css/imagens/lista.png"/></a></td>';
+                echo '<td> <form action="./formEdicao.php" method="POST"> <input name="idVendaAVista" type="hidden" value="' . $v['idVendaAVista'] . '"/> <button class="botoesTd"> <img src="../css/imagens/editar.png"/> </button> </form></td>';
+                echo '<td> <form action="../produtosDaVenda/listagem.php" method="POST"> <input name="idVendaAVista" type="hidden" value="' . $v['idVendaAVista'] . '"/> <button class="botoesTd"> <img src="../css/imagens/lista.png"/> </button> </form></td>';
 
                 echo '</tr>';
             }

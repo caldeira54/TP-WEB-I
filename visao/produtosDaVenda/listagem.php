@@ -27,7 +27,7 @@ include('../../verificaLogin.php');
             require_once '../../dao/Conexao.php';
 
             $dao = new DAOProdutosDaVenda();
-            $id = filter_input(INPUT_GET, 'idVendaAVista');
+            $id = filter_input(INPUT_POST, 'idVendaAVista');
             $lista = $dao->lista($id);
 
             foreach ($lista as $v) {

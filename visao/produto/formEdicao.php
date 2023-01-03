@@ -17,7 +17,7 @@ include('../../verificaLogin.php');
     require_once '../../dao/Conexao.php';
     require_once '../../modelo/Produto.php';
 
-    $id = filter_input(INPUT_GET, 'idEstoque');
+    $id = filter_input(INPUT_POST, 'idEstoque');
 
     $dao = new DAOProduto();
     $lista = $dao->localiza($id);
@@ -41,6 +41,10 @@ include('../../verificaLogin.php');
 
         <form action="../formPrincipal.php">
             <button class="btnInicio"> Início </button>
+        </form>
+
+        <form action="./listagem.php">
+            <button> Produtos </button>
         </form>
     </div>
 </body>

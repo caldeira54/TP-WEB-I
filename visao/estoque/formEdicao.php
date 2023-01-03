@@ -17,7 +17,7 @@ include('../../verificaLogin.php');
     require_once '../../dao/Conexao.php';
     require_once '../../modelo/Estoque.php';
 
-    $id = filter_input(INPUT_GET, 'idEstoque');
+    $id = filter_input(INPUT_POST, 'idEstoque');
 
     $dao = new DAOEstoque();
     $lista = $dao->localiza($id);

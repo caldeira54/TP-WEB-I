@@ -21,7 +21,7 @@ include('../../verificaLogin.php');
     require_once '../../dao/Conexao.php';
     require_once '../../modelo/NotaPromissoria.php';
 
-    $id = filter_input(INPUT_GET, 'idNotaPromissoria');
+    $id = filter_input(INPUT_POST, 'idNotaPromissoria');
 
     $dao = new DAONotaPromissoria();
     $lista = $dao->localiza($id);
