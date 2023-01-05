@@ -11,14 +11,17 @@
 <?php
 include('../../verificaLogin.php');
 ?>
+
 <body class="body">
     <?php
     require_once '../../dao/DAOProdutosDaVenda.php';
+    require_once '../../dao/DAOEstoque.php';
     require_once '../../dao/Conexao.php';
     require_once '../../modelo/ProdutosDaVenda.php';
 
     $obj = new ProdutosDaVenda();
     $dao = new DAOProdutosDaVenda();
+    $daoSstoque = new DAOEstoque();
 
     $idEstoque = filter_input(INPUT_POST, 'idEstoque');
     $idVendaAVista = filter_input(INPUT_POST, 'idVendaAVista');
@@ -26,25 +29,34 @@ include('../../verificaLogin.php');
     $valor = filter_input(INPUT_POST, 'valorUnitario');
 
     if (($idEstoque && $idVendaAVista && $quantidade && $valor)) {
-        $obj->setIdEstoque($idEstoque);
-        $obj->setIdVendaAVista($idVendaAVista);
-        $obj->setQuantidade($quantidade);
-        $obj->setValor($valor);
+        $quantidadeDisponivel = $daoSstoque->verificaEstoque($idEstoque);
 
-        if ($dao->inclui($obj)) {
-            $dao->atualizaEstoque($idEstoque, $quantidade);
-            echo '<div class="popup-wrapper">
-                    <div class="popup">
-                        <div class="popup-close">x</div>
-                        <div class="popup-content">
-                            <p>Produto cadastrado com sucesso!</p>
-                            <a class="popup-link" href="./formCadastro.php">Adicionar produto</a>
+        // if (($quantidadeDisponivel < 0) && ($quantidadeDisponivel <= $quantidade)) {
+            $obj->setIdEstoque($idEstoque);
+            $obj->setIdVendaAVista($idVendaAVista);
+            $obj->setQuantidade($quantidade);
+            $obj->setValor($valor);
+
+            if ($dao->inclui($obj)) {
+                $dao->atualizaEstoque($idEstoque, $quantidade);
+                echo '<div class="popup-wrapper">
+                        <div class="popup">
+                            <div class="popup-close">x</div>
+                            <div class="popup-content">
+                                <p>Produto cadastrado com sucesso!</p>
+                                <a class="popup-link" href="./formCadastro.php">Adicionar produto</a>
+                            </div>
                         </div>
-                    </div>
-                  </div>';
-        } else {
-            echo 'Deu alguma merda...';
-        }
+                      </div>';
+            } else {
+                echo 'Deu alguma merda...';
+            }
+        // } else {
+        //     echo '<script>
+        //             alert("Estoque insuficiente!");
+        //             window.location.href = "../vendaAVista/listagem.php";
+        //           </script>';
+        // }
     } else {
         echo '<script>
                 alert("Dados ausentes ou incorretos!");

@@ -13,12 +13,9 @@ class DAOEstoque
         $pst->bindValue(3, $estoque->getPreco());
         $pst->bindValue(4, $estoque->getQuantidade());
 
-        if($pst->execute())
-        {
+        if ($pst->execute()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -30,12 +27,10 @@ class DAOEstoque
                 where idEstoque = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $estoque->getIdEstoque());
-        if($pst->execute())
-        {
+        
+        if ($pst->execute()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -51,12 +46,10 @@ class DAOEstoque
         $pst->bindValue(3, $estoque->getPreco());
         $pst->bindValue(4, $estoque->getQuantidade());
         $pst->bindValue(5, $estoque->getIdEstoque());
-        if($pst->execute())
-        {
+
+        if ($pst->execute()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -91,5 +84,16 @@ class DAOEstoque
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
     }
+
+    public function verificaEstoque($id)
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('select quantidade
+                                              from estoque
+                                              where idEstoque = ?;');
+        $pst->bindValue(1, $id);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
 }
-?>
