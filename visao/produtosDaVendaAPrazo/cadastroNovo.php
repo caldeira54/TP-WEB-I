@@ -25,6 +25,8 @@ include('../../verificaLogin.php');
     $quantidade = filter_input(INPUT_POST, 'quantidade');
     $valor = filter_input(INPUT_POST, 'valor');
 
+    var_dump($quantidade);
+
     if (($idEstoque && $idVendaAPrazo && $quantidade && $valor)) {
         $obj->setIdEstoque($idEstoque);
         $obj->setIdVendaAPrazo($idVendaAPrazo);
@@ -33,7 +35,7 @@ include('../../verificaLogin.php');
 
         try {
             $dao->inclui($obj);
-            $dao->adicionaProutos($obj);
+            $dao->adicionaProutosNovos($obj);
             $dao->baixaEstoque($idEstoque, $quantidade);
             echo '<script>
                     alert("Novo produto adicionado na venda com sucesso!");
