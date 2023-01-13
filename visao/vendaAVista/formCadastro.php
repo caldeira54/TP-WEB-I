@@ -18,7 +18,7 @@ include('../../verificaLogin.php');
     <h1> Cadastro de Venda </h1>
     <div class="cadastro">
         <form action="cadastro.php" method="post">
-            <label for="valor">Preço</label>
+            <label for="valor">Valor total</label>
             <input class="dados" type="text" name="valor" id="valor">
 
             <br>

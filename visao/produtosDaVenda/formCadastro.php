@@ -46,7 +46,7 @@ include('../../verificaLogin.php');
 
             <br>
 
-            <label for="valorUnitario">Valor</label>
+            <label for="valorUnitario">Preço unitário</label>
             <input class="dados" type="text" name="valorUnitario" id="valorUnitario">
 
             <br>

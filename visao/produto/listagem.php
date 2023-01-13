@@ -17,7 +17,7 @@ include('../../verificaLogin.php');
         <tr> 
             <th> ID Produto </th>
             <th> Produto </th>
-            <th> Funcionário </th>
+            <!-- <th> Funcionário </th> -->
             <th> Preço </th>
             <th> Excluir </th>
             <th> Editar </th>
@@ -36,7 +36,7 @@ include('../../verificaLogin.php');
 
                     echo '<td>' . $v['idEstoque'] . '</td>';
                     echo '<td>' . $v['estoque'] . '</td>';
-                    echo '<td>' . $v['funcionario'] . '</td>';
+                    // echo '<td>' . $v['funcionario'] . '</td>';
                     echo '<td>' . $v['preco'] . '</td>';
                     echo '<td> <form action="./verificaExclusao.php" method="POST"> <input name="idEstoque" type="hidden" value="' . $v['idEstoque'] . '"/> <button class="botoesTd"> <img src="../css/imagens/apagar.png"/> </button> </form></td>';
                     echo '<td> <form action="./formEdicao.php" method="POST"> <input name="idEstoque" type="hidden" value="' . $v['idEstoque'] . '"/> <button class="botoesTd"> <img src="../css/imagens/editar.png"/> </button> </form></td>';

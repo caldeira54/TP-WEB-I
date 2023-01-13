@@ -30,7 +30,7 @@ include('../../verificaLogin.php');
         try {
             if ($dao->exclui($obj)) {
                 echo '<script>
-                        alert("Fornecedor apagado com sucesso");
+                        alert("Fornecedor excluído com sucesso");
                         window.location.href = "./listagem.php";
                       </script>';
             } else {
@@ -40,7 +40,7 @@ include('../../verificaLogin.php');
             }
         } catch (Exception $e) {
             echo '<script>
-                    alert("Não foi possível apagar o fornecedor!");
+                    alert("Não foi possível excluir o fornecedor!");
                     window.location.href = "./listagem.php";
                   </script>';
         }

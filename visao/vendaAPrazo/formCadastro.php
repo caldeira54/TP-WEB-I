@@ -12,9 +12,7 @@
 include('../../verificaLogin.php');
 ?>
 <body class="body">
-    <script src="../../mascaras/mascaraData.js">
-
-    </script>
+    <script src="../../mascaras/mascaraData.js"> </script>
 
     <div class="cadastro">
         <h1> Cadastro de Venda à Prazo </h1>

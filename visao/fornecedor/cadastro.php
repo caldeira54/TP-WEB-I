@@ -30,7 +30,7 @@ include('../../verificaLogin.php');
         if ($dao->inclui($obj)) {
             echo '<script>
                     alert("Fornecedor cadastrado com sucesso");
-                    window.location.href = "./formCadastro.php";
+                    window.location.href = "./listagem.php";
                   </script>';
         } else {
             echo 'Deu alguma merda...';
