@@ -17,8 +17,6 @@ include('../../verificaLogin.php');
     require_once '../../dao/Conexao.php';
     require_once '../../modelo/Produto.php';
 
-    session_start();
-
     $obj = new Produto();
     $dao = new DAOProduto();
 
