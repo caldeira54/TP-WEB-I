@@ -11,6 +11,7 @@
 <?php
 include('../../verificaLogin.php');
 ?>
+
 <body class="body">
     <?php
     require_once '../../dao/DAOProduto.php';
@@ -24,17 +25,24 @@ include('../../verificaLogin.php');
     $preco = filter_input(INPUT_POST, 'preco');
 
     if (($idEstoque && $preco)) {
-        $obj->setIdEstoque($idEstoque);
-        $obj->setIdFuncionario($_SESSION['idFuncionario']);
-        $obj->setPreco($preco);
+        try {
+            $obj->setIdEstoque($idEstoque);
+            $obj->setIdFuncionario($_SESSION['idFuncionario']);
+            $obj->setPreco($preco);
 
-        if ($dao->inclui($obj)) {
-            echo '<script>
+            if ($dao->inclui($obj)) {
+                echo '<script>
                     alert("Produto cadastrado com sucesso!");
                     window.location.href = "./formCadastro.php";
                   </script>';
-        } else {
-            echo 'Deu alguma merda...';
+            } else {
+                echo 'Deu alguma merda...';
+            }
+        } catch (Exception) {
+            echo '<script>
+                    alert("Produto já cadastrado!");
+                    window.location.href = "./formCadastro.php";
+                  </script>';
         }
     } else {
         echo '<script>
