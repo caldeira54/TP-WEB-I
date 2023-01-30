@@ -52,6 +52,10 @@ include('../../verificaLogin.php');
                   </script>';
         }
     ?>
+
+    <form action="../vendaAPrazo/listagem.php">
+        <button>Vendas</button>
+    </form>
 </body>
 <script src="./popup.js"></script>
 </html>

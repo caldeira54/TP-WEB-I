@@ -32,7 +32,6 @@ include('../../verificaLogin.php');
         $obj->setDataFinal($dataFinal);
 
         if ($id = $dao->inclui($obj)) {
-            session_start();
             $_SESSION['ultimaCompra'] = $id;
             echo '<script>
                     alert("Venda cadastrada com sucesso!");

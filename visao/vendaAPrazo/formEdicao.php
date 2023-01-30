@@ -20,7 +20,7 @@ include('../../verificaLogin.php');
     require_once '../../dao/Conexao.php';
     require_once '../../modelo/VendaAPrazo.php';
 
-    $id = filter_input(INPUT_GET, 'idVendaAPrazo');
+    $id = filter_input(INPUT_POST, 'idVendaAPrazo');
 
     $dao = new DAOVendaAPrazo();
     $lista = $dao->localiza($id);

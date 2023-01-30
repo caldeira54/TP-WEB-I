@@ -25,8 +25,6 @@ include('../../verificaLogin.php');
     $quantidade = filter_input(INPUT_POST, 'quantidade');
     $valor = filter_input(INPUT_POST, 'valor');
 
-    var_dump($quantidade);
-
     if (($idEstoque && $idVendaAPrazo && $quantidade && $valor)) {
         $obj->setIdEstoque($idEstoque);
         $obj->setIdVendaAPrazo($idVendaAPrazo);
@@ -39,20 +37,19 @@ include('../../verificaLogin.php');
             $dao->baixaEstoque($idEstoque, $quantidade);
             echo '<script>
                     alert("Novo produto adicionado na venda com sucesso!");
-                    window.location.href = "./listagem.php";
+                    window.location.href = "../vendaAPrazo/listagem.php                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ";
                   </script>';
         } catch (Exception $e) {
             echo '<script>
                     alert("Produto já existente na venda!");
                     window.location.href = "../vendaAPrazo/listagem.php";
-                  </script>';
+                  </script>';                                                           
         }
     } else {
         echo '<script>
                 alert("Dados ausentes ou incorretos!");
                 window.location.href = "./formCadastroNovo.php";
               </script>';
-    }
+    }                                                                                    
     ?>
-</body>
-</html>
+</body>         
