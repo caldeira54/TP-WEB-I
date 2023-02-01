@@ -76,13 +76,14 @@ class DAOProdutosDaVendaAPrazo
     {
         $sql = 'update produtosdavendaaprazo as pvp
                 inner join vendaAPrazo as va on va.idVendaAPrazo = pvp.idVendaAPrazo
-                set pvp.quantidade = pvp.quantidade - ?, va.valor = va.valor - ?
+                set pvp.quantidade = pvp.quantidade - ?, va.valor = va.valor - (? * ?)
                 where pvp.idEstoque = ? and pvp.idVendaAPrazo = ?;';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $produtosDaVendaAPrazo->getQuantidade());
-        $pst->bindValue(2, $produtosDaVendaAPrazo->getValor());
-        $pst->bindValue(3, $produtosDaVendaAPrazo->getIdEstoque());
-        $pst->bindValue(4, $produtosDaVendaAPrazo->getIdVendaAPrazo());
+        $pst->bindValue(2, $produtosDaVendaAPrazo->getQuantidade());
+        $pst->bindValue(3, $produtosDaVendaAPrazo->getValor());
+        $pst->bindValue(4, $produtosDaVendaAPrazo->getIdEstoque());
+        $pst->bindValue(5, $produtosDaVendaAPrazo->getIdVendaAPrazo());
 
         if ($pst->execute())
         {
