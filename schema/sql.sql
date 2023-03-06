@@ -10,8 +10,18 @@ select * from produto;
 
 select * from vendaavista;
 
-# delete from vendaavista;
+#delete from vendaavista;
 
 select * from produtosDaVenda;
 
-# delete from produtosDaVenda;
+#delete from produtosDaVenda;
+
+select * from vendasdiarias;
+
+select * from vendaaprazo;
+
+select * from produtosdavendaaprazo;
+
+select * from funcionario;
+
+insert into funcionario(nome, usuario, senha) values ('Arthur', 'admin', 'admin');
