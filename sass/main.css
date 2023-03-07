@@ -7,4 +7,18 @@
 
 .rounded {
   margin-right: 10px;
+}
+
+.img-fluid {
+  width: 20px;
+  height: 20px;
+  transition: ease 0.5s;
+}
+
+.img-fluid:hover {
+  transform: scale(1.2);
+}
+
+.btn {
+  border: none;
 }/*# sourceMappingURL=main.css.map */

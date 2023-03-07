@@ -20,10 +20,10 @@ include('../menu.php');
 
 <body class="body">
     <div class="container-fluid text-center" style="width: 36rem;">
-        <div class="card" style="padding-top: 20px;">
-            <h1 class="card-title text-center">Cadastro de Fornecedores</h1>
+        <div class="card">
+            <h1 class="card-header text-center">Cadastro de Fornecedores</h1>
 
-            <form action="cadastro.php" method="post" class="mb-5 row justify-content-md-center">
+            <form action="cadastro.php" method="post" class="row justify-content-md-center" style="padding-top: 10px;">
                 <label class="col-sm-4 col-form-label" for="nome">Fornecedor</label>
                 <div class="col-sm-5">
                     <input class="form-control mb-3" type="text" name="nome" id="nome">
@@ -35,7 +35,7 @@ include('../menu.php');
                 </div>
 
                 <div class="col-sm-5">
-                    <button class="btn btn-outline-success">Salvar</button>
+                    <button class="btn btn-outline-success" style="margin-top: 60px;">Salvar</button>
                 </div>
             </form>
 
