@@ -1,5 +1,13 @@
 @use 'cores';
+@use 'fontes';
 
 .body {
     background-color: cores.$principal;
+    font-family: fontes.$principal;
+    margin: 0;
+    padding: 0;
+}
+
+.rounded {
+    margin-right: 10px;
 }

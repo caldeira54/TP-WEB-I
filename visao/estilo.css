@@ -1,13 +1,3 @@
-* {
-    margin: 0;
-    font-family: sans-serif;
-    padding: 0;
-}
-
-body {
-    background-color: #348e91;
-}
-
 .menuLateral {
     background-color: #0a0c0d;
     width: 250px;
@@ -128,15 +118,4 @@ body {
 
 .menuLateral ul li a span.gira{
     transform: rotate(90deg);
-}
-
-.funcionario {
-    float: right;
-    text-align: right;
-    align-items: center;
-    margin-right: 10px;
-    margin-top: 20px;
-    width: 20%;
-    height: 17px;
-    font-weight: bold;
 }
